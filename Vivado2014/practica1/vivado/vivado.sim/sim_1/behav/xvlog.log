@@ -1,0 +1,5 @@
+Determining compilation order of HDL files.
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/cecilia/Facultad/Sistemas_Digitales/practica1/vivado/vivado.srcs/sim_1/imports/practica1/lab1_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module lab1_tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/cecilia/Facultad/Sistemas_Digitales/practica1/vivado/vivado.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl

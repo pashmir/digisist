@@ -1,0 +1,10 @@
+#-----------------------------------------------------------
+# Vivado v2014.4
+# SW Build 1071353 on Tue Nov 18 16:37:30 MST 2014
+# IP Build 1070531 on Tue Nov 18 01:10:18 MST 2014
+# Start of session at: Mon Sep 17 23:06:17 2018
+# Process ID: 5382
+# Log file: /home/cecilia/Facultad/Sistemas_Digitales/practica1/vivado/vivado.runs/synth_1/lab1.vds
+# Journal file: /home/cecilia/Facultad/Sistemas_Digitales/practica1/vivado/vivado.runs/synth_1/vivado.jou
+#-----------------------------------------------------------
+source lab1.tcl
