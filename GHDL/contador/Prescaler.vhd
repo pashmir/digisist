@@ -2,9 +2,9 @@
 -- Company: 
 -- Engineer: 
 -- 
--- Create Date: 20.09.2018 20:00:14
+-- Create Date: 26.09.2018 21:36:42
 -- Design Name: 
--- Module Name: contador - logica
+-- Module Name: Prescaler - Behavioral
 -- Project Name: 
 -- Target Devices: 
 -- Tool Versions: 
@@ -31,16 +31,36 @@ use IEEE.STD_LOGIC_1164.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity contador is
-    Port ( clock : in STD_LOGIC;
-           LED1 : inout STD_LOGIC;
-           LED2 : inout STD_LOGIC;
-           LED3 : inout STD_LOGIC;
-           LED4 : inout STD_LOGIC);
-end contador;
+entity Prescaler is
+    Port ( clk_125 : in STD_LOGIC;
+           rst : in STD_LOGIC;
+           clk_1 : out STD_LOGIC);
+end Prescaler;
 
-architecture logica of contador is
+architecture Behavioral of Prescaler is
+
+signal salida : std_logic;
+
 begin
+    process (clk_125,rst)
+    variable conteo : integer := 0;
+    begin
+    if (rst = '1') then
+        conteo := 0;
+    else
+        if (rising_edge (clk_125)) then
+            conteo := conteo + 1;
+        end if;
+        if (conteo = 125000000) then
+            conteo := 0;
+            salida <= '1';
+        else
+            salida <= '0';
+        end if;
+    end if;
+end process;
+
+clk_1 <= salida; 
 
 
-end logica;
+end Behavioral;

@@ -1,0 +1,8 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  "../../../practica2.srcs/sources_1/new/FFJK.vhd"
+vhdl xil_defaultlib  "../../../practica2.srcs/sources_1/imports/new/contador.vhdl"
+vhdl xil_defaultlib  "../../../practica2.srcs/sim_1/new/contador_tb.vhd"
+vhdl xil_defaultlib  "../../../practica2.srcs/sim_1/imports/new/contador.vhdl"
+
+# Do not sort compile order
+nosort

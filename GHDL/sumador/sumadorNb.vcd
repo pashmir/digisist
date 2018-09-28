@@ -1,0 +1,139 @@
+$date
+  Thu Sep 13 18:45:47 2018
+$end
+$version
+  GHDL v0
+$end
+$timescale
+  1 fs
+$end
+$scope module standard $end
+$upscope $end
+$scope module std_logic_1164 $end
+$upscope $end
+$scope module numeric_std $end
+$upscope $end
+$scope module sumnb_tb $end
+$var reg 4 ! a_tb[3:0] $end
+$var reg 4 " b_tb[3:0] $end
+$var reg 1 # ci_tb $end
+$var reg 4 $ s_tb[3:0] $end
+$var reg 1 % co_tb $end
+$scope module dut $end
+$var reg 4 & a[3:0] $end
+$var reg 4 ' b[3:0] $end
+$var reg 1 ( ci $end
+$var reg 4 ) s[3:0] $end
+$var reg 1 * co $end
+$var reg 5 + c_aux[4:0] $end
+$scope module sumgen(0) $end
+$scope module sum1b_i $end
+$var reg 1 , a $end
+$var reg 1 - b $end
+$var reg 1 . ci $end
+$var reg 1 / s $end
+$var reg 1 0 co $end
+$upscope $end
+$upscope $end
+$scope module sumgen(1) $end
+$scope module sum1b_i $end
+$var reg 1 1 a $end
+$var reg 1 2 b $end
+$var reg 1 3 ci $end
+$var reg 1 4 s $end
+$var reg 1 5 co $end
+$upscope $end
+$upscope $end
+$scope module sumgen(2) $end
+$scope module sum1b_i $end
+$var reg 1 6 a $end
+$var reg 1 7 b $end
+$var reg 1 8 ci $end
+$var reg 1 9 s $end
+$var reg 1 : co $end
+$upscope $end
+$upscope $end
+$scope module sumgen(3) $end
+$scope module sum1b_i $end
+$var reg 1 ; a $end
+$var reg 1 < b $end
+$var reg 1 = ci $end
+$var reg 1 > s $end
+$var reg 1 ? co $end
+$upscope $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+b0011 !
+b0101 "
+0#
+b1000 $
+0%
+b0011 &
+b0101 '
+0(
+b1000 )
+0*
+b01110 +
+1,
+1-
+0.
+0/
+10
+11
+02
+13
+04
+15
+06
+17
+18
+09
+1:
+0;
+0<
+1=
+1>
+0?
+#100000000
+b0110 !
+b1011 $
+b0110 &
+b1011 )
+b01000 +
+0,
+1/
+00
+03
+14
+05
+16
+08
+09
+#200000000
+b1000 "
+b1110 $
+0%
+b1000 '
+b1110 )
+0*
+b00000 +
+0-
+0/
+07
+19
+0:
+1<
+0=
+1>
+0?
+#300000000
+1#
+b1111 $
+1(
+b1111 )
+b00001 +
+1.
+1/

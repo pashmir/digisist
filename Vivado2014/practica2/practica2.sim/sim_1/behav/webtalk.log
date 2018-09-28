@@ -1,0 +1,15 @@
+#-----------------------------------------------------------
+# Webtalk v2014.4
+# SW Build 1071353 on Tue Nov 18 16:37:30 MST 2014
+# IP Build 1070531 on Tue Nov 18 01:10:18 MST 2014
+# Start of session at: Thu Sep 27 21:33:51 2018
+# Process ID: 3298
+# Log file: /home/cecilia/Facultad/Sistemas_Digitales/Vivado2014/practica2/practica2.sim/sim_1/behav/webtalk.log
+# Journal file: /home/cecilia/Facultad/Sistemas_Digitales/Vivado2014/practica2/practica2.sim/sim_1/behav/webtalk.jou
+#-----------------------------------------------------------
+source /home/cecilia/Facultad/Sistemas_Digitales/Vivado2014/practica2/practica2.sim/sim_1/behav/xsim.dir/contador_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+
+    while executing
+"webtalk_transmit -clientid 3738464035 -regid "211577337_0_0_963" -xml /home/cecilia/Facultad/Sistemas_Digitales/Vivado2014/practica2/practica2.sim/sim..."
+    (file "/home/cecilia/Facultad/Sistemas_Digitales/Vivado2014/practica2/practica2.sim/sim_1/behav/xsim.dir/contador_tb_behav/webtalk/xsim_webtalk.tcl" line 41)
+INFO: [Common 17-206] Exiting Webtalk at Thu Sep 27 21:33:53 2018...

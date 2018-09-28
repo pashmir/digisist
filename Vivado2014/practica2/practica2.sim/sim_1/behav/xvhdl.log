@@ -1,0 +1,9 @@
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/cecilia/Facultad/Sistemas_Digitales/Vivado2014/practica2/practica2.srcs/sources_1/new/FFJK.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity FFJK
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/cecilia/Facultad/Sistemas_Digitales/Vivado2014/practica2/practica2.srcs/sources_1/imports/new/contador.vhdl" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity contador
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/cecilia/Facultad/Sistemas_Digitales/Vivado2014/practica2/practica2.srcs/sim_1/new/contador_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity contador_tb
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/cecilia/Facultad/Sistemas_Digitales/Vivado2014/practica2/practica2.srcs/sim_1/imports/new/contador.vhdl" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity contador
+WARNING: [VRFC 10-1194] overwriting existing secondary unit logica [/home/cecilia/Facultad/Sistemas_Digitales/Vivado2014/practica2/practica2.srcs/sim_1/imports/new/contador.vhdl:42]
