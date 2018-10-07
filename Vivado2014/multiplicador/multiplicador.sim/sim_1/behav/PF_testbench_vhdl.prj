@@ -1,0 +1,5 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  "../../../multiplicador.srcs/sim_1/imports/testbench/ffd.vhd"
+vhdl xil_defaultlib  "../../../multiplicador.srcs/sources_1/imports/multiplicador_pf/multiplicador.vhd"
+vhdl xil_defaultlib  "../../../multiplicador.srcs/sim_1/imports/testbench/delay.vhd"
+vhdl xil_defaultlib  "../../../multiplicador.srcs/sim_1/imports/testbench/testbench.vhd"
