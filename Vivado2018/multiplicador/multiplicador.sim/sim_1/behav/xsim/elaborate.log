@@ -1,0 +1,17 @@
+Vivado Simulator 2018.2
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: /opt/Xilinx/Vivado/2018.2/bin/unwrapped/lnx64.o/xelab -wto c6162fbc54064101965b4a159c492016 --incr --debug typical --relax --mt 8 -L xil_defaultlib -L secureip --snapshot PF_testbench_behav xil_defaultlib.PF_testbench -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling architecture mult_pf_arq of entity xil_defaultlib.mult_pf [\mult_pf(n_tot=25,n_exp=7)\]
+Compiling architecture del of entity xil_defaultlib.delay_gen [\delay_gen(n=25)\]
+Compiling architecture pf_testbench_arq of entity xil_defaultlib.pf_testbench
+Built simulation snapshot PF_testbench_behav

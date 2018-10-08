@@ -1,0 +1,16 @@
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/cecilia/Documentos/Sistemas_digitales/digisist/GHDL/multiplicador_pf/delay.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity delay_gen
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/cecilia/Documentos/Sistemas_digitales/digisist/GHDL/multiplicador_pf/ffd.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity FFD
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/cecilia/Documentos/Sistemas_digitales/digisist/GHDL/multiplicador_pf/mult_pf.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity mult_pf
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/cecilia/Documentos/Sistemas_digitales/digisist/GHDL/multiplicador_pf/testbench.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity PF_testbench
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/cecilia/Documentos/Sistemas_digitales/digisist/GHDL/multiplicador_pf/testbench.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity PF_testbench
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/cecilia/Documentos/Sistemas_digitales/digisist/GHDL/multiplicador_pf/testbench.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity PF_testbench
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/cecilia/Documentos/Sistemas_digitales/digisist/GHDL/multiplicador_pf/testbench.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity PF_testbench
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/cecilia/Documentos/Sistemas_digitales/digisist/GHDL/multiplicador_pf/testbench.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity PF_testbench

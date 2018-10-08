@@ -1,0 +1,98 @@
+Vivado Simulator 2018.2
+Time resolution is 1 ps
+Warning: Error: Salida del DUT no coincide con referencia (salida del dut = 8519680, salida del archivo = 0)
+Time: 10 ns  Iteration: 0  Process: /PF_testbench/verificacion  File: /home/cecilia/Documentos/Sistemas_digitales/digisist/GHDL/multiplicador_pf/testbench.vhd
+Warning: Error: Salida del DUT no coincide con referencia (salida del dut = 33422378, salida del archivo = 33422869)
+Time: 30 ns  Iteration: 0  Process: /PF_testbench/verificacion  File: /home/cecilia/Documentos/Sistemas_digitales/digisist/GHDL/multiplicador_pf/testbench.vhd
+Warning: Error: Salida del DUT no coincide con referencia (salida del dut = 33293585, salida del archivo = 33292936)
+Time: 50 ns  Iteration: 0  Process: /PF_testbench/verificacion  File: /home/cecilia/Documentos/Sistemas_digitales/digisist/GHDL/multiplicador_pf/testbench.vhd
+Warning: Error: Salida del DUT no coincide con referencia (salida del dut = 33538450, salida del archivo = 33423359)
+Time: 70 ns  Iteration: 0  Process: /PF_testbench/verificacion  File: /home/cecilia/Documentos/Sistemas_digitales/digisist/GHDL/multiplicador_pf/testbench.vhd
+Warning: Error: Salida del DUT no coincide con referencia (salida del dut = 33429963, salida del archivo = 33423359)
+Time: 90 ns  Iteration: 0  Process: /PF_testbench/verificacion  File: /home/cecilia/Documentos/Sistemas_digitales/digisist/GHDL/multiplicador_pf/testbench.vhd
+Warning: Error: Salida del DUT no coincide con referencia (salida del dut = 15945541, salida del archivo = 15968162)
+Time: 110 ns  Iteration: 0  Process: /PF_testbench/verificacion  File: /home/cecilia/Documentos/Sistemas_digitales/digisist/GHDL/multiplicador_pf/testbench.vhd
+Warning: Error: Salida del DUT no coincide con referencia (salida del dut = 33001007, salida del archivo = 32950039)
+Time: 130 ns  Iteration: 0  Process: /PF_testbench/verificacion  File: /home/cecilia/Documentos/Sistemas_digitales/digisist/GHDL/multiplicador_pf/testbench.vhd
+Warning: Error: Salida del DUT no coincide con referencia (salida del dut = 16563271, salida del archivo = 16539171)
+Time: 150 ns  Iteration: 0  Process: /PF_testbench/verificacion  File: /home/cecilia/Documentos/Sistemas_digitales/digisist/GHDL/multiplicador_pf/testbench.vhd
+Warning: Error: Salida del DUT no coincide con referencia (salida del dut = 33398655, salida del archivo = 33411007)
+Time: 170 ns  Iteration: 0  Process: /PF_testbench/verificacion  File: /home/cecilia/Documentos/Sistemas_digitales/digisist/GHDL/multiplicador_pf/testbench.vhd
+Warning: Error: Salida del DUT no coincide con referencia (salida del dut = 33308587, salida del archivo = 33365973)
+Time: 190 ns  Iteration: 0  Process: /PF_testbench/verificacion  File: /home/cecilia/Documentos/Sistemas_digitales/digisist/GHDL/multiplicador_pf/testbench.vhd
+Warning: Error: Salida del DUT no coincide con referencia (salida del dut = 32764653, salida del archivo = 32700790)
+Time: 210 ns  Iteration: 0  Process: /PF_testbench/verificacion  File: /home/cecilia/Documentos/Sistemas_digitales/digisist/GHDL/multiplicador_pf/testbench.vhd
+Warning: Error: Salida del DUT no coincide con referencia (salida del dut = 16336729, salida del archivo = 16360364)
+Time: 230 ns  Iteration: 0  Process: /PF_testbench/verificacion  File: /home/cecilia/Documentos/Sistemas_digitales/digisist/GHDL/multiplicador_pf/testbench.vhd
+Warning: Error: Salida del DUT no coincide con referencia (salida del dut = 16309842, salida del archivo = 16281385)
+Time: 250 ns  Iteration: 0  Process: /PF_testbench/verificacion  File: /home/cecilia/Documentos/Sistemas_digitales/digisist/GHDL/multiplicador_pf/testbench.vhd
+Warning: Error: Salida del DUT no coincide con referencia (salida del dut = 33171956, salida del archivo = 33232122)
+Time: 270 ns  Iteration: 0  Process: /PF_testbench/verificacion  File: /home/cecilia/Documentos/Sistemas_digitales/digisist/GHDL/multiplicador_pf/testbench.vhd
+Warning: Error: Salida del DUT no coincide con referencia (salida del dut = 16678900, salida del archivo = 16646143)
+Time: 290 ns  Iteration: 0  Process: /PF_testbench/verificacion  File: /home/cecilia/Documentos/Sistemas_digitales/digisist/GHDL/multiplicador_pf/testbench.vhd
+Warning: Error: Salida del DUT no coincide con referencia (salida del dut = 16634692, salida del archivo = 16640418)
+Time: 310 ns  Iteration: 0  Process: /PF_testbench/verificacion  File: /home/cecilia/Documentos/Sistemas_digitales/digisist/GHDL/multiplicador_pf/testbench.vhd
+Warning: Error: Salida del DUT no coincide con referencia (salida del dut = 33270473, salida del archivo = 33215844)
+Time: 330 ns  Iteration: 0  Process: /PF_testbench/verificacion  File: /home/cecilia/Documentos/Sistemas_digitales/digisist/GHDL/multiplicador_pf/testbench.vhd
+Warning: Error: Salida del DUT no coincide con referencia (salida del dut = 33411076, salida del archivo = 33351682)
+Time: 350 ns  Iteration: 0  Process: /PF_testbench/verificacion  File: /home/cecilia/Documentos/Sistemas_digitales/digisist/GHDL/multiplicador_pf/testbench.vhd
+Warning: Error: Salida del DUT no coincide con referencia (salida del dut = 16765501, salida del archivo = 16646143)
+Time: 370 ns  Iteration: 0  Process: /PF_testbench/verificacion  File: /home/cecilia/Documentos/Sistemas_digitales/digisist/GHDL/multiplicador_pf/testbench.vhd
+Warning: Error: Salida del DUT no coincide con referencia (salida del dut = 33249002, salida del archivo = 33205109)
+Time: 390 ns  Iteration: 0  Process: /PF_testbench/verificacion  File: /home/cecilia/Documentos/Sistemas_digitales/digisist/GHDL/multiplicador_pf/testbench.vhd
+Warning: Error: Salida del DUT no coincide con referencia (salida del dut = 16286949, salida del archivo = 16269938)
+Time: 410 ns  Iteration: 0  Process: /PF_testbench/verificacion  File: /home/cecilia/Documentos/Sistemas_digitales/digisist/GHDL/multiplicador_pf/testbench.vhd
+Warning: Error: Salida del DUT no coincide con referencia (salida del dut = 16750491, salida del archivo = 16646143)
+Time: 430 ns  Iteration: 0  Process: /PF_testbench/verificacion  File: /home/cecilia/Documentos/Sistemas_digitales/digisist/GHDL/multiplicador_pf/testbench.vhd
+Warning: Error: Salida del DUT no coincide con referencia (salida del dut = 33303020, salida del archivo = 33297654)
+Time: 450 ns  Iteration: 0  Process: /PF_testbench/verificacion  File: /home/cecilia/Documentos/Sistemas_digitales/digisist/GHDL/multiplicador_pf/testbench.vhd
+Warning: Error: Salida del DUT no coincide con referencia (salida del dut = 33434013, salida del archivo = 33423359)
+Time: 470 ns  Iteration: 0  Process: /PF_testbench/verificacion  File: /home/cecilia/Documentos/Sistemas_digitales/digisist/GHDL/multiplicador_pf/testbench.vhd
+Warning: Error: Salida del DUT no coincide con referencia (salida del dut = 33089244, salida del archivo = 33125230)
+Time: 490 ns  Iteration: 0  Process: /PF_testbench/verificacion  File: /home/cecilia/Documentos/Sistemas_digitales/digisist/GHDL/multiplicador_pf/testbench.vhd
+Warning: Error: Salida del DUT no coincide con referencia (salida del dut = 33361148, salida del archivo = 33326718)
+Time: 510 ns  Iteration: 0  Process: /PF_testbench/verificacion  File: /home/cecilia/Documentos/Sistemas_digitales/digisist/GHDL/multiplicador_pf/testbench.vhd
+Warning: Error: Salida del DUT no coincide con referencia (salida del dut = 16749885, salida del archivo = 16646143)
+Time: 530 ns  Iteration: 0  Process: /PF_testbench/verificacion  File: /home/cecilia/Documentos/Sistemas_digitales/digisist/GHDL/multiplicador_pf/testbench.vhd
+Warning: Error: Salida del DUT no coincide con referencia (salida del dut = 16264487, salida del archivo = 16324243)
+Time: 550 ns  Iteration: 0  Process: /PF_testbench/verificacion  File: /home/cecilia/Documentos/Sistemas_digitales/digisist/GHDL/multiplicador_pf/testbench.vhd
+Warning: Error: Salida del DUT no coincide con referencia (salida del dut = 32916984, salida del archivo = 32908028)
+Time: 570 ns  Iteration: 0  Process: /PF_testbench/verificacion  File: /home/cecilia/Documentos/Sistemas_digitales/digisist/GHDL/multiplicador_pf/testbench.vhd
+Warning: Error: Salida del DUT no coincide con referencia (salida del dut = 16264337, salida del archivo = 16258632)
+Time: 590 ns  Iteration: 0  Process: /PF_testbench/verificacion  File: /home/cecilia/Documentos/Sistemas_digitales/digisist/GHDL/multiplicador_pf/testbench.vhd
+Warning: Error: Salida del DUT no coincide con referencia (salida del dut = 16634196, salida del archivo = 16574634)
+Time: 610 ns  Iteration: 0  Process: /PF_testbench/verificacion  File: /home/cecilia/Documentos/Sistemas_digitales/digisist/GHDL/multiplicador_pf/testbench.vhd
+Warning: Error: Salida del DUT no coincide con referencia (salida del dut = 33312146, salida del archivo = 33302217)
+Time: 630 ns  Iteration: 0  Process: /PF_testbench/verificacion  File: /home/cecilia/Documentos/Sistemas_digitales/digisist/GHDL/multiplicador_pf/testbench.vhd
+Warning: Error: Salida del DUT no coincide con referencia (salida del dut = 16595388, salida del archivo = 16555230)
+Time: 650 ns  Iteration: 0  Process: /PF_testbench/verificacion  File: /home/cecilia/Documentos/Sistemas_digitales/digisist/GHDL/multiplicador_pf/testbench.vhd
+Warning: Error: Salida del DUT no coincide con referencia (salida del dut = 33431302, salida del archivo = 33423359)
+Time: 670 ns  Iteration: 0  Process: /PF_testbench/verificacion  File: /home/cecilia/Documentos/Sistemas_digitales/digisist/GHDL/multiplicador_pf/testbench.vhd
+Warning: Error: Salida del DUT no coincide con referencia (salida del dut = 16683512, salida del archivo = 16646143)
+Time: 710 ns  Iteration: 0  Process: /PF_testbench/verificacion  File: /home/cecilia/Documentos/Sistemas_digitales/digisist/GHDL/multiplicador_pf/testbench.vhd
+Warning: Error: Salida del DUT no coincide con referencia (salida del dut = 16649084, salida del archivo = 16646143)
+Time: 730 ns  Iteration: 0  Process: /PF_testbench/verificacion  File: /home/cecilia/Documentos/Sistemas_digitales/digisist/GHDL/multiplicador_pf/testbench.vhd
+Warning: Error: Salida del DUT no coincide con referencia (salida del dut = 33339883, salida del archivo = 33381621)
+Time: 750 ns  Iteration: 0  Process: /PF_testbench/verificacion  File: /home/cecilia/Documentos/Sistemas_digitales/digisist/GHDL/multiplicador_pf/testbench.vhd
+Warning: Error: Salida del DUT no coincide con referencia (salida del dut = 16690031, salida del archivo = 16646143)
+Time: 770 ns  Iteration: 0  Process: /PF_testbench/verificacion  File: /home/cecilia/Documentos/Sistemas_digitales/digisist/GHDL/multiplicador_pf/testbench.vhd
+Warning: Error: Salida del DUT no coincide con referencia (salida del dut = 33092384, salida del archivo = 33061264)
+Time: 790 ns  Iteration: 0  Process: /PF_testbench/verificacion  File: /home/cecilia/Documentos/Sistemas_digitales/digisist/GHDL/multiplicador_pf/testbench.vhd
+Warning: Error: Salida del DUT no coincide con referencia (salida del dut = 33281170, salida del archivo = 33221193)
+Time: 810 ns  Iteration: 0  Process: /PF_testbench/verificacion  File: /home/cecilia/Documentos/Sistemas_digitales/digisist/GHDL/multiplicador_pf/testbench.vhd
+Warning: Error: Salida del DUT no coincide con referencia (salida del dut = 16529235, salida del archivo = 16587689)
+Time: 830 ns  Iteration: 0  Process: /PF_testbench/verificacion  File: /home/cecilia/Documentos/Sistemas_digitales/digisist/GHDL/multiplicador_pf/testbench.vhd
+Warning: Error: Salida del DUT no coincide con referencia (salida del dut = 16735632, salida del archivo = 16646143)
+Time: 850 ns  Iteration: 0  Process: /PF_testbench/verificacion  File: /home/cecilia/Documentos/Sistemas_digitales/digisist/GHDL/multiplicador_pf/testbench.vhd
+Warning: Error: Salida del DUT no coincide con referencia (salida del dut = 16517446, salida del archivo = 16516259)
+Time: 870 ns  Iteration: 0  Process: /PF_testbench/verificacion  File: /home/cecilia/Documentos/Sistemas_digitales/digisist/GHDL/multiplicador_pf/testbench.vhd
+Warning: Error: Salida del DUT no coincide con referencia (salida del dut = 33398988, salida del archivo = 33411174)
+Time: 890 ns  Iteration: 0  Process: /PF_testbench/verificacion  File: /home/cecilia/Documentos/Sistemas_digitales/digisist/GHDL/multiplicador_pf/testbench.vhd
+Warning: Error: Salida del DUT no coincide con referencia (salida del dut = 43155, salida del archivo = 16646143)
+Time: 910 ns  Iteration: 0  Process: /PF_testbench/verificacion  File: /home/cecilia/Documentos/Sistemas_digitales/digisist/GHDL/multiplicador_pf/testbench.vhd
+Warning: Error: Salida del DUT no coincide con referencia (salida del dut = 33269549, salida del archivo = 33215382)
+Time: 930 ns  Iteration: 0  Process: /PF_testbench/verificacion  File: /home/cecilia/Documentos/Sistemas_digitales/digisist/GHDL/multiplicador_pf/testbench.vhd
+Warning: Error: Salida del DUT no coincide con referencia (salida del dut = 33425542, salida del archivo = 33423359)
+Time: 970 ns  Iteration: 0  Process: /PF_testbench/verificacion  File: /home/cecilia/Documentos/Sistemas_digitales/digisist/GHDL/multiplicador_pf/testbench.vhd
+Warning: Error: Salida del DUT no coincide con referencia (salida del dut = 16293716, salida del archivo = 16273322)
+Time: 990 ns  Iteration: 0  Process: /PF_testbench/verificacion  File: /home/cecilia/Documentos/Sistemas_digitales/digisist/GHDL/multiplicador_pf/testbench.vhd

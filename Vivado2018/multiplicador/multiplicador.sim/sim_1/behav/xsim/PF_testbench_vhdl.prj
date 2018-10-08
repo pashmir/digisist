@@ -1,0 +1,9 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../../../GHDL/multiplicador_pf/delay.vhd" \
+"../../../../../../GHDL/multiplicador_pf/ffd.vhd" \
+"../../../../../../GHDL/multiplicador_pf/mult_pf.vhd" \
+"../../../../../../GHDL/multiplicador_pf/testbench.vhd" \
+
+# Do not sort compile order
+nosort
