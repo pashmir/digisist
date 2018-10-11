@@ -1,6 +1,5 @@
 library IEEE;
 use IEEE.std_logic_1164.all;
---- use IEEE.std_logic_arith.all;
 use IEEE.numeric_std.all;
 
 entity mult_pf is
@@ -20,10 +19,14 @@ architecture mult_pf_arq of mult_pf is
     --- declaración variables
     constant bias: natural := 2 ** (N_exp-1) - 1;
     constant N_man: natural := N_tot-N_exp-1;
+---    shared variable INFNEG: natural := 1 * 2**N_tot-1 + (2**N_exp-1) * 2 ** N_man-1;
+---    shared variable INFPOS: natural := 		   (2**N_exp-1) * 2 ** N_man-1;
+--    shared variable ZERO: natural := 0;
+--    shared variable NAN: natural := (2**N_exp-1) * 2 ** N_man-1 + 1;
     shared variable i: natural := 0;
-    shared variable exp_a: signed(N_exp-1 downto 0);
-    shared variable exp_b: signed(N_exp-1 downto 0);
-    shared variable exp_s: signed(N_exp-1 downto 0);
+    shared variable exp_a: unsigned(N_exp downto 0);
+    shared variable exp_b: unsigned(N_exp downto 0);
+    shared variable exp_s: unsigned(N_exp downto 0);
     shared variable man_a: unsigned(N_man downto 0);
     shared variable man_b: unsigned(N_man downto 0);
     shared variable man_s: unsigned(N_man*2+1 downto 0);	
@@ -36,8 +39,10 @@ begin
 	    
 	    
 		--- Recupero el valor cada parte del float
-		exp_a := signed(a(N_tot-2 downto N_man))-bias;
-		exp_b := signed(b(N_tot-2 downto N_man))-bias;
+		exp_a(N_exp-1 downto 0) := unsigned(a(N_tot-2 downto N_man))-bias;
+		exp_b(N_exp-1 downto 0) := unsigned(b(N_tot-2 downto N_man))-bias;
+		exp_a(N_exp) := '0';
+		exp_b(N_exp) := '0';
 		man_a(N_man-1 downto 0) := unsigned(a(N_man-1 downto 0));
 		man_b(N_man-1 downto 0) := unsigned(b(N_man-1 downto 0));
 		man_a(N_man) := '1';
@@ -53,10 +58,17 @@ begin
 			exp_s := exp_s + 1;
 			i:=1;
 		end if;
+
+		--- overflow
+		if exp_s(N_exp) = '1' then
+			exp_s(N_exp-1 downto 0):= to_unsigned(bias*2+1, N_exp);
+			man_s := to_unsigned(0, N_man*2+2);
+		end if;
 		
 		--- Armo la señal s
 		s(N_tot-1) <= a(N_tot-1) xor b(N_tot-1); --- signo
-		s(N_tot-2 downto N_man) <= std_logic_vector(exp_s + bias);
+		exp_s := exp_s + bias;
+		s(N_tot-2 downto N_man) <= std_logic_vector(exp_s(N_exp-1 downto 0));
 		s(N_man-1 downto 0) <= std_logic_vector(man_s(N_man*2-1+i downto N_man+i));
 		
 	end process;
