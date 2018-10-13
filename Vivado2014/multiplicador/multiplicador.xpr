@@ -27,7 +27,7 @@
       </File>
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
-        <Option Name="TopModule" Val="mult_pf"/>
+        <Option Name="TopModule" Val="mult_pf1"/>
         <Option Name="TopAutoSet" Val="TRUE"/>
       </Config>
     </FileSet>
@@ -63,13 +63,19 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
+      <File Path="$PSRCDIR/sim_1/imports/multiplicador_pf/test_mul_float_25_7.txt">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../GHDL/multiplicador_pf/test_mul_float_25_7.txt"/>
+          <Attr Name="ImportTime" Val="1539287140"/>
+        </FileInfo>
+      </File>
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
-        <Option Name="TopModule" Val="PF_testbench"/>
+        <Option Name="TopModule" Val="PF_testbench1"/>
         <Option Name="TopLib" Val="xil_defaultlib"/>
         <Option Name="TopAutoSet" Val="TRUE"/>
         <Option Name="SrcSet" Val="sources_1"/>
-        <Option Name="xsim.simulate.runtime" Val="200ns"/>
+        <Option Name="xsim.simulate.runtime" Val=""/>
       </Config>
     </FileSet>
   </FileSets>

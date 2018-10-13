@@ -1,0 +1,16 @@
+Vivado Simulator 2014.4
+Copyright 1986-1999, 2001-2014 Xilinx, Inc. All Rights Reserved.
+Running: /opt/Xilinx/Vivado/2014.4/bin/unwrapped/lnx32.o/xelab -wto bc6aa63e36f049788cfd20269c957c5d --debug typical --relax -L xil_defaultlib -L secureip --snapshot PF_testbench1_behav xil_defaultlib.PF_testbench1 -log elaborate.log 
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package std.textio
+Compiling architecture mult_pf1_arq of entity xil_defaultlib.mult_pf1 [\mult_pf1(25,7)\]
+Compiling architecture del of entity xil_defaultlib.delay_gen [\delay_gen(25,0)\]
+Compiling architecture pf_testbench1_arq of entity xil_defaultlib.pf_testbench1
+Built simulation snapshot PF_testbench1_behav

@@ -2,11 +2,8 @@ Determining compilation order of HDL files.
 INFO: [VRFC 10-163] Analyzing VHDL file "/home/cecilia/Facultad/Sistemas_Digitales/Vivado2014/multiplicador/multiplicador.srcs/sim_1/imports/testbench/ffd.vhd" into library xil_defaultlib
 INFO: [VRFC 10-307] analyzing entity FFD
 INFO: [VRFC 10-163] Analyzing VHDL file "/home/cecilia/Facultad/Sistemas_Digitales/Vivado2014/multiplicador/multiplicador.srcs/sources_1/imports/multiplicador_pf/multiplicador.vhd" into library xil_defaultlib
-INFO: [VRFC 10-307] analyzing entity mult_pf
+INFO: [VRFC 10-307] analyzing entity mult_pf1
 INFO: [VRFC 10-163] Analyzing VHDL file "/home/cecilia/Facultad/Sistemas_Digitales/Vivado2014/multiplicador/multiplicador.srcs/sim_1/imports/testbench/delay.vhd" into library xil_defaultlib
 INFO: [VRFC 10-307] analyzing entity delay_gen
 INFO: [VRFC 10-163] Analyzing VHDL file "/home/cecilia/Facultad/Sistemas_Digitales/Vivado2014/multiplicador/multiplicador.srcs/sim_1/imports/testbench/testbench.vhd" into library xil_defaultlib
-INFO: [VRFC 10-307] analyzing entity PF_testbench
-ERROR: [VRFC 10-91] mult_pf is not declared [/home/cecilia/Facultad/Sistemas_Digitales/Vivado2014/multiplicador/multiplicador.srcs/sim_1/imports/testbench/testbench.vhd:86]
-ERROR: [VRFC 10-1504] unit pf_testbench_arq ignored due to previous errors [/home/cecilia/Facultad/Sistemas_Digitales/Vivado2014/multiplicador/multiplicador.srcs/sim_1/imports/testbench/testbench.vhd:9]
-INFO: [VRFC 10-240] VHDL file /home/cecilia/Facultad/Sistemas_Digitales/Vivado2014/multiplicador/multiplicador.srcs/sim_1/imports/testbench/testbench.vhd ignored due to errors
+INFO: [VRFC 10-307] analyzing entity PF_testbench1

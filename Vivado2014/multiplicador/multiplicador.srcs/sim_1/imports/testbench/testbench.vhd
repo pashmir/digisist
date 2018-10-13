@@ -3,10 +3,10 @@ use IEEE.std_logic_1164.all;
 use IEEE.numeric_std.all;
 use std.textio.all;
 
-entity PF_testbench is
-end entity PF_testbench;
+entity PF_testbench1 is
+end entity PF_testbench1;
 
-architecture PF_testbench_arq of PF_testbench is
+architecture PF_testbench1_arq of PF_testbench1 is
   constant TCK: time:= 20 ns; 		-- periodo de reloj
   constant DELAY: natural:= 0; 		-- retardo de procesamiento del DUT
   constant WORD_SIZE_T: natural:= 25;	-- tama�o de datos
@@ -25,20 +25,21 @@ architecture PF_testbench_arq of PF_testbench is
   -- La senal z_del_aux se define por un problema de conversi�n
   signal z_del_aux: std_logic_vector(WORD_SIZE_T-1 downto 0):= (others => '0');
   
-  file datos: text open read_mode is "../test_files_2015/multiplicacion/test_mul_float_25_7.txt";
+  file datos: text open read_mode is "/home/cecilia/Facultad/Sistemas_Digitales/GHDL/multiplicador_pf/test_mul_float_25_7.txt";
   
   -- Declaracion del componente a probar
-  component xxx_PF is
+  component mult_PF1 is
     generic(
-      WORD_SIZE: natural := 25;
-      EXP_SIZE: natural := 7
+      N_tot: natural := 25;
+      N_exp: natural := 7
       );
     port(
-      A: in std_logic_vector(WORD_SIZE-1 downto 0);	-- Operando A
-      B: in std_logic_vector(WORD_SIZE-1 downto 0);	-- Operando B
-      S: out std_logic_vector(WORD_SIZE-1 downto 0)	-- Resultado
+      clk: in std_logic;
+      A: in std_logic_vector(N_tot-1 downto 0);	-- Operando A
+      B: in std_logic_vector(N_tot-1 downto 0);	-- Operando B
+      S: out std_logic_vector(N_tot-1 downto 0)	-- Resultado
       );
-  end component xxx_PF;
+  end component mult_PF1;
   
   -- Declaracion de la linea de retardo
   component delay_gen is
@@ -56,7 +57,13 @@ architecture PF_testbench_arq of PF_testbench is
 begin
   -- Generacion del clock del sistema
   clk <= not(clk) after TCK/ 2; -- reloj
-  
+--  clock_process :process
+--begin
+--     clk <= '0';
+--     wait for 10 ns;
+--     clk <= '1';
+--     wait for 10 ns;
+--end process;
   Test_Sequence: process
     variable l: line;
     variable ch: character:= ' ';
@@ -83,12 +90,13 @@ begin
   end process Test_Sequence;
   
   -- Instanciacion del DUT
-  DUT: mult_pf
+  DUT: mult_pf1
     generic map(
       N_tot => WORD_SIZE_T,
       N_exp => EXP_SIZE_T
       )
     port map(
+      clk => clk,
       A => std_logic_vector(a_file),
       B => std_logic_vector(b_file),
       unsigned(S) => z_dut
@@ -118,4 +126,4 @@ begin
     end if;
   end process;
   
-end architecture PF_testbench_arq; 
+end architecture PF_testbench1_arq; 

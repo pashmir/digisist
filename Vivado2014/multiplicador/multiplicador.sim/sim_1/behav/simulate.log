@@ -1,0 +1,5 @@
+Vivado Simulator 2014.4
+Time resolution is 1 ps
+Failure: Fin de la simulacion
+Time: 400010 ns  Iteration: 0  Process: /PF_testbench1/Test_Sequence  File: /home/cecilia/Facultad/Sistemas_Digitales/Vivado2014/multiplicador/multiplicador.srcs/sim_1/imports/testbench/testbench.vhd
+$finish called at time : 400010 ns : File "/home/cecilia/Facultad/Sistemas_Digitales/Vivado2014/multiplicador/multiplicador.srcs/sim_1/imports/testbench/testbench.vhd" Line 89
