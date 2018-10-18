@@ -9,7 +9,7 @@ end entity PF_testbench;
 architecture PF_testbench_arq of PF_testbench is
   constant TCK: time:= 20 ns; 		-- periodo de reloj
   constant DELAY: natural:= 0; 		-- retardo de procesamiento del DUT
-  constant WORD_SIZE_T: natural:= 32;	-- tama�o de datos
+  constant WORD_SIZE_T: natural:= 30;	-- tama�o de datos
   constant EXP_SIZE_T: natural:= 8;   -- tama�o exponente
   
   signal clk: std_logic:= '0';
@@ -25,12 +25,12 @@ architecture PF_testbench_arq of PF_testbench is
   -- La senal z_del_aux se define por un problema de conversi�n
   signal z_del_aux: std_logic_vector(WORD_SIZE_T-1 downto 0):= (others => '0');
   
-  file datos: text open read_mode is "suma/test_sum_float_32_8.txt";
+  file datos: text open read_mode is "suma/test_sum_float_30_8.txt";
   
   -- Declaracion del componente a probar
   component sum_PF is
     generic(
-      N_tot: natural := 32;
+      N_tot: natural := 30;
       N_exp: natural := 8
       );
     port(
@@ -44,7 +44,7 @@ architecture PF_testbench_arq of PF_testbench is
   -- Declaracion de la linea de retardo
   component delay_gen is
     generic(
-      N: natural:= 33;
+      N: natural:= 31;
       DELAY: natural:= 0
       );        
     port(

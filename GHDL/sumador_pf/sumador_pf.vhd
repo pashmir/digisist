@@ -39,46 +39,52 @@ begin
 		man_a(N_man+1 downto N_man) := "01";
 		man_b(N_man+1 downto N_man) := "01";
 		signo := a(N_tot-1) xor b(N_tot-1); -- el signo de la operacion
-		
-		if exp_a < exp_b then
-			exp_s := exp_b;
-			s_s := b(N_tot-1);
-			if signo = '1' then
-				man_a := -man_a;
-				man_a := shift_right(man_a, to_integer(exp_b-exp_a));
-				man_s := man_b + man_a;
-				i := N_man;
-				while man_s(i) /= '1' loop
-					exp_s := exp_s-1;
-				end loop;
-				man_s := shift_left(man_s, N_man-i);
-			else
-				man_a := shift_right(man_a, to_integer(exp_b-exp_a));
-				man_s := man_b + man_a;
-				if man_s(N_man+1)='1' then
-					exp_s := exp_s + 1;
-					man_s := shift_right(man_s, 1);
-				end if;
-			end if;
+		if (bias +1) = to_integer(exp_a) or (bias +1) = to_integer(exp_b) then
+		    exp_s := to_signed(bias + 1, N_exp);
+		    man_s := to_signed(0,N_man+2);
+		    s_s := '0'; 
 		else
-			exp_s := exp_a;
-			s_s := a(N_tot-1);
-			if signo='1' then
-				man_b := -man_b;
-				man_b := shift_right(man_b, to_integer(exp_a-exp_b));
-				man_s := man_a + man_b;
-				i := N_man;
-				while man_s(i) /= '1' loop
-					exp_s:= exp_s-1;
-					i := i + 1;
-				end loop;
-				man_s := shift_left(man_s, N_man-i);
+			if exp_a < exp_b then
+				exp_s := exp_b;
+				s_s := b(N_tot-1);
+				if signo = '1' then
+					man_a := -man_a;
+					man_a := shift_right(man_a, to_integer(exp_b-exp_a));
+					man_s := man_b + man_a;
+					i := N_man;
+					while man_s(i) /= '1' loop
+						exp_s := exp_s-1;
+						i := i - 1;
+					end loop;
+					man_s := shift_left(man_s, N_man-i);
+				else
+					man_a := shift_right(man_a, to_integer(exp_b-exp_a));
+					man_s := man_b + man_a;
+					if man_s(N_man+1)='1' then
+						exp_s := exp_s + 1;
+						man_s := shift_right(man_s, 1);
+					end if;
+				end if;
 			else
-				man_b := shift_right(man_b, to_integer(exp_a-exp_b));
-				man_s := man_a + man_b;
-				if man_s(N_man+1)='1' then
-					exp_s := exp_s + 1;
-					man_s := shift_right(man_s, 1);
+				exp_s := exp_a;
+				s_s := a(N_tot-1);
+				if signo='1' then
+					man_b := -man_b;
+					man_b := shift_right(man_b, to_integer(exp_a-exp_b));
+					man_s := man_a + man_b;
+					i := N_man;
+					while man_s(i) /= '1' loop
+						exp_s:= exp_s-1;
+						i := i - 1;
+					end loop;
+					man_s := shift_left(man_s, N_man-i);
+				else
+					man_b := shift_right(man_b, to_integer(exp_a-exp_b));
+					man_s := man_a + man_b;
+					if man_s(N_man+1)='1' then
+						exp_s := exp_s + 1;
+						man_s := shift_right(man_s, 1);
+					end if;
 				end if;
 			end if;
 		end if;

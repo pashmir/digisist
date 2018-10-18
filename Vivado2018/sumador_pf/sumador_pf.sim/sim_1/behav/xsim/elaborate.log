@@ -3,6 +3,16 @@ Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
 Running: /opt/Xilinx/Vivado/2018.2/bin/unwrapped/lnx64.o/xelab -wto 8eb0f243097b43b291c005767de128bd --incr --debug typical --relax --mt 8 -L xil_defaultlib -L secureip --snapshot PF_testbench_behav xil_defaultlib.PF_testbench -log elaborate.log 
 Using 8 slave threads.
 Starting static elaboration
-WARNING: [VRFC 10-1537] value -1 is out of target constraint range 0 to 2147483647 [/home/cecilia/Documentos/Sistemas_digitales/digisist/Vivado2018/sumador_pf/sumador_pf.srcs/sources_1/imports/sumador_pf/sumador_pf.vhd:75]
+WARNING: [VRFC 10-1537] value -1 is out of target constraint range 0 to 2147483647 [/home/cecilia/Documentos/Sistemas_digitales/digisist/Vivado2018/sumador_pf/sumador_pf.srcs/sources_1/imports/sumador_pf/sumador_pf.vhd:80]
 Completed static elaboration
-INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling architecture sum_pf_arq of entity xil_defaultlib.sum_pf [\sum_pf(n_tot=32,n_exp=8)\]
+Compiling architecture del of entity xil_defaultlib.delay_gen [\delay_gen(n=32)\]
+Compiling architecture pf_testbench_arq of entity xil_defaultlib.pf_testbench
+Built simulation snapshot PF_testbench_behav
