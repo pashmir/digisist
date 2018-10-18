@@ -1,0 +1,9 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../sumador_pf.srcs/sim_1/imports/sumador_pf/delay.vhd" \
+"../../../../sumador_pf.srcs/sim_1/imports/sumador_pf/ffd.vhd" \
+"../../../../sumador_pf.srcs/sources_1/imports/sumador_pf/sumador_pf.vhd" \
+"../../../../sumador_pf.srcs/sim_1/imports/sumador_pf/testbench.vhd" \
+
+# Do not sort compile order
+nosort

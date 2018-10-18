@@ -25,7 +25,7 @@ architecture PF_testbench_arq of PF_testbench is
   -- La senal z_del_aux se define por un problema de conversi�n
   signal z_del_aux: std_logic_vector(WORD_SIZE_T-1 downto 0):= (others => '0');
   
-  file datos: text open read_mode is "suma/test_sum_float_32_8.txt";
+  file datos: text open read_mode is "/home/cecilia/Documentos/Sistemas_digitales/digisist/GHDL/sumador_pf/suma/test_sum_float_32_8.txt";
   
   -- Declaracion del componente a probar
   component sum_PF is

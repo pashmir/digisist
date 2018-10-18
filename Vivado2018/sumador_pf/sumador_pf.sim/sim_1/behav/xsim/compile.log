@@ -1,0 +1,12 @@
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/cecilia/Documentos/Sistemas_digitales/digisist/Vivado2018/sumador_pf/sumador_pf.srcs/sim_1/imports/sumador_pf/delay.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity delay_gen
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/cecilia/Documentos/Sistemas_digitales/digisist/Vivado2018/sumador_pf/sumador_pf.srcs/sim_1/imports/sumador_pf/ffd.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity FFD
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/cecilia/Documentos/Sistemas_digitales/digisist/Vivado2018/sumador_pf/sumador_pf.srcs/sources_1/imports/sumador_pf/sumador_pf.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity sum_pf
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/cecilia/Documentos/Sistemas_digitales/digisist/Vivado2018/sumador_pf/sumador_pf.srcs/sim_1/imports/sumador_pf/testbench.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity PF_testbench
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/cecilia/Documentos/Sistemas_digitales/digisist/Vivado2018/sumador_pf/sumador_pf.srcs/sim_1/imports/sumador_pf/testbench.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity PF_testbench
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/cecilia/Documentos/Sistemas_digitales/digisist/Vivado2018/sumador_pf/sumador_pf.srcs/sim_1/imports/sumador_pf/testbench.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity PF_testbench
