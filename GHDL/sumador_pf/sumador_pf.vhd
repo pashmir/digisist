@@ -11,7 +11,7 @@ entity sum_pf is
 		clk: in std_logic;
 		a: in std_logic_vector(N_tot-1 downto 0);
 		b: in std_logic_vector(N_tot-1 downto 0);
-		s: out std_logic_vector(N_tot-1 downto 0)
+		sal: out std_logic_vector(N_tot-1 downto 0)
 	);
 end;
 
@@ -21,13 +21,17 @@ architecture sum_pf_arq of sum_pf is
 	constant N_man: natural := N_tot-N_exp-1;
 	shared variable i: natural;
 	shared variable signo: std_logic := '0';
+	shared variable g: std_logic := '0';
+	shared variable r: std_logic := '0';
+	shared variable s: std_logic := '0';
+	shared variable p: std_logic := '0';
 	shared variable s_s: std_logic;
 	shared variable exp_a: signed(N_exp-1 downto 0);
 	shared variable exp_b: signed(N_exp-1 downto 0);
 	shared variable exp_s: signed(N_exp-1 downto 0);
 	shared variable man_a: signed(N_man+1 downto 0);
 	shared variable man_b: signed(N_man+1 downto 0);
-	shared variable man_s: signed(N_man+1 downto 0);
+	shared variable man_s: signed((N_man+1)*2 downto 0);
 begin
 	process(clk,a,b)
 	begin
@@ -49,20 +53,64 @@ begin
 				s_s := b(N_tot-1);
 				if signo = '1' then
 					man_a := -man_a;
-					man_a := shift_right(man_a, to_integer(exp_b-exp_a));
-					man_s := man_b + man_a;
-					i := N_man;
-					while man_s(i) /= '1' loop
+					man_s := man_a & (N_man downto 0 => '0');
+					man_s := shift_right(man_s, to_integer(exp_b-exp_a));
+					g := man_s(N_man);
+					r := man_s(N_man-1);
+					s := man_s(N_man-2);
+					man_s := man_b & (N_man downto 0 => '0') + man_s;
+					i := N_man+1;
+					while man_s(i) /= '1' and i/=0 loop
 						exp_s := exp_s-1;
 						i := i - 1;
 					end loop;
-					man_s := shift_left(man_s, N_man-i);
+					if i=N_man+1 then 
+						exp_s := exp_s + 1;
+						man_s := shift_right(man_s, 1);
+						g := man_s(N_man);
+						s := g or r or s;
+					else
+						man_s := -man_s;
+						man_s := shift_left(man_s, N_man-i);
+						if i=N_man then
+							r := g;
+							s := r or s;
+						else 
+							if i<N_man-1 then
+								r:='0';
+								s:='0';
+							end if;
+						end if;
+					end if;
+					if r and s or r and p then
+						man_s := man_s + to_signed(2**(N_man+1),2*(N_man+1));
+						if man_s(N_man+1)='1' then
+							exp_s := exp_s + 1;
+							man_s := shift_right(man_s, 1);
+						end if;
+					end if;
 				else
-					man_a := shift_right(man_a, to_integer(exp_b-exp_a));
-					man_s := man_b + man_a;
+					man_s := man_a & (N_man downto 0 => '0');
+					man_s := shift_right(man_s, to_integer(exp_b-exp_a));
+					g := man_s(N_man);
+					r := man_s(N_man-1);
+					s := man_s(N_man-2);
+					man_s := man_b & (N_man downto 0 => '0') + man_a;
 					if man_s(N_man+1)='1' then
 						exp_s := exp_s + 1;
 						man_s := shift_right(man_s, 1);
+						g := man_s(N_man);
+						s := g or r or s;
+					else
+						r := g;
+						s := r or s;
+					end if;
+					if (r and s) or (r and p) then
+						man_s := man_s + to_unsigned(2**(N_man+1),2*(N_man+1));
+						if man_s(N_man+1)='1' then
+							exp_s := exp_s + 1;
+							man_s := shift_right(man_s, 1);
+						end if;
 					end if;
 				end if;
 			else
@@ -70,27 +118,72 @@ begin
 				s_s := a(N_tot-1);
 				if signo='1' then
 					man_b := -man_b;
-					man_b := shift_right(man_b, to_integer(exp_a-exp_b));
-					man_s := man_a + man_b;
+					man_s := man_b & (N_man downto 0 => '0');
+					man_s := shift_right(man_s, to_integer(exp_a-exp_b));
+					g := man_s(N_man);
+					r := man_s(N_man-1);
+					s := man_s(N_man-2);
+					man_s := man_a & (N_man downto 0 => '0') + man_s;
 					i := N_man;
-					while man_s(i) /= '1' loop
+					while (man_s(i) /= '1'  and i/=0) loop
 						exp_s:= exp_s-1;
 						i := i - 1;
 					end loop;
-					man_s := shift_left(man_s, N_man-i);
+					if i=N_man+1 then 
+						exp_s := exp_s + 1;
+						man_s := shift_right(man_s, 1);
+						g := man_s(N_man);
+						s := g or r or s;
+					else
+						man_s := -man_s;
+						s_s := b(N_tot-1);
+						man_s := shift_left(man_s, N_man-i);
+						if i=N_man then
+							r := g;
+							s := r or s;
+						else 
+							if i<N_man-1 then
+								r:='0';
+								s:='0';
+							end if;
+						end if;
+					end if;
+					if (r and s) or (r and p) then
+						man_s := man_s + to_unsigned(2**(N_man+1),2*(N_man+1));
+						if man_s(N_man+1)='1' then
+							exp_s := exp_s + 1;
+							man_s := shift_right(man_s, 1);
+						end if;
+					end if;
 				else
-					man_b := shift_right(man_b, to_integer(exp_a-exp_b));
-					man_s := man_a + man_b;
+					man_s := man_b & (N_man downto 0 => '0');
+					man_s := shift_right(man_s, to_integer(exp_a-exp_b));
+					g := man_s(N_man);
+					r := man_s(N_man-1);
+					s := man_s(N_man-2);
+					man_s := man_a & (N_man downto 0 => '0') + man_s;
 					if man_s(N_man+1)='1' then
 						exp_s := exp_s + 1;
 						man_s := shift_right(man_s, 1);
+						g := man_s(N_man);
+						s := g or r or s;
+					else
+						r := g;
+						s := r or s;
+					end if;
+					if (r and s) or (r and p) then
+						man_s := man_s + to_unsigned(2**(N_man+1),2*(N_man+1));
+						if man_s(N_man+1)='1' then
+							exp_s := exp_s + 1;
+							man_s := shift_right(man_s, 1);
+						end if;
 					end if;
 				end if;
 			end if;
 		end if;
-		s(N_tot-1) <= s_s;
+		sal(N_tot-1) <= s_s;
 		exp_s := exp_s + bias;
-		s(N_tot-2 downto N_man) <= std_logic_vector(exp_s);
-		s(N_man-1 downto 0) <= std_logic_vector(man_s(N_man-1 downto 0));
+		sal(N_tot-2 downto N_man) <= std_logic_vector(exp_s);
+		sal(N_man-1 downto 0) <= std_logic_vector(man_s(2*(N_man+1)-2 downto N_man + 1));
 	end process;
 end;  
