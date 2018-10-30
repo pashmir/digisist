@@ -37,7 +37,7 @@ architecture PF_testbench_arq of PF_testbench is
       clk: in std_logic;
       A: in std_logic_vector(N_tot-1 downto 0);	-- Operando A
       B: in std_logic_vector(N_tot-1 downto 0);	-- Operando B
-      S: out std_logic_vector(N_tot-1 downto 0)	-- Resultado
+      Sal: out std_logic_vector(N_tot-1 downto 0)	-- Resultado
       );
   end component sum_PF;
   
@@ -99,7 +99,7 @@ begin
       clk => clk,
       A => std_logic_vector(a_file),
       B => std_logic_vector(b_file),
-      unsigned(S) => z_dut
+      unsigned(Sal) => z_dut
       );
   
   -- Instanciacion de la linea de retardo

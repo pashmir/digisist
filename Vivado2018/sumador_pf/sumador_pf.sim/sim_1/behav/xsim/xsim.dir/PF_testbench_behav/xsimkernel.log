@@ -2,3 +2,6 @@ Running: xsim.dir/PF_testbench_behav/xsimk -simmode gui -wdb PF_testbench_behav.
 Design successfully loaded
 Design Loading Memory Usage: 43188 KB (Peak: 43240 KB)
 Design Loading CPU Usage: 30 ms
+Simulation completed
+Simulation Memory Usage: 133124 KB (Peak: 190460 KB)
+Simulation CPU Usage: 60 ms

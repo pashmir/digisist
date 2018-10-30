@@ -2,6 +2,7 @@ library IEEE;
 use IEEE.std_logic_1164.all;
 use IEEE.numeric_std.all;
 
+
 entity sum_pf is 
 	generic(
 		N_tot: natural := 16;
@@ -82,7 +83,7 @@ begin
 							end if;
 						end if;
 					end if;
-					if r and s or r and p then
+					if ((r and s) or (r and p)) ='1' then
 						man_s := man_s + to_signed(2**(N_man+1),2*(N_man+1));
 						if man_s(N_man+1)='1' then
 							exp_s := exp_s + 1;
@@ -105,8 +106,8 @@ begin
 						r := g;
 						s := r or s;
 					end if;
-					if (r and s) or (r and p) then
-						man_s := man_s + to_unsigned(2**(N_man+1),2*(N_man+1));
+					if ((r and s) or (r and p))='1' then
+						man_s := man_s + to_signed(2**(N_man+1),2*(N_man+1));
 						if man_s(N_man+1)='1' then
 							exp_s := exp_s + 1;
 							man_s := shift_right(man_s, 1);
@@ -148,8 +149,8 @@ begin
 							end if;
 						end if;
 					end if;
-					if (r and s) or (r and p) then
-						man_s := man_s + to_unsigned(2**(N_man+1),2*(N_man+1));
+					if ((r and s) or (r and p))='1' then
+						man_s := man_s + to_signed(2**(N_man+1),2*(N_man+1));
 						if man_s(N_man+1)='1' then
 							exp_s := exp_s + 1;
 							man_s := shift_right(man_s, 1);
@@ -171,8 +172,8 @@ begin
 						r := g;
 						s := r or s;
 					end if;
-					if (r and s) or (r and p) then
-						man_s := man_s + to_unsigned(2**(N_man+1),2*(N_man+1));
+					if ((r and s) or (r and p))='1' then
+						man_s := man_s + to_signed(2**(N_man+1),2*(N_man+1));
 						if man_s(N_man+1)='1' then
 							exp_s := exp_s + 1;
 							man_s := shift_right(man_s, 1);
