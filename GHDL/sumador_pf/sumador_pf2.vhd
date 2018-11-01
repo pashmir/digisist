@@ -37,6 +37,7 @@ begin
 		variable signo:	std_logic;
 		variable carry:	std_logic;
 		variable i:	integer :=			0;
+		variable aux: integer;
 	begin
 		exp_a := signed(a(N_tot-2 downto N_man))-bias;
 		exp_b := signed(b(N_tot-2 downto N_man))-bias;
@@ -89,6 +90,14 @@ begin
 				i := i + 1;
 			end loop;
 			man_s := shift_left(man_s,i);
+			if i=N_man*2 then
+				exp_s:=to_signed(-bias,N_exp);
+			end if;
+		end if;
+		aux:=to_integer(exp_s);
+		if aux > 2*bias then
+			exp_s:=to_signed(bias,N_exp);
+			man_s:=(2*(N_man+1) downto 0 => '1');
 		end if;
 		-- paso 6
 		if i=-1 then
