@@ -94,9 +94,9 @@ begin
 				exp_s:=to_signed(-bias,N_exp);
 			end if;
 		end if;
-		aux:=to_integer(exp_s);
-		if aux > 2*bias then
-			exp_s:=to_signed(bias,N_exp);
+		aux:=to_integer(exp_s+bias);
+		if aux > 2 ** N_exp -3 then
+			exp_s:=to_signed(2 ** N_exp -2 - bias,N_exp);
 			man_s:=(2*(N_man+1) downto 0 => '1');
 		end if;
 		-- paso 6
