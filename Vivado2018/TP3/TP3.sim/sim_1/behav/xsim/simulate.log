@@ -1,0 +1,4 @@
+Vivado Simulator 2018.2
+Time resolution is 1 ps
+Warning: Error: Salida del DUT no coincide con referencia (salida del dut = 2097152, salida del archivo = 0)
+Time: 10 ns  Iteration: 0  Process: /sumPF_testbench/verificacion  File: /home/cecilia/Documentos/Sistemas_digitales/digisist/Vivado2018/TP3/TP3.srcs/sim_1/imports/GHDL/sumador_pf/testbench.vhd

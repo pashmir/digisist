@@ -1,0 +1,1 @@
+-wto "5a30a572e93e474e85e142f8d38013c4" --incr --debug "typical" --relax --mt "8" -L "xil_defaultlib" -L "secureip" --snapshot "PF_testbench1_behav" "xil_defaultlib.PF_testbench1" -log "elaborate.log" 
