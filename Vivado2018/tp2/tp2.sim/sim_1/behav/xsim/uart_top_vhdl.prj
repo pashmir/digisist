@@ -1,0 +1,12 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../tp2.srcs/sources_1/imports/UART_Fuentes/led_ctl.vhd" \
+"../../../../tp2.srcs/sources_1/imports/UART_Fuentes/meta_harden.vhd" \
+"../../../../tp2.srcs/sources_1/imports/UART_Fuentes/uart_baud_gen.vhd" \
+"../../../../tp2.srcs/sources_1/imports/UART_Fuentes/uart_led.vhd" \
+"../../../../tp2.srcs/sources_1/imports/UART_Fuentes/uart_rx.vhd" \
+"../../../../tp2.srcs/sources_1/imports/UART_Fuentes/uart_rx_ctl.vhd" \
+"../../../../tp2.srcs/sources_1/imports/UART_Fuentes/uart_top.vhd" \
+
+# Do not sort compile order
+nosort

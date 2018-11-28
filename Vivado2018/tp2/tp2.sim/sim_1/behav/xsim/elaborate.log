@@ -1,0 +1,21 @@
+Vivado Simulator 2018.2
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2018.2/bin/unwrapped/win64.o/xelab.exe -wto 50d4db448cfe460abd2fdf96d6cf0fce --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot uart_top_behav xil_defaultlib.uart_top -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling architecture meta_harden_arq of entity xil_defaultlib.meta_harden [meta_harden_default]
+Compiling architecture uart_baud_gen_arq of entity xil_defaultlib.uart_baud_gen [\uart_baud_gen(baud_rate=115200)...]
+Compiling architecture uart_rx_ctl_arq of entity xil_defaultlib.uart_rx_ctl [uart_rx_ctl_default]
+Compiling architecture uart_rx_arq of entity xil_defaultlib.uart_rx [uart_rx_default]
+Compiling architecture led_ctl_arq of entity xil_defaultlib.led_ctl [led_ctl_default]
+Compiling architecture uart_led_arq of entity xil_defaultlib.uart_led [uart_led_default]
+Compiling architecture uart_top_arq of entity xil_defaultlib.uart_top
+Built simulation snapshot uart_top_behav
