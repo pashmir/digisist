@@ -1,0 +1,4 @@
+vhdl xil_defaultlib  \
+"../../../bd/Gen_clk/sim/Gen_clk.vhd" \
+
+nosort

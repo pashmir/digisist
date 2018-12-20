@@ -1,0 +1,6 @@
+verilog xil_defaultlib  \
+"../../../bd/video_mem/ip/video_mem_blk_mem_gen_0_0/sim/video_mem_blk_mem_gen_0_0.v" \
+
+verilog xil_defaultlib "glbl.v"
+
+nosort

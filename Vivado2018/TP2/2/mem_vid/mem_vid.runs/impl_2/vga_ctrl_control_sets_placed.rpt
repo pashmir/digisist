@@ -1,0 +1,75 @@
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+-------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
+| Date         : Thu Dec  6 18:23:18 2018
+| Host         : NBOOKPAGANI running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file vga_ctrl_control_sets_placed.rpt
+| Design       : vga_ctrl
+| Device       : xc7z010
+-------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Number of unique control sets                            |     8 |
+| Unused register locations in slices containing registers |    24 |
++----------------------------------------------------------+-------+
+
+
+2. Histogram
+------------
+
++--------+--------------+
+| Fanout | Control Sets |
++--------+--------------+
+|      2 |            1 |
+|      4 |            1 |
+|      6 |            1 |
+|    16+ |            5 |
++--------+--------------+
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |              26 |            7 |
+| No           | No                    | Yes                    |             134 |           18 |
+| No           | Yes                   | No                     |               0 |            0 |
+| Yes          | No                    | No                     |              40 |            8 |
+| Yes          | No                    | Yes                    |               0 |            0 |
+| Yes          | Yes                   | No                     |               0 |            0 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++-----------------------------------------------+------------------------+---------------------------------+------------------+----------------+
+|                  Clock Signal                 |      Enable Signal     |         Set/Reset Signal        | Slice Load Count | Bel Load Count |
++-----------------------------------------------+------------------------+---------------------------------+------------------+----------------+
+|  vga_sync_unit/conteo2                        |                        |                                 |                1 |              2 |
+|  clock_unit/gen_clk_i/clk_wiz_0/inst/clk_out1 |                        |                                 |                2 |              4 |
+|  clock_unit/gen_clk_i/clk_wiz_0/inst/clk_out1 |                        | rst_IBUF                        |                2 |              6 |
+|  clock_unit/gen_clk_i/clk_wiz_0/inst/clk_out1 | vga_sync_unit/v_count0 |                                 |                4 |             20 |
+|  clock_unit/gen_clk_i/clk_wiz_0/inst/clk_out1 | pixel_clock_BUFG       |                                 |                4 |             20 |
+|  pixel_clock_BUFG                             |                        |                                 |                4 |             20 |
+|  clock_unit/gen_clk_i/clk_wiz_0/inst/clk_out1 |                        | vga_sync_unit/conteo_reg[31]    |                8 |             64 |
+|  pixel_clock_BUFG                             |                        | vga_sync_unit/conteo_reg[31]__0 |                8 |             64 |
++-----------------------------------------------+------------------------+---------------------------------+------------------+----------------+
+
+
