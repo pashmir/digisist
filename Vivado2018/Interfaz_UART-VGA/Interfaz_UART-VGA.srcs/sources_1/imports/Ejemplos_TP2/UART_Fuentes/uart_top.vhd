@@ -24,11 +24,11 @@ use IEEE.std_logic_1164.all;
 entity uart_top is
 	port(
 		--Write side inputs
-		clk_pin: in std_logic;		-- Clock input (from pin)
-		rst_pin: in std_logic;		-- Active HIGH reset (from pin)
-		btn_pin: in std_logic;		-- Button to swap high and low bits
+		sys_clk: in std_logic;		-- Clock input (from pin)
+		rst: in std_logic;		-- Active HIGH reset (from pin)
+		sw: in std_logic_vector(2 downto 0);		-- Button to swap high and low bits
 		rxd_pin: in std_logic; 		-- Uart input
-		led_pins: out std_logic_vector(3 downto 0) -- 4 LED outputs
+		led: out std_logic_vector(3 downto 0) -- 4 LED outputs
 	);
 end;
 	
@@ -58,10 +58,10 @@ begin
 			CLOCK_RATE => 125E6
 		)
 		port map(
-			clk_pin => clk_pin,  	-- Clock input (from pin)
-			rst_pin => rst_pin,  	-- Active HIGH reset (from pin)
-			btn_pin => btn_pin,  	-- Button to swap high and low bits
+			clk_pin => sys_clk,  	-- Clock input (from pin)
+			rst_pin => rst,  	-- Active HIGH reset (from pin)
+			btn_pin => sw(2),  	-- Button to swap high and low bits
 			rxd_pin => rxd_pin,  	-- RS232 RXD pin - directly from pin
-			led_pins => led_pins 	-- 8 LED outputs
+			led_pins => led 	-- 8 LED outputs
 		);
 end;

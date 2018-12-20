@@ -41,7 +41,6 @@ architecture vga_ctrl_arch of vga_ctrl is
 	signal rgb_reg: std_logic_vector(2 downto 0);
 	signal pixel_x, pixel_y: std_logic_vector(9 downto 0);
 	signal video_on: std_logic;
-	signal clk50: std_logic;
 	signal pixel_clock : std_logic;
     signal add_video_mem : std_logic_vector (18 downto 0);
     signal pixel_value : std_logic_vector (0 downto 0);
@@ -54,16 +53,7 @@ architecture vga_ctrl_arch of vga_ctrl is
     signal font_row : std_logic_vector(2 downto 0);
     signal font_column : std_logic_vector(2 downto 0);
     signal rom_out : std_logic;
-    
-
-component gen_clk_wrapper is
-  port (
-    rst : in STD_LOGIC;
-    sys_clk : in STD_LOGIC;
-    clk : out STD_LOGIC;
-    locked : out STD_LOGIC
-  );
-end component;
+    signal clk50 : std_logic;
 
 component video_mem_wrapper is
    port (
@@ -90,6 +80,15 @@ component char_rom
 		font_row, font_col: in std_logic_vector(M-1 downto 0);
 		rom_out: out std_logic
 	);
+end component;
+
+component gen_clk_wrapper is
+  port (
+    rst : in STD_LOGIC;
+    sys_clk : in STD_LOGIC;
+    clk : out STD_LOGIC;
+    locked : out STD_LOGIC
+  );
 end component;
 
 begin
@@ -132,7 +131,7 @@ process (pixel_clock,rst, pixel_x,pixel_y)
     begin
     if ((rst = '1') or ((pixel_x = "0000000000") and (pixel_y = "0000000000"))) then
         conteo := 0;
-        if (sw(0) = '0') then
+        if (rx_data(0) = '0') then
             pantalla <= '0';
         else
             pantalla <= '1';
