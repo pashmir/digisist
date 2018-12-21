@@ -178,17 +178,18 @@ process (clk50,rst,pixel_x,pixel_y)
         if (rising_edge (clk50)) then
             conteo := conteo + 1;
             if (pantalla = '0') then
-                if (to_integer(unsigned(pixel_x)) mod 8 = 0) or (to_integer(unsigned(pixel_y)) mod 8 = 0) then
-                    pixel_value_reg <= "1";
-                else
-                    pixel_value_reg <= "0";
-                end if;
+                -- reset screen
+                pixel_value_reg <= "0";
             else
-                if (to_integer(unsigned(pixel_x)) mod 16 = 0) or (to_integer(unsigned(pixel_y)) mod 16 = 0) then
-                    pixel_value_reg <= "1";
-                else
-                    pixel_value_reg <= "0";
-                end if;
+                -- write char A
+                char_add<="00000";
+                if ((conteo mod 640)>=0 and (conteo mod 640)<=7) then
+                    if ((conteo mod 480)>=0 and (conteo mod 480)<=7) then  
+                        font_row<=pixel_x(2 downto 0);
+                        font_column<=pixel_y(2 downto 0);
+                        pixel_value_reg(0) <= rom_out;
+                   end if;
+                end if; 
             end if;    
         end if;
         if (conteo = 307200) then
