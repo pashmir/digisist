@@ -181,15 +181,15 @@ process (clk50,rst,pixel_x,pixel_y)
                 -- reset screen
                 pixel_value_reg <= "0";
             else
-                -- write char A
-                char_add<="00000";
-                if ((conteo mod 640)>=0 and (conteo mod 640)<=7) then
-                    if ((conteo mod 480)>=0 and (conteo mod 480)<=7) then  
-                        font_row<=pixel_x(2 downto 0);
-                        font_column<=pixel_y(2 downto 0);
-                        pixel_value_reg(0) <= rom_out;
-                   end if;
-                end if; 
+                --A write char A
+                char_add<="000001";
+                font_row<=pixel_y(2 downto 0);
+                font_column<=pixel_x(2 downto 0);
+                if (to_integer(unsigned(pixel_x))/8 = 0 and to_integer(unsigned(pixel_y))/8 = 0) then  
+                    pixel_value_reg(0) <= rom_out;
+               else
+                   pixel_value_reg(0) <= '0';
+               end if;
             end if;    
         end if;
         if (conteo = 307200) then
