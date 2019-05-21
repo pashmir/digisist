@@ -175,6 +175,9 @@ process (clk50,rst,pixel_x,pixel_y)
     if ((rst = '1') or ((pixel_x = "0000000000") and (pixel_y = "0000000000"))) then
         conteo := 0;
     else
+        ------------------------------------------
+        --A partir de acá se modifica la pantalla
+        
         if (rising_edge (clk50)) then
             conteo := conteo + 1;
             if (pantalla = '0') then
@@ -192,6 +195,9 @@ process (clk50,rst,pixel_x,pixel_y)
                end if;
             end if;    
         end if;
+        
+        -- Acá se termina de modificar la pantalla
+        -------------------------------------------
         if (conteo = 307200) then
             conteo := 0;
         end if;
