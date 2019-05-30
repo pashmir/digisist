@@ -169,40 +169,60 @@ chars: char_rom
     );	
 
 -- Process para escribir la memoria de video
-process (clk50,rst,pixel_x,pixel_y)
-    variable conteo : integer := 0;
+process (rx_rdy,rst,clk50)
+    variable ccol : integer := 0;
+    variable cfil : integer := 0;
+    variable col : integer := 0;
+    variable fil : integer := 0;
     begin
-    if ((rst = '1') or ((pixel_x = "0000000000") and (pixel_y = "0000000000"))) then
-        conteo := 0;
+    if (rst = '1') then
+        col := 0;
+        fil := 0;
+        ccol := 0;
+        cfil := 0; 
     else
         ------------------------------------------
         --A partir de acá se modifica la pantalla
         
         if (rising_edge (clk50)) then
-            conteo := conteo + 1;
-            if (pantalla = '0') then
-                -- reset screen
-                pixel_value_reg <= "0";
-            else
-                --A write char A
-                char_add<="000001";
-                font_row<=pixel_y(2 downto 0);
-                font_column<=pixel_x(2 downto 0);
-                if (to_integer(unsigned(pixel_x))/8 = 0 and to_integer(unsigned(pixel_y))/8 = 0) then  
-                    pixel_value_reg(0) <= rom_out;
-               else
-                   pixel_value_reg(0) <= '0';
-               end if;
-            end if;    
+            col := col + 1;
+            
+            --A write char A
+            char_add<="000001";
+            font_row<=std_logic_vector(to_unsigned(fil,3));
+            font_column<=std_logic_vector(to_unsigned(col,3)); 
+            pixel_value_reg(0) <= rom_out; 
+             
         end if;
         
         -- Acá se termina de modificar la pantalla
         -------------------------------------------
-        if (conteo = 307200) then
-            conteo := 0;
+        if (rising_edge (rx_rdy) ) then
+            ccol := ccol + 1;
         end if;
-    end if;
-    add_video_mem_load <= std_logic_vector(to_unsigned(conteo,add_video_mem_load'length));
+        
+        if (ccol = 79) then
+            cfil := cfil+1;
+            ccol := 0;
+        end if;
+        
+        if (col = 7) then
+            fil := fil+1;
+            col := 0;
+        end if; 
+        
+        if (fil = 7) then
+            fil:=0;
+            col:=0;
+        end if;
+        
+        if (cfil=59) then
+            cfil:=0;
+            ccol:=0;
+        end if;
+        
+        end if;
+    add_video_mem_load <= std_logic_vector(to_unsigned(6400 + col + 640 * fil ,add_video_mem_load'length));
     pixel_in <= pixel_value_reg;
 end process;
 

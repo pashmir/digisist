@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<Runs Version="1" Minor="0">
+	<Run Id="gen_clk_clk_wiz_0_0_synth_1" LaunchDir="C:/Users/Lenovo/Desktop/Sistemas Digitales/digisist/Vivado2018/Interfaz_UART-VGA/Interfaz_UART-VGA.runs/gen_clk_clk_wiz_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="video_mem_blk_mem_gen_0_0_synth_1" LaunchDir="C:/Users/Lenovo/Desktop/Sistemas Digitales/digisist/Vivado2018/Interfaz_UART-VGA/Interfaz_UART-VGA.runs/video_mem_blk_mem_gen_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="synth_1" LaunchDir="C:/Users/Lenovo/Desktop/Sistemas Digitales/digisist/Vivado2018/Interfaz_UART-VGA/Interfaz_UART-VGA.runs/synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado">
+		<Parent Id="gen_clk_clk_wiz_0_0_synth_1"/>
+		<Parent Id="video_mem_blk_mem_gen_0_0_synth_1"/>
+	</Run>
+	<Run Id="impl_1" LaunchDir="C:/Users/Lenovo/Desktop/Sistemas Digitales/digisist/Vivado2018/Interfaz_UART-VGA/Interfaz_UART-VGA.runs/impl_1" FlowId="Vivado_Implementation" FromStepId="init_design" ToStepId="write_bitstream">
+		<Parent Id="synth_1"/>
+		<Parent Id="gen_clk_clk_wiz_0_0_synth_1"/>
+		<Parent Id="video_mem_blk_mem_gen_0_0_synth_1"/>
+	</Run>
+	<Parameters>
+		<Parameter Name="runs.monitorLSFJobs" Val="true" Type="bool"/>
+	</Parameters>
+</Runs>
+
