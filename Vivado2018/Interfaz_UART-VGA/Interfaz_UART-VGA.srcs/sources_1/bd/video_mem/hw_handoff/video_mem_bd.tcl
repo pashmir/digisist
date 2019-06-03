@@ -194,7 +194,7 @@ proc create_root_design { parentCell } {
    CONFIG.Use_Byte_Write_Enable {false} \
    CONFIG.Use_RSTA_Pin {false} \
    CONFIG.Use_RSTB_Pin {false} \
-   CONFIG.Write_Depth_A {307200} \
+   CONFIG.Write_Depth_A {480000} \
    CONFIG.Write_Width_A {1} \
    CONFIG.Write_Width_B {1} \
    CONFIG.use_bram_block {Stand_Alone} \

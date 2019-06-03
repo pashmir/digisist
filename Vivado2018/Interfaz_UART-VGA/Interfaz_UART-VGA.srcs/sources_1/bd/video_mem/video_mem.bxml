@@ -2,10 +2,10 @@
 <Root MajorVersion="0" MinorVersion="36">
   <CompositeFile CompositeFileTopName="video_mem" CanBeSetAsTop="false" CanDisplayChildGraph="true">
     <Description>Composite Fileset</Description>
-    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1558649369"/>
-    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1558649369"/>
-    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1558649369"/>
-    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1558649369"/>
+    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1559597374"/>
+    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1559597374"/>
+    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1559597374"/>
+    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1559597374"/>
     <FileCollection Name="SOURCES" Type="SOURCES">
       <File Name="ip\video_mem_blk_mem_gen_0_0\video_mem_blk_mem_gen_0_0.xci" Type="IP">
         <Instance HierarchyPath="blk_mem_gen_0"/>

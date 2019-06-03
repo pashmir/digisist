@@ -179,7 +179,6 @@ process (rx_rdy,rst,clk50)
             conteo := conteo+1;
             
             --A write char A
-            char_add<="000001";
             font_row<=std_logic_vector(to_unsigned(conteo/8,3));
             font_column<=std_logic_vector(to_unsigned(conteo mod 8,3)); 
             pixel_value_reg(0) <= rom_out;
@@ -195,14 +194,21 @@ process (rx_rdy,rst,clk50)
         -------------------------------------------
         if (rising_edge (rx_rdy) ) then
             qchars := qchars+1;
+            
+            if (rx_data(7)='0') then
+                char_add<="000000";
+            else
+                char_add<="000001";
+            end if;
+            
         end if;
         
         if (qchars = 4800) then
             qchars:=0;
         end if; 
         
-        end if;
-    add_video_mem_load <= std_logic_vector(to_unsigned((conteo/8) * 800 + conteo mod 8 + 6400 * (qchars/80) + 8 * (qchars mod 60),add_video_mem_load'length));
+    end if;
+    add_video_mem_load <= std_logic_vector(to_unsigned((conteo/8) * 800 + conteo mod 8 + 6400 * (qchars/80) + 8 * (qchars mod 80),add_video_mem_load'length));
     pixel_in <= pixel_value_reg;
 end process;
 
