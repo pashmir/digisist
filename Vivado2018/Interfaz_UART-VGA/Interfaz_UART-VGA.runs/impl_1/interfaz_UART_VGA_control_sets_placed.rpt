@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-| Date         : Thu May 30 19:23:07 2019
+| Date         : Mon Jun  3 18:23:50 2019
 | Host         : LAPTOP-T9IKLUT4 running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file interfaz_UART_VGA_control_sets_placed.rpt
 | Design       : interfaz_UART_VGA
@@ -23,8 +23,8 @@ Table of Contents
 +----------------------------------------------------------+-------+
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
-| Number of unique control sets                            |    11 |
-| Unused register locations in slices containing registers |    31 |
+| Number of unique control sets                            |    13 |
+| Unused register locations in slices containing registers |    46 |
 +----------------------------------------------------------+-------+
 
 
@@ -34,11 +34,11 @@ Table of Contents
 +--------+--------------+
 | Fanout | Control Sets |
 +--------+--------------+
-|      2 |            1 |
-|      3 |            3 |
+|      1 |            1 |
+|      4 |            3 |
 |      6 |            1 |
-|      7 |            2 |
-|     10 |            1 |
+|      7 |            1 |
+|     10 |            4 |
 |    16+ |            3 |
 +--------+--------------+
 
@@ -49,32 +49,34 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |              13 |            4 |
-| No           | No                    | Yes                    |              67 |           18 |
-| No           | Yes                   | No                     |              32 |            9 |
-| Yes          | No                    | No                     |              12 |            4 |
+| No           | No                    | No                     |              17 |            7 |
+| No           | No                    | Yes                    |             100 |           28 |
+| No           | Yes                   | No                     |              10 |            2 |
+| Yes          | No                    | No                     |              27 |            9 |
 | Yes          | No                    | Yes                    |               0 |            0 |
-| Yes          | Yes                   | No                     |              13 |            6 |
+| Yes          | Yes                   | No                     |               8 |            3 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 
 4. Detailed Control Set Information
 -----------------------------------
 
-+---------------------------------------------------+----------------------------+--------------------------------------+------------------+----------------+
-|                    Clock Signal                   |        Enable Signal       |           Set/Reset Signal           | Slice Load Count | Bel Load Count |
-+---------------------------------------------------+----------------------------+--------------------------------------+------------------+----------------+
-|  VGA/clock_unit/gen_clk_i/clk_wiz_0/inst/clk_out1 | pixel_clock                |                                      |                1 |              2 |
-|  VGA/clock_unit/gen_clk_i/clk_wiz_0/inst/clk_out1 |                            |                                      |                2 |              3 |
-|  VGA/clock_unit/gen_clk_i/clk_wiz_0/inst/clk_out1 |                            | rst_IBUF                             |                2 |              3 |
-|  VGA/clock_unit/gen_clk_i/clk_wiz_0/inst/clk_out1 | VGA/vga_sync_unit/v_count0 |                                      |                1 |              3 |
-|  VGA/clock_unit/gen_clk_i/clk_wiz_0/inst/clk_out1 | VGA/vga_sync_unit/v_count0 | VGA/vga_sync_unit/v_count[9]_i_1_n_0 |                3 |              6 |
-|  VGA/clock_unit/gen_clk_i/clk_wiz_0/inst/clk_out1 | VGA/font_column[2]_i_1_n_0 |                                      |                2 |              7 |
-|  VGA/clock_unit/gen_clk_i/clk_wiz_0/inst/clk_out1 | pixel_clock                | VGA/vga_sync_unit/v_count0           |                3 |              7 |
-|  pixel_clock                                      |                            |                                      |                2 |             10 |
-|  VGA/clock_unit/gen_clk_i/clk_wiz_0/inst/clk_out1 |                            | VGA/col[0]_i_2_n_0                   |                8 |             32 |
-| ~VGA/fil_reg[31]_i_3_n_0                          |                            | VGA/fil_reg[31]_i_2_n_0              |                9 |             32 |
-|  pixel_clock                                      |                            | VGA/vga_sync_unit/rst                |                8 |             32 |
-+---------------------------------------------------+----------------------------+--------------------------------------+------------------+----------------+
++---------------------------------------------------+-----------------------------------------------------+-------------------------------------+------------------+----------------+
+|                    Clock Signal                   |                    Enable Signal                    |           Set/Reset Signal          | Slice Load Count | Bel Load Count |
++---------------------------------------------------+-----------------------------------------------------+-------------------------------------+------------------+----------------+
+|  VGA/clock_unit/gen_clk_i/clk_wiz_0/inst/clk_out1 |                                                     |                                     |                1 |              1 |
+|  VGA/clock_unit/gen_clk_i/clk_wiz_0/inst/clk_out1 |                                                     | rst_IBUF                            |                4 |              4 |
+|  sys_clk_IBUF                                     | UART/uart_rx_ctl_i0/over_sample_cnt                 | meta_harden_rst_i0/rst_clk_rx       |                1 |              4 |
+|  sys_clk_IBUF                                     | UART/uart_rx_ctl_i0/FSM_sequential_state[1]_i_1_n_0 | meta_harden_rst_i0/rst_clk_rx       |                2 |              4 |
+|  sys_clk_IBUF                                     |                                                     |                                     |                2 |              6 |
+|  VGA/clock_unit/gen_clk_i/clk_wiz_0/inst/clk_out1 | VGA/font_column[2]_i_1_n_0                          |                                     |                3 |              7 |
+|  VGA/clock_unit/gen_clk_i/clk_wiz_0/inst/clk_out1 | pixel_clock                                         |                                     |                4 |             10 |
+|  VGA/clock_unit/gen_clk_i/clk_wiz_0/inst/clk_out1 | VGA/vga_sync_unit/v_count0                          |                                     |                2 |             10 |
+|  sys_clk_IBUF                                     |                                                     | meta_harden_rst_i0/rst_clk_rx       |                2 |             10 |
+|  pixel_clock                                      |                                                     |                                     |                4 |             10 |
+|  VGA/clock_unit/gen_clk_i/clk_wiz_0/inst/clk_out1 |                                                     | VGA/conteo[0]_i_2_n_0               |                8 |             32 |
+|  rx_data_rdy_BUFG                                 |                                                     | VGA/qchars[0]_i_2_n_0               |                8 |             32 |
+|  pixel_clock                                      |                                                     | VGA/vga_sync_unit/conteo_reg[19]__0 |                8 |             32 |
++---------------------------------------------------+-----------------------------------------------------+-------------------------------------+------------------+----------------+
 
 
