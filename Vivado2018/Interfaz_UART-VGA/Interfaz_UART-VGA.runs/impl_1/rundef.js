@@ -23,7 +23,7 @@ eval( EAInclude(ISEJScriptLib) );
 
 
 // pre-commands:
-ISETouchFile( "init_design", "begin" );
+ISETouchFile( "write_bitstream", "begin" );
 ISEStep( "vivado",
          "-log interfaz_UART_VGA.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source interfaz_UART_VGA.tcl -notrace" );
 

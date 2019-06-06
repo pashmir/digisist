@@ -135,7 +135,7 @@ process (pixel_clock,rst, pixel_x,pixel_y)
         if (rising_edge (pixel_clock)) then
             conteo := conteo + 1;
         end if;
-        if (conteo = 307200) then
+        if (conteo = 480000) then
             conteo := 0;
         end if;
     end if;
@@ -167,27 +167,42 @@ chars: char_rom
 process (rx_rdy,rst,clk50)
     variable conteo : integer := 0;
     variable qchars : integer := 0;
+    variable wipe : bit := '0';
+    variable dir : integer := 0;
     begin
     if (rst = '1') then
         conteo := 0;
         qchars := 0;
+        wipe:='1';
+        
     else
         ------------------------------------------
         --A partir de acá se modifica la pantalla
         
         if (rising_edge (clk50)) then
-            conteo := conteo+1;
             
-            --A write char A
-            font_row<=std_logic_vector(to_unsigned(conteo/8,3));
-            font_column<=std_logic_vector(to_unsigned(conteo mod 8,3)); 
-            pixel_value_reg(0) <= rom_out;
-             
+            conteo := conteo+1;
+            if wipe='0' then
+                
+                font_row<=std_logic_vector(to_unsigned(conteo/8,3));
+                font_column<=std_logic_vector(to_unsigned(conteo mod 8,3)); 
+                pixel_value_reg(0) <= rom_out;
+                dir:=(conteo/8) * 800 + conteo mod 8 + 6400 * (qchars/80) + 8 * (qchars mod 80);
+                if (conteo=64) then
+                    conteo:=0;
+                end if;
+            
+            else 
+                pixel_value_reg(0)<='0';
+                dir:=conteo;
+                if conteo=480000 then
+                    wipe:='0';
+                    conteo:=0;
+                end if;
+            end if;    
         end if;
         
-        if (conteo=64) then
-            conteo:=0;
-        end if;
+        
         
         
         -- Acá se termina de modificar la pantalla
@@ -195,7 +210,7 @@ process (rx_rdy,rst,clk50)
         if (rising_edge (rx_rdy) ) then
             qchars := qchars+1;
             
-            if (rx_data(7)='0') then
+            if (rx_data(0)='0') then
                 char_add<="000000";
             else
                 char_add<="000001";
@@ -208,7 +223,7 @@ process (rx_rdy,rst,clk50)
         end if; 
         
     end if;
-    add_video_mem_load <= std_logic_vector(to_unsigned((conteo/8) * 800 + conteo mod 8 + 6400 * (qchars/80) + 8 * (qchars mod 80),add_video_mem_load'length));
+    add_video_mem_load <= std_logic_vector(to_unsigned(dir,add_video_mem_load'length));
     pixel_in <= pixel_value_reg;
 end process;
 
