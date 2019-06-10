@@ -80,10 +80,8 @@
           <Proxy FileSetName="gen_clk_clk_wiz_0_0"/>
         </CompFileExtendedInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/imports/TP2/Char_ROM.vhd">
+      <File Path="$PPRDIR/../../Ejemplos_TP2/Char_ROM/Char_ROM.vhd">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../Vivado2018/TP2/Char_ROM.vhd"/>
-          <Attr Name="ImportTime" Val="1544131914"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
@@ -158,6 +156,15 @@
       </File>
       <File Path="$PSRCDIR/sources_1/new/Interfaz_UART-VGA.vhd">
         <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/TP2/Char_ROM.vhd">
+        <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../Vivado2018/TP2/Char_ROM.vhd"/>
+          <Attr Name="ImportTime" Val="1544131914"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>

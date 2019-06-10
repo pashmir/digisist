@@ -31,7 +31,7 @@ set_property target_language VHDL [current_project]
 set_property ip_output_repo {c:/Users/Lenovo/Desktop/Sistemas Digitales/digisist/Vivado2018/Interfaz_UART-VGA/Interfaz_UART-VGA.cache/ip} [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 read_vhdl -library xil_defaultlib {
-  {C:/Users/Lenovo/Desktop/Sistemas Digitales/digisist/Vivado2018/Interfaz_UART-VGA/Interfaz_UART-VGA.srcs/sources_1/imports/TP2/Char_ROM.vhd}
+  {C:/Users/Lenovo/Desktop/Sistemas Digitales/digisist/Ejemplos_TP2/Char_ROM/Char_ROM.vhd}
   {C:/Users/Lenovo/Desktop/Sistemas Digitales/digisist/Vivado2018/Interfaz_UART-VGA/Interfaz_UART-VGA.srcs/sources_1/bd/gen_clk/hdl/gen_clk_wrapper.vhd}
   {C:/Users/Lenovo/Desktop/Sistemas Digitales/digisist/Vivado2018/Interfaz_UART-VGA/Interfaz_UART-VGA.srcs/sources_1/imports/Ejemplos_TP2/arcvga/02VGAVideoMem/gen_pixels.vhd}
   {C:/Users/Lenovo/Desktop/Sistemas Digitales/digisist/Vivado2018/Interfaz_UART-VGA/Interfaz_UART-VGA.srcs/sources_1/imports/Ejemplos_TP2/UART_Fuentes/meta_harden.vhd}

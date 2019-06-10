@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7z010clg400-1" LaunchTime="1559859590">
+<GenRun Id="synth_1" LaunchPart="xc7z010clg400-1" LaunchTime="1560202974">
   <File Type="PA-TCL" Name="interfaz_UART_VGA.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="interfaz_UART_VGA_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="interfaz_UART_VGA_reports.tcl"/>
   <File Type="RDS-RDS" Name="interfaz_UART_VGA.vds"/>
   <File Type="RDS-UTIL" Name="interfaz_UART_VGA_utilization_synth.rpt"/>
   <File Type="RDS-UTIL-PB" Name="interfaz_UART_VGA_utilization_synth.pb"/>
   <File Type="RDS-DCP" Name="interfaz_UART_VGA.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="interfaz_UART_VGA_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="interfaz_UART_VGA_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/bd/video_mem/video_mem.bd">
@@ -22,10 +25,8 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/imports/TP2/Char_ROM.vhd">
+    <File Path="$PPRDIR/../../Ejemplos_TP2/Char_ROM/Char_ROM.vhd">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../Vivado2018/TP2/Char_ROM.vhd"/>
-        <Attr Name="ImportTime" Val="1544131914"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
@@ -100,6 +101,15 @@
     </File>
     <File Path="$PSRCDIR/sources_1/new/Interfaz_UART-VGA.vhd">
       <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/TP2/Char_ROM.vhd">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Vivado2018/TP2/Char_ROM.vhd"/>
+        <Attr Name="ImportTime" Val="1544131914"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
