@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-| Date             : Mon Jun 10 18:45:10 2019
+| Date             : Thu Jun 27 17:37:41 2019
 | Host             : LAPTOP-T9IKLUT4 running 64-bit major release  (build 9200)
 | Command          : report_power -file interfaz_UART_VGA_power_routed.rpt -pb interfaz_UART_VGA_power_summary_routed.pb -rpx interfaz_UART_VGA_power_routed.rpx
 | Design           : interfaz_UART_VGA
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.230        |
+| Total On-Chip Power (W)  | 0.231        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.135        |
+| Dynamic (W)              | 0.136        |
 | Device Static (W)        | 0.095        |
 | Effective TJA (C/W)      | 11.5         |
 | Max Ambient (C)          | 82.3         |
@@ -53,18 +53,18 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |     0.002 |        6 |       --- |             --- |
-| Slice Logic    |     0.012 |     1525 |       --- |             --- |
-|   LUT as Logic |     0.011 |      984 |     17600 |            5.59 |
-|   CARRY4       |     0.001 |      175 |      4400 |            3.98 |
-|   Register     |    <0.001 |      196 |     35200 |            0.56 |
+| Slice Logic    |     0.012 |     1542 |       --- |             --- |
+|   LUT as Logic |     0.011 |     1000 |     17600 |            5.68 |
+|   CARRY4       |     0.001 |      179 |      4400 |            4.07 |
+|   Register     |    <0.001 |      188 |     35200 |            0.53 |
 |   BUFG         |    <0.001 |        2 |        32 |            6.25 |
-|   Others       |     0.000 |       34 |       --- |             --- |
-| Signals        |     0.012 |     1327 |       --- |             --- |
+|   Others       |     0.000 |       33 |       --- |             --- |
+| Signals        |     0.012 |     1340 |       --- |             --- |
 | Block RAM      |     0.002 |     15.5 |        60 |           25.83 |
 | MMCM           |     0.106 |        1 |         2 |           50.00 |
-| I/O            |     0.001 |       17 |       100 |           17.00 |
+| I/O            |     0.003 |       17 |       100 |           17.00 |
 | Static Power   |     0.095 |          |           |                 |
-| Total          |     0.230 |          |           |                 |
+| Total          |     0.231 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -76,7 +76,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Vccint    |       1.000 |     0.032 |       0.028 |      0.004 |
 | Vccaux    |       1.800 |     0.064 |       0.059 |      0.006 |
-| Vcco33    |       3.300 |     0.001 |       0.000 |      0.001 |
+| Vcco33    |       3.300 |     0.002 |       0.001 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
@@ -153,9 +153,8 @@ Table of Contents
 +-------------------+-----------+
 | Name              | Power (W) |
 +-------------------+-----------+
-| interfaz_UART_VGA |     0.135 |
-|   UART            |     0.001 |
-|   VGA             |     0.132 |
+| interfaz_UART_VGA |     0.136 |
+|   VGA             |     0.131 |
 |     clock_unit    |     0.106 |
 |       gen_clk_i   |     0.106 |
 |     memoria_video |     0.002 |

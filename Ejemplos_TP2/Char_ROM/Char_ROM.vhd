@@ -2233,18 +2233,12 @@ architecture Behavioral of fontROM is
 begin
 
 	-- addr register to infer block RAM
-	setRegA: process (clkA)
-	begin
-		if rising_edge(clkA) then
 		
-			-- Write to rom
-			if(writeEnableA = '1') then
-				ROM(to_integer(unsigned(addrA))) <= dataInA;
-			end if;
-			-- Read from it
-			dataOutA <= ROM(to_integer(unsigned(addrA)));
-
-		end if;
-	end process;
+    -- Write to rom
+--    if (writeEnableA = '1') then
+--        ROM(to_integer(unsigned(addrA))) <= dataInA;
+--    end if;
+    -- Read from it
+    dataOutA <= ROM(to_integer(unsigned(addrA)));
 	
 end Behavioral;

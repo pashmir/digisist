@@ -2,8 +2,8 @@
 # Vivado v2018.3 (64-bit)
 # SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
 # IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
-# Start of session at: Mon Jun 10 18:42:59 2019
-# Process ID: 23192
+# Start of session at: Thu Jun 27 17:35:47 2019
+# Process ID: 17092
 # Current directory: C:/Users/Lenovo/Desktop/Sistemas Digitales/digisist/Vivado2018/Interfaz_UART-VGA/Interfaz_UART-VGA.runs/synth_1
 # Command line: vivado.exe -log interfaz_UART_VGA.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source interfaz_UART_VGA.tcl
 # Log file: C:/Users/Lenovo/Desktop/Sistemas Digitales/digisist/Vivado2018/Interfaz_UART-VGA/Interfaz_UART-VGA.runs/synth_1/interfaz_UART_VGA.vds
@@ -18,9 +18,9 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 1164 
+INFO: Helper process launched with PID 2384 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 397.914 ; gain = 100.582
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 397.801 ; gain = 101.613
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'interfaz_UART_VGA' [C:/Users/Lenovo/Desktop/Sistemas Digitales/digisist/Vivado2018/Interfaz_UART-VGA/Interfaz_UART-VGA.srcs/sources_1/new/Interfaz_UART-VGA.vhd:49]
 INFO: [Synth 8-3491] module 'vga_ctrl' declared at 'C:/Users/Lenovo/Desktop/Sistemas Digitales/digisist/Vivado2018/Interfaz_UART-VGA/Interfaz_UART-VGA.srcs/sources_1/imports/Ejemplos_TP2/arcvga/02VGAVideoMem/vga_ctrl.vhd:16' bound to instance 'VGA' of component 'vga_ctrl' [C:/Users/Lenovo/Desktop/Sistemas Digitales/digisist/Vivado2018/Interfaz_UART-VGA/Interfaz_UART-VGA.srcs/sources_1/new/Interfaz_UART-VGA.vhd:100]
@@ -29,8 +29,8 @@ INFO: [Synth 8-3491] module 'gen_clk_wrapper' declared at 'C:/Users/Lenovo/Deskt
 INFO: [Synth 8-638] synthesizing module 'gen_clk_wrapper' [C:/Users/Lenovo/Desktop/Sistemas Digitales/digisist/Vivado2018/Interfaz_UART-VGA/Interfaz_UART-VGA.srcs/sources_1/bd/gen_clk/hdl/gen_clk_wrapper.vhd:23]
 INFO: [Synth 8-3491] module 'gen_clk' declared at 'C:/Users/Lenovo/Desktop/Sistemas Digitales/digisist/Vivado2018/Interfaz_UART-VGA/Interfaz_UART-VGA.srcs/sources_1/bd/gen_clk/synth/gen_clk.vhd:14' bound to instance 'gen_clk_i' of component 'gen_clk' [C:/Users/Lenovo/Desktop/Sistemas Digitales/digisist/Vivado2018/Interfaz_UART-VGA/Interfaz_UART-VGA.srcs/sources_1/bd/gen_clk/hdl/gen_clk_wrapper.vhd:33]
 INFO: [Synth 8-638] synthesizing module 'gen_clk' [C:/Users/Lenovo/Desktop/Sistemas Digitales/digisist/Vivado2018/Interfaz_UART-VGA/Interfaz_UART-VGA.srcs/sources_1/bd/gen_clk/synth/gen_clk.vhd:27]
-INFO: [Synth 8-3491] module 'gen_clk_clk_wiz_0_0' declared at 'C:/Users/Lenovo/Desktop/Sistemas Digitales/digisist/Vivado2018/Interfaz_UART-VGA/Interfaz_UART-VGA.runs/synth_1/.Xil/Vivado-23192-LAPTOP-T9IKLUT4/realtime/gen_clk_clk_wiz_0_0_stub.vhdl:5' bound to instance 'clk_wiz_0' of component 'gen_clk_clk_wiz_0_0' [C:/Users/Lenovo/Desktop/Sistemas Digitales/digisist/Vivado2018/Interfaz_UART-VGA/Interfaz_UART-VGA.srcs/sources_1/bd/gen_clk/synth/gen_clk.vhd:53]
-INFO: [Synth 8-638] synthesizing module 'gen_clk_clk_wiz_0_0' [C:/Users/Lenovo/Desktop/Sistemas Digitales/digisist/Vivado2018/Interfaz_UART-VGA/Interfaz_UART-VGA.runs/synth_1/.Xil/Vivado-23192-LAPTOP-T9IKLUT4/realtime/gen_clk_clk_wiz_0_0_stub.vhdl:15]
+INFO: [Synth 8-3491] module 'gen_clk_clk_wiz_0_0' declared at 'C:/Users/Lenovo/Desktop/Sistemas Digitales/digisist/Vivado2018/Interfaz_UART-VGA/Interfaz_UART-VGA.runs/synth_1/.Xil/Vivado-17092-LAPTOP-T9IKLUT4/realtime/gen_clk_clk_wiz_0_0_stub.vhdl:5' bound to instance 'clk_wiz_0' of component 'gen_clk_clk_wiz_0_0' [C:/Users/Lenovo/Desktop/Sistemas Digitales/digisist/Vivado2018/Interfaz_UART-VGA/Interfaz_UART-VGA.srcs/sources_1/bd/gen_clk/synth/gen_clk.vhd:53]
+INFO: [Synth 8-638] synthesizing module 'gen_clk_clk_wiz_0_0' [C:/Users/Lenovo/Desktop/Sistemas Digitales/digisist/Vivado2018/Interfaz_UART-VGA/Interfaz_UART-VGA.runs/synth_1/.Xil/Vivado-17092-LAPTOP-T9IKLUT4/realtime/gen_clk_clk_wiz_0_0_stub.vhdl:15]
 INFO: [Synth 8-256] done synthesizing module 'gen_clk' (1#1) [C:/Users/Lenovo/Desktop/Sistemas Digitales/digisist/Vivado2018/Interfaz_UART-VGA/Interfaz_UART-VGA.srcs/sources_1/bd/gen_clk/synth/gen_clk.vhd:27]
 INFO: [Synth 8-256] done synthesizing module 'gen_clk_wrapper' (2#1) [C:/Users/Lenovo/Desktop/Sistemas Digitales/digisist/Vivado2018/Interfaz_UART-VGA/Interfaz_UART-VGA.srcs/sources_1/bd/gen_clk/hdl/gen_clk_wrapper.vhd:23]
 INFO: [Synth 8-638] synthesizing module 'vga_sync' [C:/Users/Lenovo/Desktop/Sistemas Digitales/digisist/Vivado2018/Interfaz_UART-VGA/Interfaz_UART-VGA.srcs/sources_1/imports/Ejemplos_TP2/arcvga/02VGAVideoMem/vga_sync.vhd:26]
@@ -41,8 +41,8 @@ INFO: [Synth 8-3491] module 'video_mem_wrapper' declared at 'C:/Users/Lenovo/Des
 INFO: [Synth 8-638] synthesizing module 'video_mem_wrapper' [C:/Users/Lenovo/Desktop/Sistemas Digitales/digisist/Vivado2018/Interfaz_UART-VGA/Interfaz_UART-VGA.srcs/sources_1/bd/video_mem/hdl/video_mem_wrapper.vhd:28]
 INFO: [Synth 8-3491] module 'video_mem' declared at 'C:/Users/Lenovo/Desktop/Sistemas Digitales/digisist/Vivado2018/Interfaz_UART-VGA/Interfaz_UART-VGA.srcs/sources_1/bd/video_mem/synth/video_mem.vhd:14' bound to instance 'video_mem_i' of component 'video_mem' [C:/Users/Lenovo/Desktop/Sistemas Digitales/digisist/Vivado2018/Interfaz_UART-VGA/Interfaz_UART-VGA.srcs/sources_1/bd/video_mem/hdl/video_mem_wrapper.vhd:43]
 INFO: [Synth 8-638] synthesizing module 'video_mem' [C:/Users/Lenovo/Desktop/Sistemas Digitales/digisist/Vivado2018/Interfaz_UART-VGA/Interfaz_UART-VGA.srcs/sources_1/bd/video_mem/synth/video_mem.vhd:32]
-INFO: [Synth 8-3491] module 'video_mem_blk_mem_gen_0_0' declared at 'C:/Users/Lenovo/Desktop/Sistemas Digitales/digisist/Vivado2018/Interfaz_UART-VGA/Interfaz_UART-VGA.runs/synth_1/.Xil/Vivado-23192-LAPTOP-T9IKLUT4/realtime/video_mem_blk_mem_gen_0_0_stub.vhdl:5' bound to instance 'blk_mem_gen_0' of component 'video_mem_blk_mem_gen_0_0' [C:/Users/Lenovo/Desktop/Sistemas Digitales/digisist/Vivado2018/Interfaz_UART-VGA/Interfaz_UART-VGA.srcs/sources_1/bd/video_mem/synth/video_mem.vhd:71]
-INFO: [Synth 8-638] synthesizing module 'video_mem_blk_mem_gen_0_0' [C:/Users/Lenovo/Desktop/Sistemas Digitales/digisist/Vivado2018/Interfaz_UART-VGA/Interfaz_UART-VGA.runs/synth_1/.Xil/Vivado-23192-LAPTOP-T9IKLUT4/realtime/video_mem_blk_mem_gen_0_0_stub.vhdl:20]
+INFO: [Synth 8-3491] module 'video_mem_blk_mem_gen_0_0' declared at 'C:/Users/Lenovo/Desktop/Sistemas Digitales/digisist/Vivado2018/Interfaz_UART-VGA/Interfaz_UART-VGA.runs/synth_1/.Xil/Vivado-17092-LAPTOP-T9IKLUT4/realtime/video_mem_blk_mem_gen_0_0_stub.vhdl:5' bound to instance 'blk_mem_gen_0' of component 'video_mem_blk_mem_gen_0_0' [C:/Users/Lenovo/Desktop/Sistemas Digitales/digisist/Vivado2018/Interfaz_UART-VGA/Interfaz_UART-VGA.srcs/sources_1/bd/video_mem/synth/video_mem.vhd:71]
+INFO: [Synth 8-638] synthesizing module 'video_mem_blk_mem_gen_0_0' [C:/Users/Lenovo/Desktop/Sistemas Digitales/digisist/Vivado2018/Interfaz_UART-VGA/Interfaz_UART-VGA.runs/synth_1/.Xil/Vivado-17092-LAPTOP-T9IKLUT4/realtime/video_mem_blk_mem_gen_0_0_stub.vhdl:20]
 INFO: [Synth 8-256] done synthesizing module 'video_mem' (5#1) [C:/Users/Lenovo/Desktop/Sistemas Digitales/digisist/Vivado2018/Interfaz_UART-VGA/Interfaz_UART-VGA.srcs/sources_1/bd/video_mem/synth/video_mem.vhd:32]
 INFO: [Synth 8-256] done synthesizing module 'video_mem_wrapper' (6#1) [C:/Users/Lenovo/Desktop/Sistemas Digitales/digisist/Vivado2018/Interfaz_UART-VGA/Interfaz_UART-VGA.srcs/sources_1/bd/video_mem/hdl/video_mem_wrapper.vhd:28]
 	Parameter addrWidth bound to: 11 - type: integer 
@@ -53,8 +53,6 @@ INFO: [Synth 8-638] synthesizing module 'fontROM' [C:/Users/Lenovo/Desktop/Siste
 	Parameter dataWidth bound to: 8 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'fontROM' (7#1) [C:/Users/Lenovo/Desktop/Sistemas Digitales/digisist/Ejemplos_TP2/Char_ROM/Char_ROM.vhd:48]
 WARNING: [Synth 8-614] signal 'pixel_value_reg' is read in the process but is not in the sensitivity list [C:/Users/Lenovo/Desktop/Sistemas Digitales/digisist/Vivado2018/Interfaz_UART-VGA/Interfaz_UART-VGA.srcs/sources_1/imports/Ejemplos_TP2/arcvga/02VGAVideoMem/vga_ctrl.vhd:179]
-WARNING: [Synth 8-5787] Register char_add_reg in module vga_ctrl is clocked by two different clocks in the same process. This may cause simulation mismatches and synthesis errors. Consider using different process statements  [C:/Users/Lenovo/Desktop/Sistemas Digitales/digisist/Vivado2018/Interfaz_UART-VGA/Interfaz_UART-VGA.srcs/sources_1/imports/Ejemplos_TP2/arcvga/02VGAVideoMem/vga_ctrl.vhd:173]
-WARNING: [Synth 8-5787] Register char_add_reg in module vga_ctrl is clocked by two different clocks in the same process. This may cause simulation mismatches and synthesis errors. Consider using different process statements  [C:/Users/Lenovo/Desktop/Sistemas Digitales/digisist/Vivado2018/Interfaz_UART-VGA/Interfaz_UART-VGA.srcs/sources_1/imports/Ejemplos_TP2/arcvga/02VGAVideoMem/vga_ctrl.vhd:173]
 INFO: [Synth 8-256] done synthesizing module 'vga_ctrl' (8#1) [C:/Users/Lenovo/Desktop/Sistemas Digitales/digisist/Vivado2018/Interfaz_UART-VGA/Interfaz_UART-VGA.srcs/sources_1/imports/Ejemplos_TP2/arcvga/02VGAVideoMem/vga_ctrl.vhd:39]
 INFO: [Synth 8-3491] module 'meta_harden' declared at 'C:/Users/Lenovo/Desktop/Sistemas Digitales/digisist/Vivado2018/Interfaz_UART-VGA/Interfaz_UART-VGA.srcs/sources_1/imports/Ejemplos_TP2/UART_Fuentes/meta_harden.vhd:27' bound to instance 'meta_harden_rst_i0' of component 'meta_harden' [C:/Users/Lenovo/Desktop/Sistemas Digitales/digisist/Vivado2018/Interfaz_UART-VGA/Interfaz_UART-VGA.srcs/sources_1/new/Interfaz_UART-VGA.vhd:114]
 INFO: [Synth 8-638] synthesizing module 'meta_harden' [C:/Users/Lenovo/Desktop/Sistemas Digitales/digisist/Vivado2018/Interfaz_UART-VGA/Interfaz_UART-VGA.srcs/sources_1/imports/Ejemplos_TP2/UART_Fuentes/meta_harden.vhd:36]
@@ -79,6 +77,16 @@ INFO: [Synth 8-226] default block is never used [C:/Users/Lenovo/Desktop/Sistema
 INFO: [Synth 8-256] done synthesizing module 'uart_rx_ctl' (11#1) [C:/Users/Lenovo/Desktop/Sistemas Digitales/digisist/Vivado2018/Interfaz_UART-VGA/Interfaz_UART-VGA.srcs/sources_1/imports/Ejemplos_TP2/UART_Fuentes/uart_rx_ctl.vhd:70]
 INFO: [Synth 8-256] done synthesizing module 'uart_rx' (12#1) [C:/Users/Lenovo/Desktop/Sistemas Digitales/digisist/Vivado2018/Interfaz_UART-VGA/Interfaz_UART-VGA.srcs/sources_1/imports/Ejemplos_TP2/UART_Fuentes/uart_rx.vhd:58]
 INFO: [Synth 8-256] done synthesizing module 'interfaz_UART_VGA' (13#1) [C:/Users/Lenovo/Desktop/Sistemas Digitales/digisist/Vivado2018/Interfaz_UART-VGA/Interfaz_UART-VGA.srcs/sources_1/new/Interfaz_UART-VGA.vhd:49]
+WARNING: [Synth 8-3331] design fontROM has unconnected port clkA
+WARNING: [Synth 8-3331] design fontROM has unconnected port writeEnableA
+WARNING: [Synth 8-3331] design fontROM has unconnected port dataInA[7]
+WARNING: [Synth 8-3331] design fontROM has unconnected port dataInA[6]
+WARNING: [Synth 8-3331] design fontROM has unconnected port dataInA[5]
+WARNING: [Synth 8-3331] design fontROM has unconnected port dataInA[4]
+WARNING: [Synth 8-3331] design fontROM has unconnected port dataInA[3]
+WARNING: [Synth 8-3331] design fontROM has unconnected port dataInA[2]
+WARNING: [Synth 8-3331] design fontROM has unconnected port dataInA[1]
+WARNING: [Synth 8-3331] design fontROM has unconnected port dataInA[0]
 WARNING: [Synth 8-3331] design gen_pixels has unconnected port pixel_x[9]
 WARNING: [Synth 8-3331] design gen_pixels has unconnected port pixel_x[8]
 WARNING: [Synth 8-3331] design gen_pixels has unconnected port pixel_x[7]
@@ -102,9 +110,8 @@ WARNING: [Synth 8-3331] design gen_pixels has unconnected port pixel_y[0]
 WARNING: [Synth 8-3331] design vga_ctrl has unconnected port sw[2]
 WARNING: [Synth 8-3331] design vga_ctrl has unconnected port sw[1]
 WARNING: [Synth 8-3331] design vga_ctrl has unconnected port sw[0]
-WARNING: [Synth 8-3331] design vga_ctrl has unconnected port rx_data[7]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 454.527 ; gain = 157.195
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 454.926 ; gain = 158.738
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -117,10 +124,10 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 454.527 ; gain = 157.195
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:05 . Memory (MB): peak = 454.926 ; gain = 158.738
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 454.527 ; gain = 157.195
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:05 . Memory (MB): peak = 454.926 ; gain = 158.738
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7z010clg400-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -142,24 +149,24 @@ INFO: [Project 1-236] Implementation specific constraints were found while readi
 Resolution: To avoid this warning, move constraints listed in [.Xil/interfaz_UART_VGA_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Parsing XDC File [C:/Users/Lenovo/Desktop/Sistemas Digitales/digisist/Vivado2018/Interfaz_UART-VGA/Interfaz_UART-VGA.runs/synth_1/dont_touch.xdc]
 Finished Parsing XDC File [C:/Users/Lenovo/Desktop/Sistemas Digitales/digisist/Vivado2018/Interfaz_UART-VGA/Interfaz_UART-VGA.runs/synth_1/dont_touch.xdc]
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 797.211 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 797.563 ; gain = 0.000
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 797.211 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 797.563 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 797.211 ; gain = 0.000
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.047 . Memory (MB): peak = 797.211 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 797.563 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.009 . Memory (MB): peak = 797.563 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:11 ; elapsed = 00:00:16 . Memory (MB): peak = 797.211 ; gain = 499.879
+Finished Constraint Validation : Time (s): cpu = 00:00:11 ; elapsed = 00:00:14 . Memory (MB): peak = 797.563 ; gain = 501.375
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z010clg400-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:11 ; elapsed = 00:00:16 . Memory (MB): peak = 797.211 ; gain = 499.879
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:11 ; elapsed = 00:00:14 . Memory (MB): peak = 797.563 ; gain = 501.375
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -171,10 +178,11 @@ Applied set_property DONT_TOUCH = true for VGA/memoria_video/video_mem_i/blk_mem
 Applied set_property DONT_TOUCH = true for VGA/clock_unit/gen_clk_i. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for VGA/clock_unit/gen_clk_i/clk_wiz_0. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:11 ; elapsed = 00:00:16 . Memory (MB): peak = 797.211 ; gain = 499.879
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:11 ; elapsed = 00:00:14 . Memory (MB): peak = 797.563 ; gain = 501.375
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5546] ROM "h_end" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "v_end" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/Lenovo/Desktop/Sistemas Digitales/digisist/Vivado2018/Interfaz_UART-VGA/Interfaz_UART-VGA.srcs/sources_1/imports/Ejemplos_TP2/arcvga/02VGAVideoMem/vga_ctrl.vhd:200]
 INFO: [Synth 8-5545] ROM "dir3" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 INFO: [Synth 8-5546] ROM "baud_x16_en_reg" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'uart_rx_ctl'
@@ -193,7 +201,7 @@ INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address si
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'uart_rx_ctl'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:12 ; elapsed = 00:00:17 . Memory (MB): peak = 797.211 ; gain = 499.879
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:15 . Memory (MB): peak = 797.563 ; gain = 501.375
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -211,13 +219,14 @@ Detailed RTL Component Info :
 	   2 Input     10 Bit       Adders := 2     
 	   2 Input      8 Bit       Adders := 1     
 	   2 Input      7 Bit       Adders := 1     
-	   2 Input      4 Bit       Adders := 2     
+	   2 Input      5 Bit       Adders := 1     
+	   2 Input      4 Bit       Adders := 1     
 	   2 Input      3 Bit       Adders := 1     
 +---Registers : 
 	               32 Bit    Registers := 2     
 	               11 Bit    Registers := 2     
 	               10 Bit    Registers := 2     
-	                8 Bit    Registers := 2     
+	                8 Bit    Registers := 1     
 	                7 Bit    Registers := 1     
 	                4 Bit    Registers := 4     
 	                3 Bit    Registers := 1     
@@ -225,15 +234,14 @@ Detailed RTL Component Info :
 	                1 Bit    Registers := 12    
 +---Multipliers : 
 	                11x32  Multipliers := 1     
-	                14x32  Multipliers := 1     
-+---RAMs : 
-	              16K Bit         RAMs := 1     
+	                15x32  Multipliers := 1     
 +---Muxes : 
 	   2 Input     32 Bit        Muxes := 6     
 	   2 Input     31 Bit        Muxes := 2     
+	   2 Input     11 Bit        Muxes := 1     
 	   2 Input     10 Bit        Muxes := 2     
 	   2 Input      8 Bit        Muxes := 4     
-	   2 Input      4 Bit        Muxes := 7     
+	   2 Input      4 Bit        Muxes := 5     
 	   4 Input      2 Bit        Muxes := 1     
 	   2 Input      2 Bit        Muxes := 2     
 	   6 Input      2 Bit        Muxes := 1     
@@ -262,31 +270,25 @@ Detailed RTL Component Info :
 	                4 Bit    Registers := 3     
 +---Muxes : 
 	   2 Input      4 Bit        Muxes := 3     
-Module fontROM 
-Detailed RTL Component Info : 
-+---Registers : 
-	                8 Bit    Registers := 1     
-+---RAMs : 
-	              16K Bit         RAMs := 1     
 Module vga_ctrl 
 Detailed RTL Component Info : 
 +---Adders : 
 	   2 Input     32 Bit       Adders := 3     
 	   2 Input     31 Bit       Adders := 2     
 	   2 Input      8 Bit       Adders := 1     
-	   2 Input      4 Bit       Adders := 1     
+	   2 Input      5 Bit       Adders := 1     
 +---Registers : 
 	               32 Bit    Registers := 2     
 	               11 Bit    Registers := 2     
 	                1 Bit    Registers := 2     
 +---Multipliers : 
 	                11x32  Multipliers := 1     
-	                14x32  Multipliers := 1     
+	                15x32  Multipliers := 1     
 +---Muxes : 
 	   2 Input     32 Bit        Muxes := 6     
 	   2 Input     31 Bit        Muxes := 2     
+	   2 Input     11 Bit        Muxes := 1     
 	   2 Input      8 Bit        Muxes := 2     
-	   2 Input      4 Bit        Muxes := 2     
 Module meta_harden 
 Detailed RTL Component Info : 
 +---Registers : 
@@ -335,16 +337,20 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 Warning: Parallel synthesis criteria is not met 
-INFO: [Synth 8-4471] merging register 'VGA/pixeles/blue_reg_reg[3:0]' into 'VGA/pixeles/green_reg_reg[3:0]' [C:/Users/Lenovo/Desktop/Sistemas Digitales/digisist/Vivado2018/Interfaz_UART-VGA/Interfaz_UART-VGA.srcs/sources_1/imports/Ejemplos_TP2/arcvga/02VGAVideoMem/gen_pixels.vhd:42]
-WARNING: [Synth 8-3936] Found unconnected internal register 'VGA/char_add_reg' and it is trimmed from '11' to '4' bits. [C:/Users/Lenovo/Desktop/Sistemas Digitales/digisist/Vivado2018/Interfaz_UART-VGA/Interfaz_UART-VGA.srcs/sources_1/imports/Ejemplos_TP2/arcvga/02VGAVideoMem/vga_ctrl.vhd:173]
-INFO: [Synth 8-5544] ROM "UART/uart_rx_ctl_i0/bit_cnt_done" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
-INFO: [Synth 8-5546] ROM "VGA/vga_sync_unit/h_end" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "VGA/vga_sync_unit/v_end" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5545] ROM "VGA/dir3" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5546] ROM "UART/uart_baud_gen_rx_i0/baud_x16_en_reg" won't be mapped to RAM because it is too sparse
-WARNING: [Synth 8-3331] design interfaz_UART_VGA has unconnected port sw[2]
-WARNING: [Synth 8-3331] design interfaz_UART_VGA has unconnected port sw[1]
-WARNING: [Synth 8-3331] design interfaz_UART_VGA has unconnected port sw[0]
+INFO: [Synth 8-4471] merging register 'pixeles/blue_reg_reg[3:0]' into 'pixeles/green_reg_reg[3:0]' [C:/Users/Lenovo/Desktop/Sistemas Digitales/digisist/Vivado2018/Interfaz_UART-VGA/Interfaz_UART-VGA.srcs/sources_1/imports/Ejemplos_TP2/arcvga/02VGAVideoMem/gen_pixels.vhd:42]
+INFO: [Synth 8-5546] ROM "vga_sync_unit/h_end" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "vga_sync_unit/v_end" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5545] ROM "dir3" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5544] ROM "uart_rx_ctl_i0/bit_cnt_done" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "uart_baud_gen_rx_i0/baud_x16_en_reg" won't be mapped to RAM because it is too sparse
+WARNING: [Synth 8-3331] design vga_ctrl has unconnected port sw[2]
+WARNING: [Synth 8-3331] design vga_ctrl has unconnected port sw[1]
+WARNING: [Synth 8-3331] design vga_ctrl has unconnected port sw[0]
+WARNING: [Synth 8-3331] design vga_ctrl has unconnected port rx_data[7]
+INFO: [Synth 8-3886] merging instance 'VGA/char_address_reg[0]' (FDE) to 'VGA/char_address_reg[3]'
+INFO: [Synth 8-3886] merging instance 'VGA/char_address_reg[1]' (FDE) to 'VGA/char_address_reg[3]'
+INFO: [Synth 8-3886] merging instance 'VGA/char_address_reg[2]' (FDE) to 'VGA/char_address_reg[3]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (VGA/\char_address_reg[3] )
 INFO: [Synth 8-3886] merging instance 'VGA/pixeles/green_reg_reg[0]' (FDC) to 'VGA/pixeles/green_reg_reg[1]'
 INFO: [Synth 8-3886] merging instance 'VGA/pixeles/green_reg_reg[1]' (FDC) to 'VGA/pixeles/green_reg_reg[2]'
 INFO: [Synth 8-3886] merging instance 'VGA/pixeles/green_reg_reg[2]' (FDC) to 'VGA/pixeles/green_reg_reg[3]'
@@ -352,24 +358,24 @@ INFO: [Synth 8-3886] merging instance 'VGA/pixeles/red_reg_reg[0]' (FDC) to 'VGA
 INFO: [Synth 8-3886] merging instance 'VGA/pixeles/red_reg_reg[1]' (FDC) to 'VGA/pixeles/red_reg_reg[3]'
 INFO: [Synth 8-3886] merging instance 'VGA/pixeles/red_reg_reg[2]' (FDC) to 'VGA/pixeles/red_reg_reg[3]'
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:22 . Memory (MB): peak = 797.211 ; gain = 499.879
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:15 ; elapsed = 00:00:19 . Memory (MB): peak = 797.563 ; gain = 501.375
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
 ---------------------------------------------------------------------------------
 
-Block RAM: Preliminary Mapping  Report (see note below)
-+------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
-|Module Name | RTL Object | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
-+------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
-|fontROM:    | ROM_reg    | 2 K x 8(READ_FIRST)    | W | R |                        |   |   | Port A           | 1      | 0      | 
-+------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+ROM:
++------------+--------------+---------------+----------------+
+|Module Name | RTL Object   | Depth x Width | Implemented As | 
++------------+--------------+---------------+----------------+
+|fontROM     | p_0_out      | 2048x8        | LUT            | 
+|vga_ctrl    | char_add_reg | 2048x8        | Block RAM      | 
++------------+--------------+---------------+----------------+
 
-Note: The table above is a preliminary report that shows the Block RAMs at the current stage of the synthesis flow. Some Block RAMs may be reimplemented as non Block RAM primitives later in the synthesis flow. Multiple instantiated Block RAMs are reported only once. 
 ---------------------------------------------------------------------------------
 Finished ROM, RAM, DSP and Shift Register Reporting
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-6837] The timing for the instance i_0/VGA/chars/ROM_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance VGA/i_0/char_add_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 
 Report RTL Partitions: 
 +-+--------------+------------+----------+
@@ -382,27 +388,13 @@ Start Applying XDC Timing Constraints
 INFO: [Synth 8-5578] Moved timing constraint from pin 'VGA/clock_unit/gen_clk_i/clk_wiz_0/clk_out1' to pin 'VGA/clock_unit/gen_clk_i/clk_wiz_0/bbstub_clk_out1/O'
 INFO: [Synth 8-5819] Moved 1 constraints on hierarchical pins to their respective driving/loading pins
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:24 ; elapsed = 00:00:30 . Memory (MB): peak = 797.211 ; gain = 499.879
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:23 ; elapsed = 00:00:27 . Memory (MB): peak = 797.563 ; gain = 501.375
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:24 ; elapsed = 00:00:30 . Memory (MB): peak = 799.395 ; gain = 502.063
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start ROM, RAM, DSP and Shift Register Reporting
----------------------------------------------------------------------------------
-
-Block RAM: Final Mapping  Report
-+------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
-|Module Name | RTL Object | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
-+------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
-|fontROM:    | ROM_reg    | 2 K x 8(READ_FIRST)    | W | R |                        |   |   | Port A           | 1      | 0      | 
-+------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
-
----------------------------------------------------------------------------------
-Finished ROM, RAM, DSP and Shift Register Reporting
+Finished Timing Optimization : Time (s): cpu = 00:00:23 ; elapsed = 00:00:27 . Memory (MB): peak = 799.000 ; gain = 502.813
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -413,9 +405,9 @@ Report RTL Partitions:
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-6837] The timing for the instance VGA/chars/ROM_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance VGA/char_add_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:24 ; elapsed = 00:00:31 . Memory (MB): peak = 819.066 ; gain = 521.734
+Finished Technology Mapping : Time (s): cpu = 00:00:24 ; elapsed = 00:00:27 . Memory (MB): peak = 818.441 ; gain = 522.254
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -439,7 +431,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:25 ; elapsed = 00:00:32 . Memory (MB): peak = 819.066 ; gain = 521.734
+Finished IO Insertion : Time (s): cpu = 00:00:25 ; elapsed = 00:00:28 . Memory (MB): peak = 818.441 ; gain = 522.254
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -452,7 +444,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:25 ; elapsed = 00:00:32 . Memory (MB): peak = 819.066 ; gain = 521.734
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:25 ; elapsed = 00:00:29 . Memory (MB): peak = 818.441 ; gain = 522.254
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -464,25 +456,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:25 ; elapsed = 00:00:32 . Memory (MB): peak = 819.066 ; gain = 521.734
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:25 ; elapsed = 00:00:29 . Memory (MB): peak = 818.441 ; gain = 522.254
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:25 ; elapsed = 00:00:32 . Memory (MB): peak = 819.066 ; gain = 521.734
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:25 ; elapsed = 00:00:29 . Memory (MB): peak = 818.441 ; gain = 522.254
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:26 ; elapsed = 00:00:32 . Memory (MB): peak = 819.066 ; gain = 521.734
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:25 ; elapsed = 00:00:29 . Memory (MB): peak = 818.441 ; gain = 522.254
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:26 ; elapsed = 00:00:32 . Memory (MB): peak = 819.066 ; gain = 521.734
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:25 ; elapsed = 00:00:29 . Memory (MB): peak = 818.441 ; gain = 522.254
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -503,17 +495,17 @@ Report Cell Usage:
 |1     |gen_clk_clk_wiz_0_0_bbox_0       |     1|
 |2     |video_mem_blk_mem_gen_0_0_bbox_1 |     1|
 |3     |BUFG                             |     2|
-|4     |CARRY4                           |   175|
+|4     |CARRY4                           |   179|
 |5     |LUT1                             |    56|
-|6     |LUT2                             |   124|
-|7     |LUT3                             |   162|
-|8     |LUT4                             |   149|
-|9     |LUT5                             |   140|
-|10    |LUT6                             |   445|
+|6     |LUT2                             |   136|
+|7     |LUT3                             |   167|
+|8     |LUT4                             |   142|
+|9     |LUT5                             |   145|
+|10    |LUT6                             |   452|
 |11    |RAMB18E1                         |     1|
 |12    |FDCE                             |   100|
 |13    |FDPE                             |     1|
-|14    |FDRE                             |    84|
+|14    |FDRE                             |    76|
 |15    |FDSE                             |     3|
 |16    |IBUF                             |     2|
 |17    |OBUF                             |    14|
@@ -523,45 +515,44 @@ Report Instance Areas:
 +------+------------------------+------------------+------+
 |      |Instance                |Module            |Cells |
 +------+------------------------+------------------+------+
-|1     |top                     |                  |  1461|
+|1     |top                     |                  |  1479|
 |2     |  UART                  |uart_rx           |    76|
 |3     |    meta_harden_rxd_i0  |meta_harden_0     |     2|
 |4     |    uart_baud_gen_rx_i0 |uart_baud_gen     |    19|
 |5     |    uart_rx_ctl_i0      |uart_rx_ctl       |    55|
-|6     |  VGA                   |vga_ctrl          |  1365|
-|7     |    chars               |fontROM           |     4|
-|8     |    clock_unit          |gen_clk_wrapper   |     2|
-|9     |      gen_clk_i         |gen_clk           |     2|
-|10    |    memoria_video       |video_mem_wrapper |     1|
-|11    |      video_mem_i       |video_mem         |     1|
-|12    |    pixeles             |gen_pixels        |     2|
-|13    |    vga_sync_unit       |vga_sync          |    65|
-|14    |  meta_harden_rst_i0    |meta_harden       |     2|
+|6     |  VGA                   |vga_ctrl          |  1325|
+|7     |    clock_unit          |gen_clk_wrapper   |     2|
+|8     |      gen_clk_i         |gen_clk           |     2|
+|9     |    memoria_video       |video_mem_wrapper |     1|
+|10    |      video_mem_i       |video_mem         |     1|
+|11    |    pixeles             |gen_pixels        |     2|
+|12    |    vga_sync_unit       |vga_sync          |    64|
+|13    |  meta_harden_rst_i0    |meta_harden       |     2|
 +------+------------------------+------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:26 ; elapsed = 00:00:32 . Memory (MB): peak = 819.066 ; gain = 521.734
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:25 ; elapsed = 00:00:29 . Memory (MB): peak = 818.441 ; gain = 522.254
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 4 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:17 ; elapsed = 00:00:22 . Memory (MB): peak = 819.066 ; gain = 179.051
-Synthesis Optimization Complete : Time (s): cpu = 00:00:26 ; elapsed = 00:00:32 . Memory (MB): peak = 819.066 ; gain = 521.734
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:17 ; elapsed = 00:00:22 . Memory (MB): peak = 818.441 ; gain = 179.617
+Synthesis Optimization Complete : Time (s): cpu = 00:00:25 ; elapsed = 00:00:29 . Memory (MB): peak = 818.441 ; gain = 522.254
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 176 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 180 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 WARNING: [Netlist 29-101] Netlist 'interfaz_UART_VGA' is not ideal for floorplanning, since the cellview 'vga_ctrl' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-140] Inserted 1 IBUFs to IO ports without IO buffers.
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 819.066 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 818.441 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-85 Infos, 37 Warnings, 0 Critical Warnings and 0 Errors encountered.
+90 Infos, 44 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:28 ; elapsed = 00:00:36 . Memory (MB): peak = 819.066 ; gain = 531.063
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 819.066 ; gain = 0.000
+synth_design: Time (s): cpu = 00:00:27 ; elapsed = 00:00:32 . Memory (MB): peak = 818.441 ; gain = 530.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 818.441 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint 'C:/Users/Lenovo/Desktop/Sistemas Digitales/digisist/Vivado2018/Interfaz_UART-VGA/Interfaz_UART-VGA.runs/synth_1/interfaz_UART_VGA.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file interfaz_UART_VGA_utilization_synth.rpt -pb interfaz_UART_VGA_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Mon Jun 10 18:43:40 2019...
+INFO: [Common 17-206] Exiting Vivado at Thu Jun 27 17:36:31 2019...

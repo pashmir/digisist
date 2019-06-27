@@ -181,6 +181,7 @@ process (rx_rdy,rst,clk50)
     variable qchars : integer := 0;
     variable wipe : bit := '0';
     variable dir : integer := 0;
+    variable char_address : integer := 0;
     begin
     if (rst = '1') then
         conteo := 0;
@@ -196,10 +197,10 @@ process (rx_rdy,rst,clk50)
             conteo := conteo+1;
             if wipe='0' then
                 
-                char_add(3 downto 0) <= std_logic_vector(to_unsigned(conteo/8,4));
-                pixel_value_reg(0) <= rom_out(conteo mod 8);
-                dir:=(conteo/8) * 800 + conteo mod 8 + 6400 * (qchars/80) + 8 * (qchars mod 80);
-                if (conteo=64) then
+                char_add <= std_logic_vector(to_unsigned(char_address + (conteo/8),11));
+                pixel_value_reg(0) <= rom_out(8 - (conteo mod 8));
+                dir:=(conteo/8) * 800 + conteo mod 8 + 12800 * (qchars/80) + 8 * (qchars mod 80);
+                if (conteo=128) then
                     conteo:=0;
                 end if;
             
@@ -220,11 +221,11 @@ process (rx_rdy,rst,clk50)
         -------------------------------------------
         if (rising_edge (rx_rdy) ) then
             qchars := qchars+1;
-            char_add(10 downto 4) <= rx_data(6 downto 0);
+            char_address := 16 * to_integer(unsigned(rx_data));
             
         end if;
         
-        if (qchars = 4800) then
+        if (qchars = 2400) then
             qchars:=0;
         end if; 
         
