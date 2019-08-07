@@ -49,10 +49,8 @@ architecture vga_ctrl_arch of vga_ctrl is
     signal pixel : std_logic_vector (2 downto 0);
     signal pixel_in : std_logic_vector (0 downto 0);
     signal pantalla : std_logic;
-    signal char_add : std_logic_vector(5 downto 0);
-    signal font_row : std_logic_vector(2 downto 0);
-    signal font_column : std_logic_vector(2 downto 0);
-    signal rom_out : std_logic;
+    signal char_add : std_logic_vector(10 downto 0);
+    signal rom_out : std_logic_vector(7 downto 0);
     signal clk50 : std_logic;
 
 component video_mem_wrapper is
@@ -69,18 +67,31 @@ component video_mem_wrapper is
  );
 end component;
 
-component char_rom
+--component char_rom
+--    generic(
+--		N: integer:= 6;
+--		M: integer:= 3;
+--		W: integer:= 8
+--	);
+--	port(
+--		char_address: in std_logic_vector(5 downto 0);
+--		font_row, font_col: in std_logic_vector(M-1 downto 0);
+--		rom_out: out std_logic
+--	);
+--end component;
+
+component fontROM
     generic(
-		N: integer:= 6;
-		M: integer:= 3;
-		W: integer:= 8
-	);
-	port(
-		char_address: in std_logic_vector(5 downto 0);
-		font_row, font_col: in std_logic_vector(M-1 downto 0);
-		rom_out: out std_logic
-	);
+		addrWidth: integer := 11;
+		dataWidth: integer := 8);
+    port(
+		clkA: in std_logic;
+		writeEnableA: in std_logic;
+		addrA: in std_logic_vector(addrWidth-1 downto 0);
+		dataOutA: out std_logic_vector(dataWidth-1 downto 0);
+		dataInA: in std_logic_vector(dataWidth-1 downto 0));
 end component;
+
 
 component gen_clk_wrapper is
   port (
@@ -155,12 +166,13 @@ memoria_video: Video_mem_wrapper
            enb_0 => '1',
            wea_0 => "1"
            );	
-chars: char_rom
+chars: fontROM
     port map(
-    char_address => char_add,
-    font_row => font_row,
-    font_col => font_column,
-    rom_out => rom_out
+		clkA=>clk50,
+		writeEnableA=>'0',
+		addrA=>char_add,
+		dataOutA=>rom_out,
+		dataInA=>"00000000"
     );	
 
 -- Process para escribir la memoria de video
@@ -169,6 +181,7 @@ process (rx_rdy,rst,clk50)
     variable qchars : integer := 0;
     variable wipe : bit := '0';
     variable dir : integer := 0;
+    variable char_address : integer := 0;
     begin
     if (rst = '1') then
         conteo := 0;
@@ -184,11 +197,10 @@ process (rx_rdy,rst,clk50)
             conteo := conteo+1;
             if wipe='0' then
                 
-                font_row<=std_logic_vector(to_unsigned(conteo/8,3));
-                font_column<=std_logic_vector(to_unsigned(conteo mod 8,3)); 
-                pixel_value_reg(0) <= rom_out;
-                dir:=(conteo/8) * 800 + conteo mod 8 + 6400 * (qchars/80) + 8 * (qchars mod 80);
-                if (conteo=64) then
+                char_add <= std_logic_vector(to_unsigned(char_address + (conteo/8),11));
+                pixel_value_reg(0) <= rom_out(8 - (conteo mod 8));
+                dir:=(conteo/8) * 800 + conteo mod 8 + 12800 * (qchars/80) + 8 * (qchars mod 80);
+                if (conteo=128) then
                     conteo:=0;
                 end if;
             
@@ -209,16 +221,11 @@ process (rx_rdy,rst,clk50)
         -------------------------------------------
         if (rising_edge (rx_rdy) ) then
             qchars := qchars+1;
-            
-            if (rx_data(0)='0') then
-                char_add<="000000";
-            else
-                char_add<="000001";
-            end if;
+            char_address := 16 * to_integer(unsigned(rx_data));
             
         end if;
         
-        if (qchars = 4800) then
+        if (qchars = 2400) then
             qchars:=0;
         end if; 
         
