@@ -1,8 +1,8 @@
 --Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
---Tool Version: Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
---Date        : Thu Dec 20 16:44:19 2018
---Host        : NBOOKPAGANI running 64-bit major release  (build 9200)
+--Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
+--Date        : Mon Jun  3 18:29:33 2019
+--Host        : LAPTOP-T9IKLUT4 running 64-bit major release  (build 9200)
 --Command     : generate_target video_mem.bd
 --Design      : video_mem
 --Purpose     : IP block netlist
@@ -55,9 +55,9 @@ architecture STRUCTURE of video_mem is
   attribute X_INTERFACE_INFO : string;
   attribute X_INTERFACE_INFO of clka_0 : signal is "xilinx.com:signal:clock:1.0 CLK.CLKA_0 CLK";
   attribute X_INTERFACE_PARAMETER : string;
-  attribute X_INTERFACE_PARAMETER of clka_0 : signal is "XIL_INTERFACENAME CLK.CLKA_0, CLK_DOMAIN video_mem_clka_0, FREQ_HZ 100000000, PHASE 0.000";
+  attribute X_INTERFACE_PARAMETER of clka_0 : signal is "XIL_INTERFACENAME CLK.CLKA_0, CLK_DOMAIN video_mem_clka_0, FREQ_HZ 100000000, INSERT_VIP 0, PHASE 0.000";
   attribute X_INTERFACE_INFO of clkb_0 : signal is "xilinx.com:signal:clock:1.0 CLK.CLKB_0 CLK";
-  attribute X_INTERFACE_PARAMETER of clkb_0 : signal is "XIL_INTERFACENAME CLK.CLKB_0, CLK_DOMAIN video_mem_clkb_0, FREQ_HZ 100000000, PHASE 0.000";
+  attribute X_INTERFACE_PARAMETER of clkb_0 : signal is "XIL_INTERFACENAME CLK.CLKB_0, CLK_DOMAIN video_mem_clkb_0, FREQ_HZ 100000000, INSERT_VIP 0, PHASE 0.000";
 begin
   addra_0_1(18 downto 0) <= addra_0(18 downto 0);
   addrb_0_1(18 downto 0) <= addrb_0(18 downto 0);

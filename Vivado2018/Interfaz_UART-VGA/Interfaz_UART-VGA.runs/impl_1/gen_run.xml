@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="impl_1" LaunchPart="xc7z010clg400-1" LaunchTime="1561667741">
+  <File Type="BITSTR-BMM" Name="interfaz_UART_VGA_bd.bmm"/>
+  <File Type="OPT-METHODOLOGY-DRC" Name="interfaz_UART_VGA_methodology_drc_opted.rpt"/>
+  <File Type="INIT-TIMING" Name="interfaz_UART_VGA_timing_summary_init.rpt"/>
+  <File Type="ROUTE-PWR" Name="interfaz_UART_VGA_power_routed.rpt"/>
+  <File Type="PA-TCL" Name="interfaz_UART_VGA.tcl"/>
+  <File Type="OPT-TIMING" Name="interfaz_UART_VGA_timing_summary_opted.rpt"/>
+  <File Type="OPT-DCP" Name="interfaz_UART_VGA_opt.dcp"/>
+  <File Type="ROUTE-PWR-SUM" Name="interfaz_UART_VGA_power_summary_routed.pb"/>
+  <File Type="REPORTS-TCL" Name="interfaz_UART_VGA_reports.tcl"/>
+  <File Type="OPT-DRC" Name="interfaz_UART_VGA_drc_opted.rpt"/>
+  <File Type="OPT-HWDEF" Name="interfaz_UART_VGA.hwdef"/>
+  <File Type="PWROPT-DCP" Name="interfaz_UART_VGA_pwropt.dcp"/>
+  <File Type="PWROPT-DRC" Name="interfaz_UART_VGA_drc_pwropted.rpt"/>
+  <File Type="PWROPT-TIMING" Name="interfaz_UART_VGA_timing_summary_pwropted.rpt"/>
+  <File Type="PLACE-DCP" Name="interfaz_UART_VGA_placed.dcp"/>
+  <File Type="PLACE-IO" Name="interfaz_UART_VGA_io_placed.rpt"/>
+  <File Type="PLACE-CLK" Name="interfaz_UART_VGA_clock_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL" Name="interfaz_UART_VGA_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL-PB" Name="interfaz_UART_VGA_utilization_placed.pb"/>
+  <File Type="PLACE-CTRL" Name="interfaz_UART_VGA_control_sets_placed.rpt"/>
+  <File Type="PLACE-SIMILARITY" Name="interfaz_UART_VGA_incremental_reuse_placed.rpt"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="interfaz_UART_VGA_incremental_reuse_pre_placed.rpt"/>
+  <File Type="BG-BGN" Name="interfaz_UART_VGA.bgn"/>
+  <File Type="PLACE-TIMING" Name="interfaz_UART_VGA_timing_summary_placed.rpt"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="interfaz_UART_VGA_postplace_pwropt.dcp"/>
+  <File Type="BG-BIN" Name="interfaz_UART_VGA.bin"/>
+  <File Type="POSTPLACE-PWROPT-TIMING" Name="interfaz_UART_VGA_timing_summary_postplace_pwropted.rpt"/>
+  <File Type="PHYSOPT-DCP" Name="interfaz_UART_VGA_physopt.dcp"/>
+  <File Type="PHYSOPT-DRC" Name="interfaz_UART_VGA_drc_physopted.rpt"/>
+  <File Type="BITSTR-MSK" Name="interfaz_UART_VGA.msk"/>
+  <File Type="PHYSOPT-TIMING" Name="interfaz_UART_VGA_timing_summary_physopted.rpt"/>
+  <File Type="ROUTE-ERROR-DCP" Name="interfaz_UART_VGA_routed_error.dcp"/>
+  <File Type="ROUTE-DCP" Name="interfaz_UART_VGA_routed.dcp"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="interfaz_UART_VGA_routed_bb.dcp"/>
+  <File Type="ROUTE-DRC" Name="interfaz_UART_VGA_drc_routed.rpt"/>
+  <File Type="ROUTE-DRC-PB" Name="interfaz_UART_VGA_drc_routed.pb"/>
+  <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
+  <File Type="BITSTR-LTX" Name="interfaz_UART_VGA.ltx"/>
+  <File Type="ROUTE-DRC-RPX" Name="interfaz_UART_VGA_drc_routed.rpx"/>
+  <File Type="BITSTR-MMI" Name="interfaz_UART_VGA.mmi"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="interfaz_UART_VGA_methodology_drc_routed.rpt"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="interfaz_UART_VGA_methodology_drc_routed.rpx"/>
+  <File Type="BITSTR-SYSDEF" Name="interfaz_UART_VGA.sysdef"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="interfaz_UART_VGA_methodology_drc_routed.pb"/>
+  <File Type="ROUTE-PWR-RPX" Name="interfaz_UART_VGA_power_routed.rpx"/>
+  <File Type="ROUTE-STATUS" Name="interfaz_UART_VGA_route_status.rpt"/>
+  <File Type="ROUTE-STATUS-PB" Name="interfaz_UART_VGA_route_status.pb"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="interfaz_UART_VGA_timing_summary_routed.rpt"/>
+  <File Type="ROUTE-TIMING-PB" Name="interfaz_UART_VGA_timing_summary_routed.pb"/>
+  <File Type="ROUTE-TIMING-RPX" Name="interfaz_UART_VGA_timing_summary_routed.rpx"/>
+  <File Type="ROUTE-SIMILARITY" Name="interfaz_UART_VGA_incremental_reuse_routed.rpt"/>
+  <File Type="ROUTE-CLK" Name="interfaz_UART_VGA_clock_utilization_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW" Name="interfaz_UART_VGA_bus_skew_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW-PB" Name="interfaz_UART_VGA_bus_skew_routed.pb"/>
+  <File Type="ROUTE-BUS-SKEW-RPX" Name="interfaz_UART_VGA_bus_skew_routed.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="interfaz_UART_VGA_postroute_physopt.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="interfaz_UART_VGA_postroute_physopt_bb.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="interfaz_UART_VGA_timing_summary_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="interfaz_UART_VGA_timing_summary_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="interfaz_UART_VGA_timing_summary_postroute_physopted.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="interfaz_UART_VGA_bus_skew_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="interfaz_UART_VGA_bus_skew_postroute_physopted.pb"/>
+  <File Type="BG-BIT" Name="interfaz_UART_VGA.bit"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="interfaz_UART_VGA_bus_skew_postroute_physopted.rpx"/>
+  <File Type="BITSTR-RBT" Name="interfaz_UART_VGA.rbt"/>
+  <File Type="BITSTR-NKY" Name="interfaz_UART_VGA.nky"/>
+  <File Type="BG-DRC" Name="interfaz_UART_VGA.drc"/>
+  <File Type="RDI-RDI" Name="interfaz_UART_VGA.vdi"/>
+  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/bd/video_mem/video_mem.bd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/bd/gen_clk/gen_clk.bd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../Ejemplos_TP2/Char_ROM/Char_ROM.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/bd/gen_clk/hdl/gen_clk_wrapper.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Ejemplos_TP2/arcvga/02VGAVideoMem/gen_pixels.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Ejemplos_TP2/arcvga/02VGAVideoMem/gen_pixels.vhd"/>
+        <Attr Name="ImportTime" Val="1543342666"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Ejemplos_TP2/UART_Fuentes/meta_harden.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Ejemplos_TP2/UART_Fuentes/meta_harden.vhd"/>
+        <Attr Name="ImportTime" Val="1542314390"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Ejemplos_TP2/UART_Fuentes/uart_baud_gen.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Ejemplos_TP2/UART_Fuentes/uart_baud_gen.vhd"/>
+        <Attr Name="ImportTime" Val="1542314405"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Ejemplos_TP2/UART_Fuentes/uart_rx.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Ejemplos_TP2/UART_Fuentes/uart_rx.vhd"/>
+        <Attr Name="ImportTime" Val="1542314437"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Ejemplos_TP2/UART_Fuentes/uart_rx_ctl.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Ejemplos_TP2/UART_Fuentes/uart_rx_ctl.vhd"/>
+        <Attr Name="ImportTime" Val="1542314447"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Ejemplos_TP2/arcvga/02VGAVideoMem/vga_sync.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Ejemplos_TP2/arcvga/02VGAVideoMem/vga_sync.vhd"/>
+        <Attr Name="ImportTime" Val="1465497512"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Ejemplos_TP2/arcvga/02VGAVideoMem/vga_ctrl.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Ejemplos_TP2/arcvga/02VGAVideoMem/vga_ctrl.vhd"/>
+        <Attr Name="ImportTime" Val="1543537448"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/bd/video_mem/hdl/video_mem_wrapper.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/Interfaz_UART-VGA.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/TP2/Char_ROM.vhd">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Vivado2018/TP2/Char_ROM.vhd"/>
+        <Attr Name="ImportTime" Val="1544131914"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Ejemplos_TP2/UART_Fuentes/led_ctl.vhd">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Ejemplos_TP2/UART_Fuentes/led_ctl.vhd"/>
+        <Attr Name="ImportTime" Val="1543004005"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Ejemplos_TP2/UART_Fuentes/uart_led.vhd">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Ejemplos_TP2/UART_Fuentes/uart_led.vhd"/>
+        <Attr Name="ImportTime" Val="1542314356"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Ejemplos_TP2/UART_Fuentes/uart_top.vhd">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Ejemplos_TP2/UART_Fuentes/uart_top.vhd"/>
+        <Attr Name="ImportTime" Val="1543004048"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="interfaz_UART_VGA"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <File Path="$PSRCDIR/constrs_1/imports/digisist/Ejemplos_TP2/arcvga/04PinesVGAVideoMem/Arty-Z7-20-Master.xdc">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Ejemplos_TP2/arcvga/04PinesVGAVideoMem/Arty-Z7-20-Master.xdc"/>
+        <Attr Name="ImportTime" Val="1543192472"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/constrs_1/imports/digisist/Vivado2018/TP2/p_uart/p_uart/p_uart.srcs/constrs_1/imports/UART_Fuentes/uart_led_pins_ArtyZ7.xdc">
+      <FileInfo>
+        <Attr Name="UserDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Vivado2018/TP2/p_uart/p_uart/p_uart.srcs/constrs_1/imports/UART_Fuentes/uart_led_pins_ArtyZ7.xdc"/>
+        <Attr Name="ImportTime" Val="1543003910"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/constrs_1/imports/digisist/Vivado2018/TP2/p_uart/p_uart/p_uart.srcs/constrs_1/imports/UART_Fuentes/uart_led_timing_ArtyZ7.xdc">
+      <FileInfo>
+        <Attr Name="UserDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Vivado2018/TP2/p_uart/p_uart/p_uart.srcs/constrs_1/imports/UART_Fuentes/uart_led_timing_ArtyZ7.xdc"/>
+        <Attr Name="ImportTime" Val="1543003884"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1">
+    <Filter Type="Utils"/>
+    <Config>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018"/>
+    <Step Id="init_design"/>
+    <Step Id="opt_design"/>
+    <Step Id="power_opt_design"/>
+    <Step Id="place_design"/>
+    <Step Id="post_place_power_opt_design"/>
+    <Step Id="phys_opt_design"/>
+    <Step Id="route_design"/>
+    <Step Id="post_route_phys_opt_design"/>
+    <Step Id="write_bitstream"/>
+  </Strategy>
+  <BlockFileSet Type="BlockSrcs" Name="gen_clk_clk_wiz_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="video_mem_blk_mem_gen_0_0"/>
+</GenRun>

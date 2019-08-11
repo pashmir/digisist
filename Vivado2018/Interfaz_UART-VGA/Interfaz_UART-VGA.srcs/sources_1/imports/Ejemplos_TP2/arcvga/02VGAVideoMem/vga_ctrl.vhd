@@ -49,10 +49,8 @@ architecture vga_ctrl_arch of vga_ctrl is
     signal pixel : std_logic_vector (2 downto 0);
     signal pixel_in : std_logic_vector (0 downto 0);
     signal pantalla : std_logic;
-    signal char_add : std_logic_vector(5 downto 0);
-    signal font_row : std_logic_vector(2 downto 0);
-    signal font_column : std_logic_vector(2 downto 0);
-    signal rom_out : std_logic;
+    signal char_add : std_logic_vector(10 downto 0);
+    signal rom_out : std_logic_vector(7 downto 0);
     signal clk50 : std_logic;
 
 component video_mem_wrapper is
@@ -69,18 +67,31 @@ component video_mem_wrapper is
  );
 end component;
 
-component char_rom
+--component char_rom
+--    generic(
+--		N: integer:= 6;
+--		M: integer:= 3;
+--		W: integer:= 8
+--	);
+--	port(
+--		char_address: in std_logic_vector(5 downto 0);
+--		font_row, font_col: in std_logic_vector(M-1 downto 0);
+--		rom_out: out std_logic
+--	);
+--end component;
+
+component fontROM
     generic(
-		N: integer:= 6;
-		M: integer:= 3;
-		W: integer:= 8
-	);
-	port(
-		char_address: in std_logic_vector(5 downto 0);
-		font_row, font_col: in std_logic_vector(M-1 downto 0);
-		rom_out: out std_logic
-	);
+		addrWidth: integer := 11;
+		dataWidth: integer := 8);
+    port(
+		clkA: in std_logic;
+		writeEnableA: in std_logic;
+		addrA: in std_logic_vector(addrWidth-1 downto 0);
+		dataOutA: out std_logic_vector(dataWidth-1 downto 0);
+		dataInA: in std_logic_vector(dataWidth-1 downto 0));
 end component;
+
 
 component gen_clk_wrapper is
   port (
@@ -131,16 +142,11 @@ process (pixel_clock,rst, pixel_x,pixel_y)
     begin
     if ((rst = '1') or ((pixel_x = "0000000000") and (pixel_y = "0000000000"))) then
         conteo := 0;
-        if (rx_data(0) = '0') then
-            pantalla <= '0';
-        else
-            pantalla <= '1';
-        end if;
     else
         if (rising_edge (pixel_clock)) then
             conteo := conteo + 1;
         end if;
-        if (conteo = 307200) then
+        if (conteo = 480000) then
             conteo := 0;
         end if;
     end if;
@@ -160,46 +166,74 @@ memoria_video: Video_mem_wrapper
            enb_0 => '1',
            wea_0 => "1"
            );	
-chars: char_rom
+chars: fontROM
     port map(
-    char_address => char_add,
-    font_row => font_row,
-    font_col => font_column,
-    rom_out => rom_out
+		clkA=>clk50,
+		writeEnableA=>'0',
+		addrA=>char_add,
+		dataOutA=>rom_out,
+		dataInA=>"00000000"
     );	
 
 -- Process para escribir la memoria de video
-process (clk50,rst,pixel_x,pixel_y)
+process (rx_rdy,rst,clk50)
     variable conteo : integer := 0;
+    variable qchars : integer := 0;
+    variable wipe : bit := '0';
+    variable dir : integer := 0;
+    variable char_address : integer := 0;
     begin
-    if ((rst = '1') or ((pixel_x = "0000000000") and (pixel_y = "0000000000"))) then
+    if (rst = '1') then
         conteo := 0;
+        qchars := 0;
+        wipe:='1';
+        
     else
+        ------------------------------------------
+        --A partir de acá se modifica la pantalla
+        
         if (rising_edge (clk50)) then
-            conteo := conteo + 1;
-            if (pantalla = '0') then
-                -- reset screen
-                pixel_value_reg <= "0";
-            else
-                --A write char A
-                char_add<="000001";
-                font_row<=pixel_y(2 downto 0);
-                font_column<=pixel_x(2 downto 0);
-                if (to_integer(unsigned(pixel_x))/8 = 0 and to_integer(unsigned(pixel_y))/8 = 0) then  
-                    pixel_value_reg(0) <= rom_out;
-               else
-                   pixel_value_reg(0) <= '0';
-               end if;
+            
+            conteo := conteo+1;
+            if wipe='0' then
+                
+                char_add <= std_logic_vector(to_unsigned(char_address + (conteo/8),11));
+                pixel_value_reg(0) <= rom_out(8 - (conteo mod 8));
+                dir:=(conteo/8) * 800 + conteo mod 8 + 12800 * (qchars/80) + 8 * (qchars mod 80);
+                if (conteo=128) then
+                    conteo:=0;
+                end if;
+            
+            else 
+                pixel_value_reg(0)<='0';
+                dir:=conteo;
+                if conteo=480000 then
+                    wipe:='0';
+                    conteo:=0;
+                end if;
             end if;    
         end if;
-        if (conteo = 307200) then
-            conteo := 0;
+        
+        
+        
+        
+        -- Acá se termina de modificar la pantalla
+        -------------------------------------------
+        if (rising_edge (rx_rdy) ) then
+            qchars := qchars+1;
+            char_address := 16 * to_integer(unsigned(rx_data));
+            
         end if;
+        
+        if (qchars = 2400) then
+            qchars:=0;
+        end if; 
+        
     end if;
-    add_video_mem_load <= std_logic_vector(to_unsigned(conteo,add_video_mem_load'length));
+    add_video_mem_load <= std_logic_vector(to_unsigned(dir,add_video_mem_load'length));
     pixel_in <= pixel_value_reg;
 end process;
 
-pixel <= pixel_value(0) & pixel_value(0) & pixel_value(0); 	
+pixel <= pixel_value(0) & pixel_value(0) & '1'; 	
 	
 end vga_ctrl_arch;

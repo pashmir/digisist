@@ -2,10 +2,10 @@
 <Root MajorVersion="0" MinorVersion="36">
   <CompositeFile CompositeFileTopName="gen_clk" CanBeSetAsTop="false" CanDisplayChildGraph="true">
     <Description>Composite Fileset</Description>
-    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1545332978"/>
-    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1545332978"/>
-    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1545332978"/>
-    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1545332978"/>
+    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1558649373"/>
+    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1558649373"/>
+    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1558649373"/>
+    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1558649373"/>
     <FileCollection Name="SOURCES" Type="SOURCES">
       <File Name="ip\gen_clk_clk_wiz_0_0\gen_clk_clk_wiz_0_0.xci" Type="IP">
         <Instance HierarchyPath="clk_wiz_0"/>
@@ -46,6 +46,11 @@
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="HW_HANDOFF"/>
+      </File>
+      <File Name="sim\gen_clk.protoinst">
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SIMULATION"/>
       </File>
     </FileCollection>
   </CompositeFile>

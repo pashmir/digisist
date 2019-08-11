@@ -1,6 +1,6 @@
 {
-   ExpandedHierarchyInLayout: "",
-   guistr: "# # String gsaved with Nlview 6.8.5  2018-01-30 bk=1.4354 VDI=40 GEI=35 GUI=JA:1.6 TLS
+   "ExpandedHierarchyInLayout":"",
+   "guistr":"# # String gsaved with Nlview 6.8.11  2018-08-07 bk=1.4403 VDI=40 GEI=35 GUI=JA:9.0 non-TLS
 #  -string -flagsOSRD
 preplace port locked -pg 1 -y 0 -defaultsOSRD
 preplace port sys_clk -pg 1 -y 0 -defaultsOSRD
@@ -12,8 +12,8 @@ preplace netloc clk_wiz_0_clk_out1 1 1 1 NJ
 preplace netloc clk_in1_0_1 1 0 1 NJ
 preplace netloc reset_0_1 1 0 1 NJ
 levelinfo -pg 1 -10 110 230 -top -80 -bot 140
-",
+"
 }
 {
-   da_board_cnt: "2",
+   "da_board_cnt":"2"
 }
