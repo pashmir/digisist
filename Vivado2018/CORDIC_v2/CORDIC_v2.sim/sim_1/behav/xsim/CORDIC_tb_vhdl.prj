@@ -1,0 +1,7 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../CORDIC_v2.srcs/sources_1/new/CORDIC.vhd" \
+"../../../../../CORDIC/CORDIC.srcs/sim_1/new/CORDIC_tb.vhd" \
+
+# Do not sort compile order
+nosort

@@ -31,29 +31,53 @@ architecture Behavioral of CORDIC is
     signal yo : STD_LOGIC_VECTOR(N_bits-1 downto 0):=std_logic_vector(to_unsigned(0,N_bits));
     signal angulo : integer;
     constant tolerancia : natural := 1;
-    type tabla is array(0 to 15) of unsigned(N_bits-1 downto 0);
-    constant tabla_K : tabla := (      to_unsigned(1518500249,N_bits), to_unsigned(1358187913,N_bits), to_unsigned(1317635817,N_bits), to_unsigned(1307460871,N_bits), to_unsigned(1304914694,N_bits),
-       to_unsigned(1304277994,N_bits), to_unsigned(1304118810,N_bits), to_unsigned(1304079013,N_bits), to_unsigned(1304069064,N_bits), to_unsigned(1304066577,N_bits),
-       to_unsigned(1304065955,N_bits), to_unsigned(1304065799,N_bits), to_unsigned(1304065761,N_bits), to_unsigned(1304065751,N_bits), to_unsigned(1304065748,N_bits),
-       to_unsigned(1304065748,N_bits));
-    constant tabla_pasos : tabla := (to_unsigned(536870912,N_bits), to_unsigned(316933405,N_bits), to_unsigned(167458907,N_bits),  to_unsigned(85004756,N_bits),  to_unsigned(42667331,N_bits),  to_unsigned(21354465,N_bits),
-       to_unsigned(10679838,N_bits), to_unsigned(5340245,N_bits),   to_unsigned(2670163,N_bits),   to_unsigned(1335086,N_bits),    to_unsigned(667544,N_bits),    to_unsigned(333772,N_bits),
-       to_unsigned(166886,N_bits),   to_unsigned(83443,N_bits),     to_unsigned(41721,N_bits),     to_unsigned(20860,N_bits));
+    type tabla is array(0 to 15) of signed(31 downto 0);
+    constant tabla_K : tabla := (       to_signed(1518500249,32), 
+                                        to_signed(1358187913,32),
+                                        to_signed(1317635817,32), 
+                                        to_signed(1307460871,32), 
+                                        to_signed(1304914694,32),
+                                        to_signed(1304277994,32), 
+                                        to_signed(1304118810,32), 
+                                        to_signed(1304079013,32), 
+                                        to_signed(1304069064,32), 
+                                        to_signed(1304066577,32),
+                                        to_signed(1304065955,32), 
+                                        to_signed(1304065799,32), 
+                                        to_signed(1304065761,32), 
+                                        to_signed(1304065751,32), 
+                                        to_signed(1304065748,32),
+                                        to_signed(1304065748,32));
+    constant tabla_pasos : tabla := (   "00100000000000000000000000000000",-- 45.000 * (1/180) * 2 ^ 31 
+                                        "00010010111001000000010100011101",-- 26.565 * (1/180) * 2 ^ 31
+                                        "00001001111110110011100001011011",-- 14.036 * (1/180) * 2 ^ 31
+                                        "00000101000100010001000111010100",--  7.125 * (1/180) * 2 ^ 31
+                                        "00000010100010110000110101000011",--  3.576 * (1/180) * 2 ^ 31
+                                        "00000001010001011101011111100001",--  1.790 * (1/180) * 2 ^ 31
+                                        "00000000101000101111011000011110",--  0.895 * (1/180) * 2 ^ 31
+                                        "00000000010100010111110001010101",--  0.448 * (1/180) * 2 ^ 31
+                                        "00000000001010001011111001010011",--  0.224 * (1/180) * 2 ^ 31
+                                        "00000000000101000101111100101110",--  0.112 * (1/180) * 2 ^ 31
+                                        "00000000000010100010111110011000",--  0.056 * (1/180) * 2 ^ 31
+                                        "00000000000001010001011111001100",--  0.028 * (1/180) * 2 ^ 31
+                                        "00000000000000101000101111100110",--  0.014 * (1/180) * 2 ^ 31
+                                        "00000000000000010100010111110011",--  0.007 * (1/180) * 2 ^ 31
+                                        "00000000000000001010001011111001",--  0.004 * (1/180) * 2 ^ 31
+                                        "00000000000000000101000101111100");-- 0.002 * (1/180) * 2 ^ 31
 begin
     angulo <= to_integer(signed(grados));
     process(clk,enable)
-        variable angulo_inicial : integer := 0;
         variable angulo_actual : integer := 0;
         variable angulo_meta : integer := 0;
         variable direccion : integer:= 1;
-        variable xi : integer := 2**(N_bits-1)-1;
-        variable yi : integer := 0;
+        variable xi : integer := to_integer(signed(xo));
+        variable yi : integer := to_integer(signed(yo));
         variable i : natural := 0;
         variable status : bit := '0'; -- 1 busy, 0 over
     begin
         if (rising_edge(enable)) then
             status := '1';
-            angulo_meta := angulo_inicial+angulo;
+            angulo_meta := angulo;
             i:=0;
         end if;
         if rising_edge(clk) then
@@ -65,14 +89,14 @@ begin
                 end if;
                 xi:=xi-direccion*yi/(2**i);
                 yi:=yi+direccion*xi/(2**i);
-                angulo_actual := angulo_actual + direccion * to_integer(tabla_pasos(15-i));
+                angulo_actual := angulo_actual + direccion * to_integer(tabla_pasos(i)(31 downto 32-N_bits));
                 i := i+1;
             else
                 if status='1' then
-                    xi:=xi*to_integer(tabla_K(16-i));
-                    yi:=yi*to_integer(tabla_K(16-i));
+                    xi:=xi*to_integer(tabla_K(i-1)(31 downto 32-N_bits))/2**(N_bits-1);
+                    yi:=yi*to_integer(tabla_K(i-1)(31 downto 32-N_bits))/2**(N_bits-1);
                     i:=i+1;
-                    angulo_inicial:=angulo_actual;
+                    angulo_actual:=0;
                     xo <= std_logic_vector(to_signed(xi, N_bits));
                     yo <= std_logic_vector(to_signed(yi, N_bits));
                 end if;

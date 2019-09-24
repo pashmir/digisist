@@ -38,16 +38,16 @@ architecture Behavioral of CORDIC_tb is
     constant TCK: time:= 20 ns; 		-- periodo de reloj
     constant DELAY: natural:= 0; 		-- retardo de procesamiento del DUT
     signal clk: std_logic:= '0';
-    signal grados : STD_LOGIC_VECTOR(6 downto 0):="0000000";
+    signal grados : STD_LOGIC_VECTOR(9 downto 0):="0000000000";
     signal sentido : std_logic := '0'; 
     signal enable : std_logic :='0';
-    signal x : STD_LOGIC_VECTOR(6 downto 0):="0000000";
-    signal y : STD_LOGIC_VECTOR(6 downto 0):="0111111";
+    signal x : STD_LOGIC_VECTOR(9 downto 0):="0000000000";
+    signal y : STD_LOGIC_VECTOR(9 downto 0):="0111111111";
     
     component CORDIC is
         generic(
             N_bits : natural := 8;
-            N_steps : natural := 8
+            N_pasos : natural := 8
         );
         port(
             grados : in STD_LOGIC_VECTOR(N_bits-1 downto 0);
@@ -63,8 +63,8 @@ begin
     clk <= not(clk) after TCK/ 2; -- reloj
     DUT: CORDIC
         generic map(
-            N_bits => 7,
-            N_steps => 8
+            N_bits => 10,
+            N_pasos => 10
         )
         port map(
             grados=>grados,
@@ -74,12 +74,12 @@ begin
             x=>x,
             y=>y
         );
-        grados <= "0000100";
+        grados <= "0010000000";
         retardo : process
         begin
             enable <= '0';
-            wait for 1000 ns;
+            wait for 100 ns;
             enable <= '1';
-            wait for 1000 ns;
+            wait for 100 ns;
         end process;
 end Behavioral;
