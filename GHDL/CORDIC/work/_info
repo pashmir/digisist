@@ -9,82 +9,187 @@ z2
 cModel Technology
 dC:/Modeltech_pe_edu_10.4a/examples
 Ecordic
-Z0 w1569352525
-Z1 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
-Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
-Z3 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
-Z4 dD:/Users/Ceci/Documents/Facu/digisist/GHDL/CORDIC
-Z5 8D:/Users/Ceci/Documents/Facu/digisist/GHDL/CORDIC/CORDIC.vhd
-Z6 FD:/Users/Ceci/Documents/Facu/digisist/GHDL/CORDIC/CORDIC.vhd
+w1569876509
+Z0 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+Z1 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z2 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+Z3 dD:/Users/Ceci/Documents/Facu/digisist/GHDL/CORDIC
+Z4 8D:/Users/Ceci/Documents/Facu/digisist/GHDL/CORDIC/CORDIC.vhd
+Z5 FD:/Users/Ceci/Documents/Facu/digisist/GHDL/CORDIC/CORDIC.vhd
 l0
 L10
 Vie7faOLBI]A`bCXaozBDU2
 !s100 PRee<F8d42e<C?2k6m2c^1
-Z7 OP;C;10.4a;61
+Z6 OP;C;10.4a;61
 32
-Z8 !s110 1569352544
+Z7 !s110 1569876515
 !i10b 1
-Z9 !s108 1569352544.000000
-Z10 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|D:/Users/Ceci/Documents/Facu/digisist/GHDL/CORDIC/CORDIC.vhd|
-Z11 !s107 D:/Users/Ceci/Documents/Facu/digisist/GHDL/CORDIC/CORDIC.vhd|
+Z8 !s108 1569876515.000000
+Z9 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|D:/Users/Ceci/Documents/Facu/digisist/GHDL/CORDIC/CORDIC.vhd|
+Z10 !s107 D:/Users/Ceci/Documents/Facu/digisist/GHDL/CORDIC/CORDIC.vhd|
 !i113 1
-Z12 o-work work -2002 -explicit -O0
-Z13 tExplicit 1
+Z11 o-work work -2002 -explicit -O0
+Z12 tExplicit 1
 Abehavioral
+w0
+R0
+R1
+R2
+DEx4 work 6 cordic 0 22 ie7faOLBI]A`bCXaozBDU2
+l110
+L22
+VNhcIJ>kIa3OIF_:FGEflQ0
+!s100 fo4iR2;b_4fRz8R@nb;lg1
+R6
+32
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Ecordic_it
+Z13 w1569954892
+R0
 R1
 R2
 R3
-Z14 DEx4 work 6 cordic 0 22 ie7faOLBI]A`bCXaozBDU2
-l111
-L22
-Vg9IGlda1hXnEMdAFX?27S2
-!s100 FbZE0`9f:4A976FcEC^<P3
-R7
+Z14 8D:/Users/Ceci/Documents/Facu/digisist/GHDL/CORDIC/CORDIC_IT.vhd
+Z15 FD:/Users/Ceci/Documents/Facu/digisist/GHDL/CORDIC/CORDIC_IT.vhd
+l0
+L5
+VDn@:]cl6DKD51:fb]9S9^2
+!s100 d<A5z>Hl:X9S<al<jCVAC3
+R6
 32
-R8
+Z16 !s110 1569957642
 !i10b 1
-R9
-R10
-R11
+Z17 !s108 1569957642.000000
+Z18 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|D:/Users/Ceci/Documents/Facu/digisist/GHDL/CORDIC/CORDIC_IT.vhd|
+Z19 !s107 D:/Users/Ceci/Documents/Facu/digisist/GHDL/CORDIC/CORDIC_IT.vhd|
 !i113 1
+R11
 R12
-R13
+Abehavioral
+R0
+R1
+R2
+DEx4 work 9 cordic_it 0 22 Dn@:]cl6DKD51:fb]9S9^2
+l20
+L19
+VJ0Bbd2;DZEk5OzEGOX@1I0
+!s100 ThG8Ni7[[h_P^D8oA>dEb1
+R6
+32
+R16
+!i10b 1
+R17
+R18
+R19
+!i113 1
+R11
+R12
+Pcordic_lib
+R0
+R1
+R2
+w1569888879
+R3
+8D:/Users/Ceci/Documents/Facu/digisist/GHDL/CORDIC/cordic_lib.vhd
+FD:/Users/Ceci/Documents/Facu/digisist/GHDL/CORDIC/cordic_lib.vhd
+l0
+L5
+VZ9K<Vk==V2E==FNALd^Gf3
+!s100 a1@6=FSNRPF>c@9_`Q>IV1
+R6
+32
+!s110 1569888882
+!i10b 1
+!s108 1569888882.000000
+!s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|D:/Users/Ceci/Documents/Facu/digisist/GHDL/CORDIC/cordic_lib.vhd|
+!s107 D:/Users/Ceci/Documents/Facu/digisist/GHDL/CORDIC/cordic_lib.vhd|
+!i113 1
+R11
+R12
 Ecordic_tb
-Z15 w1568929600
+Z20 w1569957724
+R1
 R2
 R3
-R4
-Z16 8D:/Users/Ceci/Documents/Facu/digisist/GHDL/CORDIC/CORDIC_tb.vhd
-Z17 FD:/Users/Ceci/Documents/Facu/digisist/GHDL/CORDIC/CORDIC_tb.vhd
+Z21 8D:/Users/Ceci/Documents/Facu/digisist/GHDL/CORDIC/CORDIC_tb.vhd
+Z22 FD:/Users/Ceci/Documents/Facu/digisist/GHDL/CORDIC/CORDIC_tb.vhd
 l0
 L34
 VIWAMoXzlzB_B^oPI8i;gK0
 !s100 c<zWVIdR4?f:`@DOVQPc`2
-R7
+R6
 32
-Z18 !s110 1568929611
+Z23 !s110 1569957731
 !i10b 1
-Z19 !s108 1568929611.000000
-Z20 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|D:/Users/Ceci/Documents/Facu/digisist/GHDL/CORDIC/CORDIC_tb.vhd|
-Z21 !s107 D:/Users/Ceci/Documents/Facu/digisist/GHDL/CORDIC/CORDIC_tb.vhd|
+Z24 !s108 1569957731.000000
+Z25 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|D:/Users/Ceci/Documents/Facu/digisist/GHDL/CORDIC/CORDIC_tb.vhd|
+Z26 !s107 D:/Users/Ceci/Documents/Facu/digisist/GHDL/CORDIC/CORDIC_tb.vhd|
 !i113 1
+R11
 R12
-R13
 Abehavioral
+R1
+R2
+Z27 DEx4 work 9 cordic_tb 0 22 IWAMoXzlzB_B^oPI8i;gK0
+l60
+L37
+V[bI8`I3QZz;PPDf0Y`i9A1
+!s100 o73eo^IB3NP?:oiHDcl7k1
+R6
+32
+R23
+!i10b 1
+R24
+R25
+R26
+!i113 1
+R11
+R12
+Ecordic_top
+Z28 w1569957174
+R0
+R1
 R2
 R3
-DEx4 work 9 cordic_tb 0 22 IWAMoXzlzB_B^oPI8i;gK0
-l61
-L37
-V2Dm;V=gjEmUcMmY;S2EXi1
-!s100 YE[;VAS8OQhcm?mn?MRdl0
-R7
+Z29 8D:/Users/Ceci/Documents/Facu/digisist/GHDL/CORDIC/CORDIC_top.vhd
+Z30 FD:/Users/Ceci/Documents/Facu/digisist/GHDL/CORDIC/CORDIC_top.vhd
+l0
+L10
+V[Vnng9lm46aJRBglFJT`n3
+!s100 O6nU20>;9mLlaE]46nXP43
+R6
 32
-R18
+Z31 !s110 1569957643
 !i10b 1
-R19
-R20
-R21
+Z32 !s108 1569957643.000000
+Z33 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|D:/Users/Ceci/Documents/Facu/digisist/GHDL/CORDIC/CORDIC_top.vhd|
+Z34 !s107 D:/Users/Ceci/Documents/Facu/digisist/GHDL/CORDIC/CORDIC_top.vhd|
 !i113 1
+R11
 R12
-R13
+Abehavioral
+R0
+R1
+R2
+DEx4 work 10 cordic_top 0 22 [Vnng9lm46aJRBglFJT`n3
+l77
+L21
+V=V7JGV<GG]<9?Y4B<Wej[2
+!s100 YJeI`:R5iV6UAa]zcfWYB2
+R6
+32
+R31
+!i10b 1
+R32
+R33
+R34
+!i113 1
+R11
+R12

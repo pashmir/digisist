@@ -1,0 +1,19 @@
+D:/Users/Ceci/Documents/Facu/digisist/GHDL/CORDIC/CORDIC_IT.vhd {1 {vcom -work work -2002 -explicit -stats=none D:/Users/Ceci/Documents/Facu/digisist/GHDL/CORDIC/CORDIC_IT.vhd
+Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 2015
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity CORDIC_IT
+-- Compiling architecture Behavioral of CORDIC_IT
+
+} {} {}} D:/Users/Ceci/Documents/Facu/digisist/GHDL/CORDIC/CORDIC_top.vhd {1 {vcom -work work -2002 -explicit -stats=none D:/Users/Ceci/Documents/Facu/digisist/GHDL/CORDIC/CORDIC_top.vhd
+Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 2015
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity CORDIC_top
+-- Compiling architecture Behavioral of CORDIC_top
+
+} {} {}}
