@@ -8,8 +8,10 @@ entity CORDIC_top is
     Port(	clk : in STD_LOGIC;
            	enable : in STD_LOGIC;
 		degrees : in STD_LOGIC_VECTOR (N_bits-1 downto 0);
-           	x : out STD_LOGIC_VECTOR (N_bits-1 downto 0);
-           	y : out STD_LOGIC_VECTOR (N_bits-1 downto 0));
+		x_in : in STD_LOGIC_VECTOR (N_bits-1 downto 0);
+		y_in : in STD_LOGIC_VECTOR (N_bits-1 downto 0);
+           	x_out : out STD_LOGIC_VECTOR (N_bits-1 downto 0);
+           	y_out : out STD_LOGIC_VECTOR (N_bits-1 downto 0));
 end CORDIC_top;
 
 architecture Behavioral of CORDIC_top is
@@ -43,6 +45,7 @@ architecture Behavioral of CORDIC_top is
     constant xo : signed(N_bits downto 0):=to_signed(2**(N_bits-1)-1,N_bits+1);
     constant yo : signed(N_bits downto 0):=to_signed(0,N_bits+1);
     constant ao : signed(N_bits-1 downto 0):=to_signed(0,N_bits);
+    constant tuple_init : t_tuple := (a => STD_LOGIC_VECTOR(ao), x => STD_LOGIC_VECTOR(yo), y => STD_LOGIC_VECTOR(yo));
     --**** Tablas ****
     constant K : t_table := (	to_signed(1518500249,32), 
                            	to_signed(1358187913,32),
@@ -77,34 +80,28 @@ architecture Behavioral of CORDIC_top is
                                   "00000000000000001010001011111001",--  0.004 * (1/180) * 2 ^ 31
                                   "00000000000000000101000101111100");-- 0.002 * (1/180) * 2 ^ 31 
     --**** Variables ****
-    signal iteration_data : t_iter := 	(0 => 		(a => STD_LOGIC_VECTOR(ao),
-						 	 x => STD_LOGIC_VECTOR(xo),
-						 	 y => STD_LOGIC_VECTOR(yo)
-							),
-					 others =>  	(a => STD_LOGIC_VECTOR(ao),
-						 	 x => STD_LOGIC_VECTOR(yo),
-						 	 y => STD_LOGIC_VECTOR(yo)));
+    signal iteration_data : t_iter := 	(others => tuple_init);
 begin
 --iteration_data(0).a <= STD_LOGIC_VECTOR(resize(signed(degrees),N_bits+1));
-x <= STD_LOGIC_VECTOR(resize(signed(iteration_data(N_steps).x),N_bits));
-y <= STD_LOGIC_VECTOR(resize(signed(iteration_data(N_steps).y),N_bits));
+x_out <= STD_LOGIC_VECTOR(resize(signed(iteration_data(N_steps).x),N_bits));
+y_out <= STD_LOGIC_VECTOR(resize(signed(iteration_data(N_steps).y),N_bits));
 
 rotation_start : process(clk)
     begin
 	if ((rising_edge(clk))and(enable = '1')) then
 	    if signed(degrees) < right_angle then
 		if signed(degrees) > -right_angle then
-		    iteration_data(0).x <= iteration_data(N_steps).x;
-		    iteration_data(0).y <= iteration_data(N_steps).y;
+		    iteration_data(0).x <= STD_LOGIC_VECTOR(resize(signed(x_in),N_bits+1));
+		    iteration_data(0).y <= STD_LOGIC_VECTOR(resize(signed(y_in),N_bits+1));
 		    iteration_data(0).a <= STD_LOGIC_VECTOR(signed(degrees));
 		else
-		    iteration_data(0).x <= STD_LOGIC_VECTOR(-signed(iteration_data(N_steps).x));
-		    iteration_data(0).y <= STD_LOGIC_VECTOR(-signed(iteration_data(N_steps).y));
+		    iteration_data(0).x <= STD_LOGIC_VECTOR(resize(-signed(x_in),N_bits+1));
+		    iteration_data(0).y <= STD_LOGIC_VECTOR(resize(-signed(y_in),N_bits+1));
 		    iteration_data(0).a <= STD_LOGIC_VECTOR(signed(degrees) + straight_angle);
 		end if;
 	    else
-		iteration_data(0).x <= STD_LOGIC_VECTOR(-signed(iteration_data(N_steps).x));
-		iteration_data(0).y <= STD_LOGIC_VECTOR(-signed(iteration_data(N_steps).y));
+		iteration_data(0).x <= STD_LOGIC_VECTOR(resize(-signed(x_in),N_bits+1));
+		iteration_data(0).y <= STD_LOGIC_VECTOR(resize(-signed(y_in),N_bits+1));
 		iteration_data(0).a <= STD_LOGIC_VECTOR(signed(degrees) - straight_angle);
 	    end if;
 	end if;

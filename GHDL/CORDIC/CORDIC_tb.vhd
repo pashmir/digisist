@@ -22,6 +22,8 @@ architecture Behavioral of CORDIC_tb is
     signal enable : std_logic :='0';
     signal x : STD_LOGIC_VECTOR(N_bits-1 downto 0):=(others=>'0');
     signal y : STD_LOGIC_VECTOR(N_bits-1 downto 0):=(N_bits-1=>'0',others=>'1');
+    signal xi : STD_LOGIC_VECTOR(N_bits-1 downto 0):=(others=>'0');
+    signal yi : STD_LOGIC_VECTOR(N_bits-1 downto 0):=(N_bits-1=>'0',others=>'1');
     
     component CORDIC_top is
         generic(
@@ -32,8 +34,10 @@ architecture Behavioral of CORDIC_tb is
             degrees : in STD_LOGIC_VECTOR(N_bits-1 downto 0);
             enable : in STD_LOGIC;
             clk : in STD_LOGIC;
-            x : out STD_LOGIC_VECTOR(N_bits-1 downto 0);
-            y : out STD_LOGIC_VECTOR(N_bits-1 downto 0)
+	    x_in : in STD_LOGIC_VECTOR (N_bits-1 downto 0);
+	    y_in : in STD_LOGIC_VECTOR (N_bits-1 downto 0);
+            x_out : out STD_LOGIC_VECTOR(N_bits-1 downto 0);
+            y_out : out STD_LOGIC_VECTOR(N_bits-1 downto 0)
         );
     end component;
 begin
@@ -48,8 +52,10 @@ begin
             degrees=>grados,
             enable=>enable,
             clk=>clk,
-            x=>x,
-            y=>y
+            x_out=>x,
+            y_out=>y,
+	    x_in=>xi,
+	    y_in=>yi
         );
         grados <= (N_bits-1-1=>'1',others=>'0'); --45º
         enable<='1' after TCK*10;
