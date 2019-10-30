@@ -47,10 +47,10 @@ architecture Behavioral of CORDIC_tb is
     component CORDIC_top is
         generic(
             N_bits : natural := 8;
-            N_pasos : natural := 8
+            N_steps : natural := 8
         );
         port(
-            grados : in STD_LOGIC_VECTOR(N_bits-1 downto 0);
+            degrees : in STD_LOGIC_VECTOR(N_bits-1 downto 0);
             enable : in STD_LOGIC;
             clk : in STD_LOGIC;
             x : out STD_LOGIC_VECTOR(N_bits-1 downto 0);
@@ -63,15 +63,15 @@ begin
     DUT: CORDIC_top
         generic map(
             N_bits => N_bits,
-            N_pasos => 10
+            N_steps => 10
         )
         port map(
-            grados=>grados,
+            degrees=>grados,
             enable=>enable,
             clk=>clk,
             x=>x,
             y=>y
         );
-        grados <= (N_bits-1-3=>'1',others=>'0'); --45º
+        grados <= (N_bits-1-2=>'1',others=>'0'); --45º
         enable<='1' after TCK*10;
 end Behavioral;

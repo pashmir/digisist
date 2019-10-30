@@ -35,13 +35,13 @@ architecture Behavioral of CORDIC_IT is
  	else
 		if rising_edge(clk) then
 			if signed(ai) > 0 then
-                    	ao <= STD_LOGIC_VECTOR(signed(ai) - resize(angle_step(31 downto 32-N_bits-1),N_bits+1));
-                    	xo <= STD_LOGIC_VECTOR(signed(xi) - shift_right(signed(yi),iteration));
-                    	yo <= STD_LOGIC_VECTOR(signed(yi) + shift_right(signed(xi),iteration));
+                    		ao <= STD_LOGIC_VECTOR(signed(ai) - resize(angle_step(31 downto 32-N_bits-1),N_bits+1));
+                    		xo <= STD_LOGIC_VECTOR(signed(xi) - shift_right(signed(yi),iteration));
+                    		yo <= STD_LOGIC_VECTOR(signed(yi) + shift_right(signed(xi),iteration));
                 	else
-	            	ao <= STD_LOGIC_VECTOR(signed(ai) + resize(angle_step(31 downto 32-N_bits-1),N_bits+1));
-               	    	xo <= STD_LOGIC_VECTOR(signed(xi) + shift_right(signed(yi),iteration));
-                    	yo <= STD_LOGIC_VECTOR(signed(yi) - shift_right(signed(xi),iteration));
+	            		ao <= STD_LOGIC_VECTOR(signed(ai) + resize(angle_step(31 downto 32-N_bits-1),N_bits+1));
+               	    		xo <= STD_LOGIC_VECTOR(signed(xi) + shift_right(signed(yi),iteration));
+                    		yo <= STD_LOGIC_VECTOR(signed(yi) - shift_right(signed(xi),iteration));
                 	end if;
 		end if;
 	end if;
