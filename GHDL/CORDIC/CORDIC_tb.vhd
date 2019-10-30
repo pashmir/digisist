@@ -1,24 +1,3 @@
-----------------------------------------------------------------------------------
--- Company: 
--- Engineer: 
--- 
--- Create Date: 11.08.2019 19:15:05
--- Design Name: 
--- Module Name: CORDIC_tb - Behavioral
--- Project Name: 
--- Target Devices: 
--- Tool Versions: 
--- Description: 
--- 
--- Dependencies: 
--- 
--- Revision:
--- Revision 0.01 - File Created
--- Additional Comments:
--- 
-----------------------------------------------------------------------------------
-
-
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
@@ -37,7 +16,7 @@ end CORDIC_tb;
 architecture Behavioral of CORDIC_tb is
     constant TCK: time:= 20 ns; 		-- periodo de reloj
     constant DELAY: natural:= 0; 		-- retardo de procesamiento del DUT
-    constant N_bits: natural:= 16;
+    constant N_bits: natural:= 10;
     signal clk: std_logic:= '0';
     signal grados : STD_LOGIC_VECTOR(N_bits-1 downto 0):=(others=>'0');
     signal enable : std_logic :='0';
@@ -72,6 +51,6 @@ begin
             x=>x,
             y=>y
         );
-        grados <= (N_bits-1-2=>'1',others=>'0'); --45º
+        grados <= (N_bits-1-1=>'1',others=>'0'); --45º
         enable<='1' after TCK*10;
 end Behavioral;

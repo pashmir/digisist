@@ -8,10 +8,10 @@ entity CORDIC_IT is
 		angle_step : signed(31 downto 0) := "00100000000000000000000000000000" 
                 );
     Port ( clk : in STD_LOGIC;
-	   ai : in STD_LOGIC_VECTOR (N_bits downto 0);
+	   ai : in STD_LOGIC_VECTOR (N_bits-1 downto 0);
 	   xi : in STD_LOGIC_VECTOR (N_bits downto 0);
 	   yi : in STD_LOGIC_VECTOR (N_bits downto 0);
-	   ao : out STD_LOGIC_VECTOR (N_bits downto 0);
+	   ao : out STD_LOGIC_VECTOR (N_bits-1 downto 0);
            xo : out STD_LOGIC_VECTOR (N_bits downto 0);
            yo : out STD_LOGIC_VECTOR (N_bits downto 0)
            );
@@ -23,11 +23,11 @@ architecture Behavioral of CORDIC_IT is
   	if iteration=0 then
 		if rising_edge(clk) then
 			if signed(ai)>0 then
-				ao <= STD_LOGIC_VECTOR(signed(ai) - resize(angle_step(31 downto 32-N_bits),N_bits+1));
+				ao <= STD_LOGIC_VECTOR(signed(ai) - angle_step(31 downto 32-N_bits));
      				xo <= STD_LOGIC_VECTOR(signed(xi) - signed(yi));
     				yo <= STD_LOGIC_VECTOR(signed(yi) + signed(xi));
   			else   
-				ao <= STD_LOGIC_VECTOR(signed(ai) + resize(angle_step(31 downto 32-N_bits),N_bits+1));
+				ao <= STD_LOGIC_VECTOR(signed(ai) + angle_step(31 downto 32-N_bits));
      				xo <= STD_LOGIC_VECTOR(signed(xi) + signed(yi));
       				yo <= STD_LOGIC_VECTOR(signed(yi) - signed(xi));
    			end if;
@@ -35,11 +35,11 @@ architecture Behavioral of CORDIC_IT is
  	else
 		if rising_edge(clk) then
 			if signed(ai) > 0 then
-                    		ao <= STD_LOGIC_VECTOR(signed(ai) - resize(angle_step(31 downto 32-N_bits-1),N_bits+1));
+                    		ao <= STD_LOGIC_VECTOR(signed(ai) - angle_step(31 downto 32-N_bits));
                     		xo <= STD_LOGIC_VECTOR(signed(xi) - shift_right(signed(yi),iteration));
                     		yo <= STD_LOGIC_VECTOR(signed(yi) + shift_right(signed(xi),iteration));
                 	else
-	            		ao <= STD_LOGIC_VECTOR(signed(ai) + resize(angle_step(31 downto 32-N_bits-1),N_bits+1));
+	            		ao <= STD_LOGIC_VECTOR(signed(ai) + angle_step(31 downto 32-N_bits));
                	    		xo <= STD_LOGIC_VECTOR(signed(xi) + shift_right(signed(yi),iteration));
                     		yo <= STD_LOGIC_VECTOR(signed(yi) - shift_right(signed(xi),iteration));
                 	end if;
