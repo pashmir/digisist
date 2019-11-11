@@ -20,7 +20,7 @@ vlog -work blk_mem_gen_v8_4_2 -64 \
 "../../../ipstatic/simulation/blk_mem_gen_v8_4.v" \
 
 vlog -work xil_defaultlib -64 \
-"../../../../Girador.srcs/sources_1/ip/video_mem/sim/video_mem.v" \
+"../../../ip/video_mem/sim/video_mem.v" \
 
 vlog -work xil_defaultlib \
 "glbl.v"

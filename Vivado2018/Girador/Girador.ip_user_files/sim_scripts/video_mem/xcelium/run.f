@@ -9,7 +9,7 @@
   "../../../ipstatic/simulation/blk_mem_gen_v8_4.v" \
 -endlib
 -makelib xcelium_lib/xil_defaultlib \
-  "../../../../Girador.srcs/sources_1/ip/video_mem/sim/video_mem.v" \
+  "../../../ip/video_mem/sim/video_mem.v" \
 -endlib
 -makelib xcelium_lib/xil_defaultlib \
   glbl.v

@@ -1,3 +1,0 @@
-clock_unit_clk_wiz.v,verilog,xil_defaultlib,../../../../Girador.srcs/sources_1/ip/clock_unit/clock_unit_clk_wiz.v,incdir="$ref_dir/../../../ipstatic"incdir="../../../ipstatic"
-clock_unit.v,verilog,xil_defaultlib,../../../../Girador.srcs/sources_1/ip/clock_unit/clock_unit.v,incdir="$ref_dir/../../../ipstatic"incdir="../../../ipstatic"
-glbl.v,Verilog,xil_defaultlib,glbl.v

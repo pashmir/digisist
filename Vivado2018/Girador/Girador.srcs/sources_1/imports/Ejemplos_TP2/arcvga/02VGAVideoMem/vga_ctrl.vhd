@@ -22,8 +22,9 @@ entity vga_ctrl is
 		red : out std_logic_vector(3 downto 0);
 		green : out std_logic_vector(3 downto 0);
 		blue : out std_logic_vector(3 downto 0);
-		rx_data: in std_logic_vector(7 downto 0);--se tiene que ir
-		rx_rdy: in std_logic--se tiene que ir
+		pixel_clock : out std_logic;
+        video_read_add : out std_logic_vector(18 downto 0);
+        pix_value : in std_logic_vector(0 downto 0)
 		-- agregar puertos para interactuar con la video mem: pix_clk, video_add y pixel_value
 	);
 	
@@ -42,19 +43,28 @@ architecture vga_ctrl_arch of vga_ctrl is
 	signal rgb_reg: std_logic_vector(2 downto 0);-- parece que no se usa
 	signal pixel_x, pixel_y: std_logic_vector(9 downto 0);
 	signal video_on: std_logic;
-	signal pixel_clock : std_logic;
+	signal pix_clock : std_logic;
     signal add_video_mem : std_logic_vector (18 downto 0);
     signal pixel_value : std_logic_vector (0 downto 0);
     signal pixel : std_logic_vector (2 downto 0);
     signal clk50 : std_logic;
+    
+    component clock_unit_wrapper is
+  port (
+    clk_in1_0 : in STD_LOGIC;
+    clk_out1_0 : out STD_LOGIC;
+    locked_0 : out STD_LOGIC;
+    reset_0 : in STD_LOGIC
+  );
+end component;
 
 begin
-    clock_unit: entity work.clock_unit
+    clock_unit: clock_unit_wrapper
         port map (
-        clk => clk50,
-        locked => open,
-        rst => rst,
-        sys_clk => sys_clk
+        clk_out1_0 => clk50,
+        locked_0 => open,
+        reset_0 => rst,
+        clk_in1_0 => sys_clk
         );
 	-- instanciacion del controlador VGA
 	vga_sync_unit: entity work.vga_sync
@@ -64,7 +74,7 @@ begin
 			hsync 	=> hsync,
 			vsync 	=> vsync,
 			vidon	=> video_on,
-			p_tick 	=> pixel_clock,
+			p_tick 	=> pix_clock,
 			pixel_x => pixel_x,
 			pixel_y => pixel_y
 		);
@@ -83,13 +93,13 @@ begin
 		);
 		
 -- contador para generar el address (controlado por pixel_clock y reseteado por pixel_x y pixel_y)
-process (pixel_clock,rst, pixel_x,pixel_y)
+process (pix_clock,rst, pixel_x,pixel_y)
     variable conteo : integer := 0;
     begin
     if ((rst = '1') or ((pixel_x = "0000000000") and (pixel_y = "0000000000"))) then
         conteo := 0;
     else
-        if (rising_edge (pixel_clock)) then
+        if (rising_edge (pix_clock)) then
             conteo := conteo + 1;
         end if;
         if (conteo = 480000) then
