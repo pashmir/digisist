@@ -1,0 +1,21 @@
+D:/Users/Ceci/Documents/Facu/digisist/GHDL/delay/delay.vhd {1 {vcom -work work -2002 -explicit -stats=none D:/Users/Ceci/Documents/Facu/digisist/GHDL/delay/delay.vhd
+Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 2015
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package my_library
+-- Compiling entity delay
+-- Compiling architecture delay_arq of delay
+
+} {} {}} D:/Users/Ceci/Documents/Facu/digisist/GHDL/delay/delay_tb.vhd {1 {vcom -work work -2002 -explicit -stats=none D:/Users/Ceci/Documents/Facu/digisist/GHDL/delay/delay_tb.vhd
+Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 2015
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package my_library
+-- Compiling entity delay_tb
+-- Compiling architecture delay_tb_arq of delay_tb
+
+} {} {}}

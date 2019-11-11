@@ -1,0 +1,118 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dD:/Users/Ceci/Documents/Facu/digisist/GHDL/CORDIC
+Edelay
+Z0 w1573430692
+Z1 DPx4 work 10 my_library 0 22 :=gngPEDX^3hcB];5TfU[0
+Z2 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+Z3 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z4 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+Z5 dD:/Users/Ceci/Documents/Facu/digisist/GHDL/delay
+Z6 8D:/Users/Ceci/Documents/Facu/digisist/GHDL/delay/delay.vhd
+Z7 FD:/Users/Ceci/Documents/Facu/digisist/GHDL/delay/delay.vhd
+l0
+L5
+V=KPKGaJ2a>g3b`oze:_I_3
+!s100 >3zV4Cj;?aG=2H<L`hXAU0
+Z8 OP;C;10.4a;61
+32
+Z9 !s110 1573430697
+!i10b 1
+Z10 !s108 1573430697.000000
+Z11 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|D:/Users/Ceci/Documents/Facu/digisist/GHDL/delay/delay.vhd|
+Z12 !s107 D:/Users/Ceci/Documents/Facu/digisist/GHDL/delay/delay.vhd|
+!i113 1
+Z13 o-work work -2002 -explicit -O0
+Z14 tExplicit 1
+Adelay_arq
+R1
+R2
+R3
+R4
+DEx4 work 5 delay 0 22 =KPKGaJ2a>g3b`oze:_I_3
+l12
+L10
+V>SEGA>JB4LI8T5o9l:lMP2
+!s100 gT6UQE;j_^>W96A^62k`Q2
+R8
+32
+R9
+!i10b 1
+R10
+R11
+R12
+!i113 1
+R13
+R14
+Edelay_tb
+Z15 w1573432027
+R1
+R2
+R3
+R4
+R5
+Z16 8D:/Users/Ceci/Documents/Facu/digisist/GHDL/delay/delay_tb.vhd
+Z17 FD:/Users/Ceci/Documents/Facu/digisist/GHDL/delay/delay_tb.vhd
+l0
+L5
+VTS2j_=XUmDeezheG9T8o[2
+!s100 bedG5H4@mSRXk`MSSeiXn3
+R8
+32
+Z18 !s110 1573432054
+!i10b 1
+Z19 !s108 1573432054.000000
+Z20 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|D:/Users/Ceci/Documents/Facu/digisist/GHDL/delay/delay_tb.vhd|
+Z21 !s107 D:/Users/Ceci/Documents/Facu/digisist/GHDL/delay/delay_tb.vhd|
+!i113 1
+R13
+R14
+Adelay_tb_arq
+R1
+R2
+R3
+R4
+Z22 DEx4 work 8 delay_tb 0 22 TS2j_=XUmDeezheG9T8o[2
+l22
+L7
+Z23 VaR2FLNZ54Kgd_F<n2_J=41
+Z24 !s100 n^8G]AdR?JD9`1B2OXAG82
+R8
+32
+R18
+!i10b 1
+R19
+R20
+R21
+!i113 1
+R13
+R14
+Pmy_library
+R2
+R3
+R4
+w1573428364
+R5
+8D:/Users/Ceci/Documents/Facu/digisist/GHDL/delay/my_library.vhd
+FD:/Users/Ceci/Documents/Facu/digisist/GHDL/delay/my_library.vhd
+l0
+L5
+V:=gngPEDX^3hcB];5TfU[0
+!s100 zTE0`?C:UJKn>?f2^=XcB2
+R8
+32
+!s110 1573428503
+!i10b 1
+!s108 1573428503.000000
+!s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|D:/Users/Ceci/Documents/Facu/digisist/GHDL/delay/my_library.vhd|
+!s107 D:/Users/Ceci/Documents/Facu/digisist/GHDL/delay/my_library.vhd|
+!i113 1
+R13
+R14
