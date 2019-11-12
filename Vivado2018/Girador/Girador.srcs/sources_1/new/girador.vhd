@@ -20,8 +20,9 @@ entity girador is
     green : out std_logic_vector(3 downto 0);
     blue : out std_logic_vector(3 downto 0);
     --UART
-    rxd_pin: in std_logic
+    rxd_pin: in std_logic;
     -- Tal vez necesite botones
+    sw : in std_logic_vector(2 downto 0)
     
   );
 end girador;
@@ -216,6 +217,29 @@ begin
 --            font_col => font_column,
 --            rom_out => rom_out
 --        );
+   
+-- Sección del código dedicada al control del girado de los puntos
+    process(sys_clk)
+    begin
+        if rising_edge(sys_clk) then
+            if sw(0)='1' then -- cambio sentido
+                grados <= std_logic_vector(-abs(signed(grados)));
+            else
+                grados <= std_logic_vector(abs(signed(grados)));
+            end if;
+            if sw(1)='1' then -- cambio velocidad de giro '+'
+                if grados<gr_max then
+                    grados<=std_logic_vector(signed(grados)+10);
+                end if;
+            end if;
+            if sw(2)='1' then --cambio velocidad de giro '-'
+                if grados>gr_min then
+                    grados<=std_logic_vector(signed(grados)-10);
+                end if;
+            
+            end if;
+        end if;
+    end process; 
         
 -- Sección del código dedicada a girar puntos
 -- esto tiene que ir a 2 clock de velocidad para poder escribir y borrar los puntos
