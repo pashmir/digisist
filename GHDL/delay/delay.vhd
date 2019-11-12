@@ -8,11 +8,11 @@ entity delay is
 	  o_out : out t_punto);
 end delay;
 architecture delay_arq of delay is
-signal mem : t_punto := ((x=> (others => '0'),y => (others => '0')));
 begin
 process (clk)
 begin
-o_out <= mem;
-mem <= i_in;
+if rising_edge(clk) then
+o_out <= i_in;
+end if;
 end process;
 end delay_arq;

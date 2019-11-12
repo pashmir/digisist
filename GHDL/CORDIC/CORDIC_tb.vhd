@@ -16,10 +16,10 @@ end CORDIC_tb;
 architecture Behavioral of CORDIC_tb is
     constant TCK: time:= 20 ns; 		-- periodo de reloj
     constant DELAY: natural:= 0; 		-- retardo de procesamiento del DUT
-    constant N_bits: natural:= 10;
+    constant N_bits: natural:= 9;
     signal clk: std_logic:= '0';
     signal grados : STD_LOGIC_VECTOR(N_bits-1 downto 0):=(others=>'0');
-    signal enable : std_logic :='0';
+    signal enable : std_logic :='1';
     signal x : STD_LOGIC_VECTOR(N_bits-1 downto 0):=(others=>'0');
     signal y : STD_LOGIC_VECTOR(N_bits-1 downto 0):=(N_bits-1=>'0',others=>'1');
     signal xi : STD_LOGIC_VECTOR(N_bits-1 downto 0):=(others=>'0');
@@ -58,5 +58,21 @@ begin
 	    y_in=>yi
         );
         grados <= (N_bits-1-1=>'1',others=>'0'); --45º
-        enable<='1' after TCK*10;
+        --enable<='1' after TCK*10;
+	process(clk)
+	variable conteo : integer :=0;
+	begin
+	if rising_edge(clk) then
+		conteo:=conteo+1;
+	end if;
+	if conteo=4 then
+		xi<=(N_bits-1=>'0',others=>'1');
+		yi<=(others=>'0');
+	end if;
+	if conteo=9 then
+		yi<=(N_bits-1=>'0',others=>'1');
+		xi<=(others=>'0');
+		conteo:=0;
+	end if;
+	end process;
 end Behavioral;
