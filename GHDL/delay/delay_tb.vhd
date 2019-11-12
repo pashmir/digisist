@@ -17,6 +17,7 @@ architecture delay_tb_arq of delay_tb is
     component delay is
     port (i_in : in  t_punto;
 	  clk : in std_logic;
+	  ena : in std_logic;
 	  o_out : out t_punto);
     end component;
     component CORDIC_top is
@@ -35,6 +36,7 @@ architecture delay_tb_arq of delay_tb is
     constant origen : t_punto := (x=>zero, y=>zero);
 
     signal fifo : t_array_punto(0 to N_points-N_steps-1);
+    signal fifo_ant : t_array_punto(0 to N_points);
     signal aux : t_punto := (x=> (others => '0'),y => (others => '0'));
 
     constant dato : t_array_punto(0 to N_points-1) := ((x=> (N_bits-2=>'1', others => '0'),y => zero), others => origen);
@@ -47,8 +49,13 @@ begin
 	port map(clk=>clk,enable=>'1',degrees=>(N_bits-2=>'1',others=>'0'),x_out=>fifo(0).x,y_out=>fifo(0).y,x_in=>aux.x,y_in=>aux.y);
     chain: for i in 0 to N_points-N_steps-2 generate
 	chain_link: delay
-		port map(clk=>clk,i_in=>fifo(i),o_out=>fifo(i+1));
+		port map(clk=>clk,ena=>'1',i_in=>fifo(i),o_out=>fifo(i+1));
 	end generate;
+    chain2: for i in 0 to N_points-1 generate
+	chain2_link: delay
+		port map(clk=>clk,ena=>'1',i_in=>fifo_ant(i),o_out=>fifo_ant(i+1));
+	end generate;
+
     process(clk)
 	variable init : bit := '0';
 	variable i :natural :=0;
@@ -57,10 +64,11 @@ begin
 	if rising_edge(clk) then
 		if init='1' then
 			aux <= fifo(N_points-N_steps-1);
+			fifo_ant(0) <= fifo(N_points-N_steps-1);
 		else
 			mi_dato.x:=std_logic_vector(to_signed(i,N_bits));
 			aux<=mi_dato;
-			
+			fifo_ant(0)<=mi_dato;
 			i:=i+1;
 			if i=N_points then
 				init:= '1';

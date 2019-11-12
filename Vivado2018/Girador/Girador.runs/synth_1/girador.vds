@@ -1,0 +1,854 @@
+#-----------------------------------------------------------
+# Vivado v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+# Start of session at: Tue Nov 12 14:24:01 2019
+# Process ID: 10208
+# Current directory: D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.runs/synth_1
+# Command line: vivado.exe -log girador.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source girador.tcl
+# Log file: D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.runs/synth_1/girador.vds
+# Journal file: D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source girador.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Xilinx/Vivado/2018.3/data/ip'.
+Command: synth_design -top girador -part xc7z010clg400-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 3440 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 395.785 ; gain = 101.090
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'girador' [D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/sources_1/new/girador.vhd:29]
+INFO: [Synth 8-3491] module 'vga_ctrl' declared at 'D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/sources_1/imports/Ejemplos_TP2/arcvga/02VGAVideoMem/vga_ctrl.vhd:16' bound to instance 'VGA' of component 'vga_ctrl' [D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/sources_1/new/girador.vhd:163]
+INFO: [Synth 8-638] synthesizing module 'vga_ctrl' [D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/sources_1/imports/Ejemplos_TP2/arcvga/02VGAVideoMem/vga_ctrl.vhd:41]
+INFO: [Synth 8-3491] module 'clock_unit_wrapper' declared at 'D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/sources_1/imports/hdl/clock_unit_wrapper.vhd:15' bound to instance 'clock_unit' of component 'clock_unit_wrapper' [D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/sources_1/imports/Ejemplos_TP2/arcvga/02VGAVideoMem/vga_ctrl.vhd:62]
+INFO: [Synth 8-638] synthesizing module 'clock_unit_wrapper' [D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/sources_1/imports/hdl/clock_unit_wrapper.vhd:24]
+INFO: [Synth 8-3491] module 'clock_unit' declared at 'D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/sources_1/bd/clock_unit/synth/clock_unit.vhd:14' bound to instance 'clock_unit_i' of component 'clock_unit' [D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/sources_1/imports/hdl/clock_unit_wrapper.vhd:34]
+INFO: [Synth 8-638] synthesizing module 'clock_unit' [D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/sources_1/bd/clock_unit/synth/clock_unit.vhd:27]
+INFO: [Synth 8-3491] module 'clock_unit_clk_wiz_0_0' declared at 'D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.runs/synth_1/.Xil/Vivado-10208-DESKTOP-DUF9KV0/realtime/clock_unit_clk_wiz_0_0_stub.vhdl:5' bound to instance 'clk_wiz_0' of component 'clock_unit_clk_wiz_0_0' [D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/sources_1/bd/clock_unit/synth/clock_unit.vhd:53]
+INFO: [Synth 8-638] synthesizing module 'clock_unit_clk_wiz_0_0' [D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.runs/synth_1/.Xil/Vivado-10208-DESKTOP-DUF9KV0/realtime/clock_unit_clk_wiz_0_0_stub.vhdl:15]
+INFO: [Synth 8-256] done synthesizing module 'clock_unit' (1#1) [D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/sources_1/bd/clock_unit/synth/clock_unit.vhd:27]
+INFO: [Synth 8-256] done synthesizing module 'clock_unit_wrapper' (2#1) [D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/sources_1/imports/hdl/clock_unit_wrapper.vhd:24]
+INFO: [Synth 8-638] synthesizing module 'vga_sync' [D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/sources_1/imports/Ejemplos_TP2/arcvga/02VGAVideoMem/vga_sync.vhd:26]
+INFO: [Synth 8-256] done synthesizing module 'vga_sync' (3#1) [D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/sources_1/imports/Ejemplos_TP2/arcvga/02VGAVideoMem/vga_sync.vhd:26]
+INFO: [Synth 8-638] synthesizing module 'gen_pixels' [D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/sources_1/imports/Ejemplos_TP2/arcvga/02VGAVideoMem/gen_pixels.vhd:28]
+INFO: [Synth 8-256] done synthesizing module 'gen_pixels' (4#1) [D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/sources_1/imports/Ejemplos_TP2/arcvga/02VGAVideoMem/gen_pixels.vhd:28]
+WARNING: [Synth 8-3848] Net pixel_clock in module/entity vga_ctrl does not have driver. [D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/sources_1/imports/Ejemplos_TP2/arcvga/02VGAVideoMem/vga_ctrl.vhd:25]
+WARNING: [Synth 8-3848] Net video_read_add in module/entity vga_ctrl does not have driver. [D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/sources_1/imports/Ejemplos_TP2/arcvga/02VGAVideoMem/vga_ctrl.vhd:26]
+WARNING: [Synth 8-3848] Net pixel_value in module/entity vga_ctrl does not have driver. [D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/sources_1/imports/Ejemplos_TP2/arcvga/02VGAVideoMem/vga_ctrl.vhd:48]
+INFO: [Synth 8-256] done synthesizing module 'vga_ctrl' (5#1) [D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/sources_1/imports/Ejemplos_TP2/arcvga/02VGAVideoMem/vga_ctrl.vhd:41]
+INFO: [Synth 8-3491] module 'meta_harden' declared at 'D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/sources_1/imports/Ejemplos_TP2/UART_Fuentes/meta_harden.vhd:27' bound to instance 'meta_harden_rst_i0' of component 'meta_harden' [D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/sources_1/new/girador.vhd:180]
+INFO: [Synth 8-638] synthesizing module 'meta_harden' [D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/sources_1/imports/Ejemplos_TP2/UART_Fuentes/meta_harden.vhd:36]
+INFO: [Synth 8-256] done synthesizing module 'meta_harden' (6#1) [D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/sources_1/imports/Ejemplos_TP2/UART_Fuentes/meta_harden.vhd:36]
+	Parameter BAUD_RATE bound to: 115200 - type: integer 
+	Parameter CLOCK_RATE bound to: 125000000 - type: integer 
+INFO: [Synth 8-3491] module 'uart_rx' declared at 'D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/sources_1/imports/Ejemplos_TP2/UART_Fuentes/uart_rx.vhd:38' bound to instance 'UART' of component 'uart_rx' [D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/sources_1/new/girador.vhd:188]
+INFO: [Synth 8-638] synthesizing module 'uart_rx' [D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/sources_1/imports/Ejemplos_TP2/UART_Fuentes/uart_rx.vhd:58]
+	Parameter BAUD_RATE bound to: 115200 - type: integer 
+	Parameter CLOCK_RATE bound to: 125000000 - type: integer 
+INFO: [Synth 8-3491] module 'meta_harden' declared at 'D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/sources_1/imports/Ejemplos_TP2/UART_Fuentes/meta_harden.vhd:27' bound to instance 'meta_harden_rxd_i0' of component 'meta_harden' [D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/sources_1/imports/Ejemplos_TP2/UART_Fuentes/uart_rx.vhd:108]
+	Parameter BAUD_RATE bound to: 115200 - type: integer 
+	Parameter CLOCK_RATE bound to: 125000000 - type: integer 
+INFO: [Synth 8-3491] module 'uart_baud_gen' declared at 'D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/sources_1/imports/Ejemplos_TP2/UART_Fuentes/uart_baud_gen.vhd:36' bound to instance 'uart_baud_gen_rx_i0' of component 'uart_baud_gen' [D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/sources_1/imports/Ejemplos_TP2/UART_Fuentes/uart_rx.vhd:116]
+INFO: [Synth 8-638] synthesizing module 'uart_baud_gen' [D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/sources_1/imports/Ejemplos_TP2/UART_Fuentes/uart_baud_gen.vhd:50]
+	Parameter BAUD_RATE bound to: 115200 - type: integer 
+	Parameter CLOCK_RATE bound to: 125000000 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'uart_baud_gen' (7#1) [D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/sources_1/imports/Ejemplos_TP2/UART_Fuentes/uart_baud_gen.vhd:50]
+INFO: [Synth 8-3491] module 'uart_rx_ctl' declared at 'D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/sources_1/imports/Ejemplos_TP2/UART_Fuentes/uart_rx_ctl.vhd:53' bound to instance 'uart_rx_ctl_i0' of component 'uart_rx_ctl' [D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/sources_1/imports/Ejemplos_TP2/UART_Fuentes/uart_rx.vhd:127]
+INFO: [Synth 8-638] synthesizing module 'uart_rx_ctl' [D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/sources_1/imports/Ejemplos_TP2/UART_Fuentes/uart_rx_ctl.vhd:70]
+INFO: [Synth 8-226] default block is never used [D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/sources_1/imports/Ejemplos_TP2/UART_Fuentes/uart_rx_ctl.vhd:95]
+INFO: [Synth 8-256] done synthesizing module 'uart_rx_ctl' (8#1) [D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/sources_1/imports/Ejemplos_TP2/UART_Fuentes/uart_rx_ctl.vhd:70]
+INFO: [Synth 8-256] done synthesizing module 'uart_rx' (9#1) [D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/sources_1/imports/Ejemplos_TP2/UART_Fuentes/uart_rx.vhd:58]
+INFO: [Synth 8-3491] module 'video_mem_wrapper' declared at 'D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/sources_1/imports/hdl/video_mem_wrapper.vhd:14' bound to instance 'memoria_video' of component 'video_mem_wrapper' [D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/sources_1/new/girador.vhd:200]
+INFO: [Synth 8-638] synthesizing module 'video_mem_wrapper' [D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/sources_1/imports/hdl/video_mem_wrapper.vhd:28]
+INFO: [Synth 8-3491] module 'video_mem' declared at 'D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/sources_1/bd/video_mem/synth/video_mem.vhd:14' bound to instance 'video_mem_i' of component 'video_mem' [D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/sources_1/imports/hdl/video_mem_wrapper.vhd:43]
+INFO: [Synth 8-638] synthesizing module 'video_mem' [D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/sources_1/bd/video_mem/synth/video_mem.vhd:32]
+INFO: [Synth 8-3491] module 'video_mem_blk_mem_gen_0_0' declared at 'D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.runs/synth_1/.Xil/Vivado-10208-DESKTOP-DUF9KV0/realtime/video_mem_blk_mem_gen_0_0_stub.vhdl:5' bound to instance 'blk_mem_gen_0' of component 'video_mem_blk_mem_gen_0_0' [D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/sources_1/bd/video_mem/synth/video_mem.vhd:71]
+INFO: [Synth 8-638] synthesizing module 'video_mem_blk_mem_gen_0_0' [D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.runs/synth_1/.Xil/Vivado-10208-DESKTOP-DUF9KV0/realtime/video_mem_blk_mem_gen_0_0_stub.vhdl:20]
+INFO: [Synth 8-256] done synthesizing module 'video_mem' (10#1) [D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/sources_1/bd/video_mem/synth/video_mem.vhd:32]
+INFO: [Synth 8-256] done synthesizing module 'video_mem_wrapper' (11#1) [D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/sources_1/imports/hdl/video_mem_wrapper.vhd:28]
+	Parameter N_bits bound to: 9 - type: integer 
+	Parameter N_steps bound to: 10 - type: integer 
+INFO: [Synth 8-3491] module 'CORDIC_top' declared at 'D:/Users/Ceci/Documents/Facu/digisist/GHDL/CORDIC/CORDIC_top.vhd:6' bound to instance 'CORDIC' of component 'CORDIC_top' [D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/sources_1/new/girador.vhd:228]
+INFO: [Synth 8-638] synthesizing module 'CORDIC_top' [D:/Users/Ceci/Documents/Facu/digisist/GHDL/CORDIC/CORDIC_top.vhd:18]
+	Parameter N_bits bound to: 9 - type: integer 
+	Parameter N_steps bound to: 10 - type: integer 
+	Parameter N_bits bound to: 9 - type: integer 
+	Parameter iteration bound to: 0 - type: integer 
+	Parameter angle_step bound to: 32'b00100000000000000000000000000000 
+INFO: [Synth 8-3491] module 'CORDIC_IT' declared at 'D:/Users/Ceci/Documents/Facu/digisist/GHDL/CORDIC/CORDIC_IT.vhd:5' bound to instance 'iteration_inst' of component 'CORDIC_IT' [D:/Users/Ceci/Documents/Facu/digisist/GHDL/CORDIC/CORDIC_top.vhd:112]
+INFO: [Synth 8-638] synthesizing module 'CORDIC_IT' [D:/Users/Ceci/Documents/Facu/digisist/GHDL/CORDIC/CORDIC_IT.vhd:19]
+	Parameter N_bits bound to: 9 - type: integer 
+	Parameter iteration bound to: 0 - type: integer 
+	Parameter angle_step bound to: 536870912 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'CORDIC_IT' (12#1) [D:/Users/Ceci/Documents/Facu/digisist/GHDL/CORDIC/CORDIC_IT.vhd:19]
+	Parameter N_bits bound to: 9 - type: integer 
+	Parameter iteration bound to: 1 - type: integer 
+	Parameter angle_step bound to: 32'b00010010111001000000010100011101 
+INFO: [Synth 8-3491] module 'CORDIC_IT' declared at 'D:/Users/Ceci/Documents/Facu/digisist/GHDL/CORDIC/CORDIC_IT.vhd:5' bound to instance 'iteration_inst' of component 'CORDIC_IT' [D:/Users/Ceci/Documents/Facu/digisist/GHDL/CORDIC/CORDIC_top.vhd:112]
+INFO: [Synth 8-638] synthesizing module 'CORDIC_IT__parameterized1' [D:/Users/Ceci/Documents/Facu/digisist/GHDL/CORDIC/CORDIC_IT.vhd:19]
+	Parameter N_bits bound to: 9 - type: integer 
+	Parameter iteration bound to: 1 - type: integer 
+	Parameter angle_step bound to: 316933405 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'CORDIC_IT__parameterized1' (12#1) [D:/Users/Ceci/Documents/Facu/digisist/GHDL/CORDIC/CORDIC_IT.vhd:19]
+	Parameter N_bits bound to: 9 - type: integer 
+	Parameter iteration bound to: 2 - type: integer 
+	Parameter angle_step bound to: 32'b00001001111110110011100001011011 
+INFO: [Synth 8-3491] module 'CORDIC_IT' declared at 'D:/Users/Ceci/Documents/Facu/digisist/GHDL/CORDIC/CORDIC_IT.vhd:5' bound to instance 'iteration_inst' of component 'CORDIC_IT' [D:/Users/Ceci/Documents/Facu/digisist/GHDL/CORDIC/CORDIC_top.vhd:112]
+INFO: [Synth 8-638] synthesizing module 'CORDIC_IT__parameterized3' [D:/Users/Ceci/Documents/Facu/digisist/GHDL/CORDIC/CORDIC_IT.vhd:19]
+	Parameter N_bits bound to: 9 - type: integer 
+	Parameter iteration bound to: 2 - type: integer 
+	Parameter angle_step bound to: 167458907 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'CORDIC_IT__parameterized3' (12#1) [D:/Users/Ceci/Documents/Facu/digisist/GHDL/CORDIC/CORDIC_IT.vhd:19]
+	Parameter N_bits bound to: 9 - type: integer 
+	Parameter iteration bound to: 3 - type: integer 
+	Parameter angle_step bound to: 32'b00000101000100010001000111010100 
+INFO: [Synth 8-3491] module 'CORDIC_IT' declared at 'D:/Users/Ceci/Documents/Facu/digisist/GHDL/CORDIC/CORDIC_IT.vhd:5' bound to instance 'iteration_inst' of component 'CORDIC_IT' [D:/Users/Ceci/Documents/Facu/digisist/GHDL/CORDIC/CORDIC_top.vhd:112]
+INFO: [Synth 8-638] synthesizing module 'CORDIC_IT__parameterized5' [D:/Users/Ceci/Documents/Facu/digisist/GHDL/CORDIC/CORDIC_IT.vhd:19]
+	Parameter N_bits bound to: 9 - type: integer 
+	Parameter iteration bound to: 3 - type: integer 
+	Parameter angle_step bound to: 85004756 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'CORDIC_IT__parameterized5' (12#1) [D:/Users/Ceci/Documents/Facu/digisist/GHDL/CORDIC/CORDIC_IT.vhd:19]
+	Parameter N_bits bound to: 9 - type: integer 
+	Parameter iteration bound to: 4 - type: integer 
+	Parameter angle_step bound to: 32'b00000010100010110000110101000011 
+INFO: [Synth 8-3491] module 'CORDIC_IT' declared at 'D:/Users/Ceci/Documents/Facu/digisist/GHDL/CORDIC/CORDIC_IT.vhd:5' bound to instance 'iteration_inst' of component 'CORDIC_IT' [D:/Users/Ceci/Documents/Facu/digisist/GHDL/CORDIC/CORDIC_top.vhd:112]
+INFO: [Synth 8-638] synthesizing module 'CORDIC_IT__parameterized7' [D:/Users/Ceci/Documents/Facu/digisist/GHDL/CORDIC/CORDIC_IT.vhd:19]
+	Parameter N_bits bound to: 9 - type: integer 
+	Parameter iteration bound to: 4 - type: integer 
+	Parameter angle_step bound to: 42667331 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'CORDIC_IT__parameterized7' (12#1) [D:/Users/Ceci/Documents/Facu/digisist/GHDL/CORDIC/CORDIC_IT.vhd:19]
+	Parameter N_bits bound to: 9 - type: integer 
+	Parameter iteration bound to: 5 - type: integer 
+	Parameter angle_step bound to: 32'b00000001010001011101011111100001 
+INFO: [Synth 8-3491] module 'CORDIC_IT' declared at 'D:/Users/Ceci/Documents/Facu/digisist/GHDL/CORDIC/CORDIC_IT.vhd:5' bound to instance 'iteration_inst' of component 'CORDIC_IT' [D:/Users/Ceci/Documents/Facu/digisist/GHDL/CORDIC/CORDIC_top.vhd:112]
+INFO: [Synth 8-638] synthesizing module 'CORDIC_IT__parameterized9' [D:/Users/Ceci/Documents/Facu/digisist/GHDL/CORDIC/CORDIC_IT.vhd:19]
+	Parameter N_bits bound to: 9 - type: integer 
+	Parameter iteration bound to: 5 - type: integer 
+	Parameter angle_step bound to: 21354465 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'CORDIC_IT__parameterized9' (12#1) [D:/Users/Ceci/Documents/Facu/digisist/GHDL/CORDIC/CORDIC_IT.vhd:19]
+	Parameter N_bits bound to: 9 - type: integer 
+	Parameter iteration bound to: 6 - type: integer 
+	Parameter angle_step bound to: 32'b00000000101000101111011000011110 
+INFO: [Synth 8-3491] module 'CORDIC_IT' declared at 'D:/Users/Ceci/Documents/Facu/digisist/GHDL/CORDIC/CORDIC_IT.vhd:5' bound to instance 'iteration_inst' of component 'CORDIC_IT' [D:/Users/Ceci/Documents/Facu/digisist/GHDL/CORDIC/CORDIC_top.vhd:112]
+INFO: [Synth 8-638] synthesizing module 'CORDIC_IT__parameterized11' [D:/Users/Ceci/Documents/Facu/digisist/GHDL/CORDIC/CORDIC_IT.vhd:19]
+	Parameter N_bits bound to: 9 - type: integer 
+	Parameter iteration bound to: 6 - type: integer 
+	Parameter angle_step bound to: 10679838 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'CORDIC_IT__parameterized11' (12#1) [D:/Users/Ceci/Documents/Facu/digisist/GHDL/CORDIC/CORDIC_IT.vhd:19]
+	Parameter N_bits bound to: 9 - type: integer 
+	Parameter iteration bound to: 7 - type: integer 
+	Parameter angle_step bound to: 32'b00000000010100010111110001010101 
+INFO: [Synth 8-3491] module 'CORDIC_IT' declared at 'D:/Users/Ceci/Documents/Facu/digisist/GHDL/CORDIC/CORDIC_IT.vhd:5' bound to instance 'iteration_inst' of component 'CORDIC_IT' [D:/Users/Ceci/Documents/Facu/digisist/GHDL/CORDIC/CORDIC_top.vhd:112]
+INFO: [Synth 8-638] synthesizing module 'CORDIC_IT__parameterized13' [D:/Users/Ceci/Documents/Facu/digisist/GHDL/CORDIC/CORDIC_IT.vhd:19]
+	Parameter N_bits bound to: 9 - type: integer 
+	Parameter iteration bound to: 7 - type: integer 
+	Parameter angle_step bound to: 5340245 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'CORDIC_IT__parameterized13' (12#1) [D:/Users/Ceci/Documents/Facu/digisist/GHDL/CORDIC/CORDIC_IT.vhd:19]
+	Parameter N_bits bound to: 9 - type: integer 
+	Parameter iteration bound to: 8 - type: integer 
+	Parameter angle_step bound to: 32'b00000000001010001011111001010011 
+INFO: [Synth 8-3491] module 'CORDIC_IT' declared at 'D:/Users/Ceci/Documents/Facu/digisist/GHDL/CORDIC/CORDIC_IT.vhd:5' bound to instance 'iteration_inst' of component 'CORDIC_IT' [D:/Users/Ceci/Documents/Facu/digisist/GHDL/CORDIC/CORDIC_top.vhd:112]
+INFO: [Synth 8-638] synthesizing module 'CORDIC_IT__parameterized15' [D:/Users/Ceci/Documents/Facu/digisist/GHDL/CORDIC/CORDIC_IT.vhd:19]
+	Parameter N_bits bound to: 9 - type: integer 
+	Parameter iteration bound to: 8 - type: integer 
+	Parameter angle_step bound to: 2670163 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'CORDIC_IT__parameterized15' (12#1) [D:/Users/Ceci/Documents/Facu/digisist/GHDL/CORDIC/CORDIC_IT.vhd:19]
+WARNING: [Synth 8-5858] RAM iteration_data_reg from Abstract Data Type (record/struct) for this pattern/configuration is not supported. This will most likely be implemented in registers
+WARNING: [Synth 8-6014] Unused sequential element aux1_reg was removed.  [D:/Users/Ceci/Documents/Facu/digisist/GHDL/CORDIC/CORDIC_top.vhd:128]
+WARNING: [Synth 8-6014] Unused sequential element aux2_reg was removed.  [D:/Users/Ceci/Documents/Facu/digisist/GHDL/CORDIC/CORDIC_top.vhd:129]
+INFO: [Synth 8-256] done synthesizing module 'CORDIC_top' (13#1) [D:/Users/Ceci/Documents/Facu/digisist/GHDL/CORDIC/CORDIC_top.vhd:18]
+INFO: [Synth 8-3491] module 'delay' declared at 'D:/Users/Ceci/Documents/Facu/digisist/GHDL/delay/delay.vhd:5' bound to instance 'chain_part' of component 'delay' [D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/sources_1/new/girador.vhd:244]
+INFO: [Synth 8-638] synthesizing module 'delay' [D:/Users/Ceci/Documents/Facu/digisist/GHDL/delay/delay.vhd:11]
+INFO: [Synth 8-256] done synthesizing module 'delay' (14#1) [D:/Users/Ceci/Documents/Facu/digisist/GHDL/delay/delay.vhd:11]
+INFO: [Synth 8-3491] module 'delay' declared at 'D:/Users/Ceci/Documents/Facu/digisist/GHDL/delay/delay.vhd:5' bound to instance 'chain_part' of component 'delay' [D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/sources_1/new/girador.vhd:244]
+INFO: [Synth 8-3491] module 'delay' declared at 'D:/Users/Ceci/Documents/Facu/digisist/GHDL/delay/delay.vhd:5' bound to instance 'chain_part' of component 'delay' [D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/sources_1/new/girador.vhd:244]
+INFO: [Synth 8-3491] module 'delay' declared at 'D:/Users/Ceci/Documents/Facu/digisist/GHDL/delay/delay.vhd:5' bound to instance 'chain_part' of component 'delay' [D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/sources_1/new/girador.vhd:244]
+INFO: [Synth 8-3491] module 'delay' declared at 'D:/Users/Ceci/Documents/Facu/digisist/GHDL/delay/delay.vhd:5' bound to instance 'chain_part' of component 'delay' [D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/sources_1/new/girador.vhd:244]
+INFO: [Synth 8-3491] module 'delay' declared at 'D:/Users/Ceci/Documents/Facu/digisist/GHDL/delay/delay.vhd:5' bound to instance 'chain_part' of component 'delay' [D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/sources_1/new/girador.vhd:244]
+INFO: [Synth 8-3491] module 'delay' declared at 'D:/Users/Ceci/Documents/Facu/digisist/GHDL/delay/delay.vhd:5' bound to instance 'chain_part' of component 'delay' [D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/sources_1/new/girador.vhd:244]
+INFO: [Synth 8-3491] module 'delay' declared at 'D:/Users/Ceci/Documents/Facu/digisist/GHDL/delay/delay.vhd:5' bound to instance 'chain_part' of component 'delay' [D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/sources_1/new/girador.vhd:244]
+INFO: [Synth 8-3491] module 'delay' declared at 'D:/Users/Ceci/Documents/Facu/digisist/GHDL/delay/delay.vhd:5' bound to instance 'chain_part' of component 'delay' [D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/sources_1/new/girador.vhd:244]
+INFO: [Synth 8-3491] module 'delay' declared at 'D:/Users/Ceci/Documents/Facu/digisist/GHDL/delay/delay.vhd:5' bound to instance 'chain2_link' of component 'delay' [D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/sources_1/new/girador.vhd:252]
+INFO: [Synth 8-3491] module 'delay' declared at 'D:/Users/Ceci/Documents/Facu/digisist/GHDL/delay/delay.vhd:5' bound to instance 'chain2_link' of component 'delay' [D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/sources_1/new/girador.vhd:252]
+INFO: [Synth 8-3491] module 'delay' declared at 'D:/Users/Ceci/Documents/Facu/digisist/GHDL/delay/delay.vhd:5' bound to instance 'chain2_link' of component 'delay' [D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/sources_1/new/girador.vhd:252]
+INFO: [Synth 8-3491] module 'delay' declared at 'D:/Users/Ceci/Documents/Facu/digisist/GHDL/delay/delay.vhd:5' bound to instance 'chain2_link' of component 'delay' [D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/sources_1/new/girador.vhd:252]
+INFO: [Synth 8-3491] module 'delay' declared at 'D:/Users/Ceci/Documents/Facu/digisist/GHDL/delay/delay.vhd:5' bound to instance 'chain2_link' of component 'delay' [D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/sources_1/new/girador.vhd:252]
+INFO: [Synth 8-3491] module 'delay' declared at 'D:/Users/Ceci/Documents/Facu/digisist/GHDL/delay/delay.vhd:5' bound to instance 'chain2_link' of component 'delay' [D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/sources_1/new/girador.vhd:252]
+INFO: [Synth 8-3491] module 'delay' declared at 'D:/Users/Ceci/Documents/Facu/digisist/GHDL/delay/delay.vhd:5' bound to instance 'chain2_link' of component 'delay' [D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/sources_1/new/girador.vhd:252]
+INFO: [Synth 8-3491] module 'delay' declared at 'D:/Users/Ceci/Documents/Facu/digisist/GHDL/delay/delay.vhd:5' bound to instance 'chain2_link' of component 'delay' [D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/sources_1/new/girador.vhd:252]
+INFO: [Synth 8-3491] module 'delay' declared at 'D:/Users/Ceci/Documents/Facu/digisist/GHDL/delay/delay.vhd:5' bound to instance 'chain2_link' of component 'delay' [D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/sources_1/new/girador.vhd:252]
+INFO: [Synth 8-3491] module 'delay' declared at 'D:/Users/Ceci/Documents/Facu/digisist/GHDL/delay/delay.vhd:5' bound to instance 'chain2_link' of component 'delay' [D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/sources_1/new/girador.vhd:252]
+INFO: [Synth 8-3491] module 'delay' declared at 'D:/Users/Ceci/Documents/Facu/digisist/GHDL/delay/delay.vhd:5' bound to instance 'chain2_link' of component 'delay' [D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/sources_1/new/girador.vhd:252]
+INFO: [Synth 8-3491] module 'delay' declared at 'D:/Users/Ceci/Documents/Facu/digisist/GHDL/delay/delay.vhd:5' bound to instance 'chain2_link' of component 'delay' [D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/sources_1/new/girador.vhd:252]
+INFO: [Synth 8-3491] module 'delay' declared at 'D:/Users/Ceci/Documents/Facu/digisist/GHDL/delay/delay.vhd:5' bound to instance 'chain2_link' of component 'delay' [D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/sources_1/new/girador.vhd:252]
+INFO: [Synth 8-3491] module 'delay' declared at 'D:/Users/Ceci/Documents/Facu/digisist/GHDL/delay/delay.vhd:5' bound to instance 'chain2_link' of component 'delay' [D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/sources_1/new/girador.vhd:252]
+INFO: [Synth 8-3491] module 'delay' declared at 'D:/Users/Ceci/Documents/Facu/digisist/GHDL/delay/delay.vhd:5' bound to instance 'chain2_link' of component 'delay' [D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/sources_1/new/girador.vhd:252]
+INFO: [Synth 8-3491] module 'delay' declared at 'D:/Users/Ceci/Documents/Facu/digisist/GHDL/delay/delay.vhd:5' bound to instance 'chain2_link' of component 'delay' [D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/sources_1/new/girador.vhd:252]
+INFO: [Synth 8-3491] module 'delay' declared at 'D:/Users/Ceci/Documents/Facu/digisist/GHDL/delay/delay.vhd:5' bound to instance 'chain2_link' of component 'delay' [D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/sources_1/new/girador.vhd:252]
+INFO: [Synth 8-3491] module 'delay' declared at 'D:/Users/Ceci/Documents/Facu/digisist/GHDL/delay/delay.vhd:5' bound to instance 'chain2_link' of component 'delay' [D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/sources_1/new/girador.vhd:252]
+INFO: [Synth 8-3491] module 'delay' declared at 'D:/Users/Ceci/Documents/Facu/digisist/GHDL/delay/delay.vhd:5' bound to instance 'chain2_link' of component 'delay' [D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/sources_1/new/girador.vhd:252]
+INFO: [Synth 8-3491] module 'delay' declared at 'D:/Users/Ceci/Documents/Facu/digisist/GHDL/delay/delay.vhd:5' bound to instance 'chain2_link' of component 'delay' [D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/sources_1/new/girador.vhd:252]
+WARNING: [Synth 8-614] signal 'pixel_value_reg' is read in the process but is not in the sensitivity list [D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/sources_1/new/girador.vhd:285]
+WARNING: [Synth 8-5858] RAM fifo_ant_reg from Abstract Data Type (record/struct) for this pattern/configuration is not supported. This will most likely be implemented in registers
+WARNING: [Synth 8-6014] Unused sequential element mi_dato_reg[x] was removed.  [D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/sources_1/new/girador.vhd:273]
+INFO: [Synth 8-4471] merging register 'fifo_ant_reg[0][x][8:0]' into 'to_turn_reg[x][8:0]' [D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/sources_1/new/girador.vhd:255]
+INFO: [Synth 8-4471] merging register 'fifo_ant_reg[0][y][8:0]' into 'to_turn_reg[y][8:0]' [D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/sources_1/new/girador.vhd:255]
+WARNING: [Synth 8-6014] Unused sequential element fifo_ant_reg[0][x] was removed.  [D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/sources_1/new/girador.vhd:255]
+WARNING: [Synth 8-6014] Unused sequential element fifo_ant_reg[0][y] was removed.  [D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/sources_1/new/girador.vhd:255]
+WARNING: [Synth 8-3848] Net enable in module/entity girador does not have driver. [D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/sources_1/new/girador.vhd:158]
+WARNING: [Synth 8-3848] Net grados in module/entity girador does not have driver. [D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/sources_1/new/girador.vhd:159]
+INFO: [Synth 8-256] done synthesizing module 'girador' (15#1) [D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/sources_1/new/girador.vhd:29]
+WARNING: [Synth 8-3331] design gen_pixels has unconnected port pixel_x[9]
+WARNING: [Synth 8-3331] design gen_pixels has unconnected port pixel_x[8]
+WARNING: [Synth 8-3331] design gen_pixels has unconnected port pixel_x[7]
+WARNING: [Synth 8-3331] design gen_pixels has unconnected port pixel_x[6]
+WARNING: [Synth 8-3331] design gen_pixels has unconnected port pixel_x[5]
+WARNING: [Synth 8-3331] design gen_pixels has unconnected port pixel_x[4]
+WARNING: [Synth 8-3331] design gen_pixels has unconnected port pixel_x[3]
+WARNING: [Synth 8-3331] design gen_pixels has unconnected port pixel_x[2]
+WARNING: [Synth 8-3331] design gen_pixels has unconnected port pixel_x[1]
+WARNING: [Synth 8-3331] design gen_pixels has unconnected port pixel_x[0]
+WARNING: [Synth 8-3331] design gen_pixels has unconnected port pixel_y[9]
+WARNING: [Synth 8-3331] design gen_pixels has unconnected port pixel_y[8]
+WARNING: [Synth 8-3331] design gen_pixels has unconnected port pixel_y[7]
+WARNING: [Synth 8-3331] design gen_pixels has unconnected port pixel_y[6]
+WARNING: [Synth 8-3331] design gen_pixels has unconnected port pixel_y[5]
+WARNING: [Synth 8-3331] design gen_pixels has unconnected port pixel_y[4]
+WARNING: [Synth 8-3331] design gen_pixels has unconnected port pixel_y[3]
+WARNING: [Synth 8-3331] design gen_pixels has unconnected port pixel_y[2]
+WARNING: [Synth 8-3331] design gen_pixels has unconnected port pixel_y[1]
+WARNING: [Synth 8-3331] design gen_pixels has unconnected port pixel_y[0]
+WARNING: [Synth 8-3331] design vga_ctrl has unconnected port pixel_clock
+WARNING: [Synth 8-3331] design vga_ctrl has unconnected port video_read_add[18]
+WARNING: [Synth 8-3331] design vga_ctrl has unconnected port video_read_add[17]
+WARNING: [Synth 8-3331] design vga_ctrl has unconnected port video_read_add[16]
+WARNING: [Synth 8-3331] design vga_ctrl has unconnected port video_read_add[15]
+WARNING: [Synth 8-3331] design vga_ctrl has unconnected port video_read_add[14]
+WARNING: [Synth 8-3331] design vga_ctrl has unconnected port video_read_add[13]
+WARNING: [Synth 8-3331] design vga_ctrl has unconnected port video_read_add[12]
+WARNING: [Synth 8-3331] design vga_ctrl has unconnected port video_read_add[11]
+WARNING: [Synth 8-3331] design vga_ctrl has unconnected port video_read_add[10]
+WARNING: [Synth 8-3331] design vga_ctrl has unconnected port video_read_add[9]
+WARNING: [Synth 8-3331] design vga_ctrl has unconnected port video_read_add[8]
+WARNING: [Synth 8-3331] design vga_ctrl has unconnected port video_read_add[7]
+WARNING: [Synth 8-3331] design vga_ctrl has unconnected port video_read_add[6]
+WARNING: [Synth 8-3331] design vga_ctrl has unconnected port video_read_add[5]
+WARNING: [Synth 8-3331] design vga_ctrl has unconnected port video_read_add[4]
+WARNING: [Synth 8-3331] design vga_ctrl has unconnected port video_read_add[3]
+WARNING: [Synth 8-3331] design vga_ctrl has unconnected port video_read_add[2]
+WARNING: [Synth 8-3331] design vga_ctrl has unconnected port video_read_add[1]
+WARNING: [Synth 8-3331] design vga_ctrl has unconnected port video_read_add[0]
+WARNING: [Synth 8-3331] design vga_ctrl has unconnected port sw[2]
+WARNING: [Synth 8-3331] design vga_ctrl has unconnected port sw[1]
+WARNING: [Synth 8-3331] design vga_ctrl has unconnected port sw[0]
+WARNING: [Synth 8-3331] design vga_ctrl has unconnected port pix_value[0]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 452.945 ; gain = 158.250
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+WARNING: [Synth 8-3295] tying undriven pin pixeles:sw[2] to constant 0 [D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/sources_1/imports/Ejemplos_TP2/arcvga/02VGAVideoMem/vga_ctrl.vhd:82]
+WARNING: [Synth 8-3295] tying undriven pin pixeles:sw[1] to constant 0 [D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/sources_1/imports/Ejemplos_TP2/arcvga/02VGAVideoMem/vga_ctrl.vhd:82]
+WARNING: [Synth 8-3295] tying undriven pin CORDIC:enable to constant 0 [D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/sources_1/new/girador.vhd:228]
+WARNING: [Synth 8-3295] tying undriven pin CORDIC:degrees[8] to constant 0 [D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/sources_1/new/girador.vhd:228]
+WARNING: [Synth 8-3295] tying undriven pin CORDIC:degrees[7] to constant 0 [D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/sources_1/new/girador.vhd:228]
+WARNING: [Synth 8-3295] tying undriven pin CORDIC:degrees[6] to constant 0 [D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/sources_1/new/girador.vhd:228]
+WARNING: [Synth 8-3295] tying undriven pin CORDIC:degrees[5] to constant 0 [D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/sources_1/new/girador.vhd:228]
+WARNING: [Synth 8-3295] tying undriven pin CORDIC:degrees[4] to constant 0 [D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/sources_1/new/girador.vhd:228]
+WARNING: [Synth 8-3295] tying undriven pin CORDIC:degrees[3] to constant 0 [D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/sources_1/new/girador.vhd:228]
+WARNING: [Synth 8-3295] tying undriven pin CORDIC:degrees[2] to constant 0 [D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/sources_1/new/girador.vhd:228]
+WARNING: [Synth 8-3295] tying undriven pin CORDIC:degrees[1] to constant 0 [D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/sources_1/new/girador.vhd:228]
+WARNING: [Synth 8-3295] tying undriven pin CORDIC:degrees[0] to constant 0 [D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/sources_1/new/girador.vhd:228]
+WARNING: [Synth 8-3295] tying undriven pin chain[0].chain_part:ena to constant 0 [D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/sources_1/new/girador.vhd:244]
+WARNING: [Synth 8-3295] tying undriven pin chain[1].chain_part:ena to constant 0 [D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/sources_1/new/girador.vhd:244]
+WARNING: [Synth 8-3295] tying undriven pin chain[2].chain_part:ena to constant 0 [D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/sources_1/new/girador.vhd:244]
+WARNING: [Synth 8-3295] tying undriven pin chain[3].chain_part:ena to constant 0 [D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/sources_1/new/girador.vhd:244]
+WARNING: [Synth 8-3295] tying undriven pin chain[4].chain_part:ena to constant 0 [D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/sources_1/new/girador.vhd:244]
+WARNING: [Synth 8-3295] tying undriven pin chain[5].chain_part:ena to constant 0 [D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/sources_1/new/girador.vhd:244]
+WARNING: [Synth 8-3295] tying undriven pin chain[6].chain_part:ena to constant 0 [D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/sources_1/new/girador.vhd:244]
+WARNING: [Synth 8-3295] tying undriven pin chain[7].chain_part:ena to constant 0 [D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/sources_1/new/girador.vhd:244]
+WARNING: [Synth 8-3295] tying undriven pin chain[8].chain_part:ena to constant 0 [D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/sources_1/new/girador.vhd:244]
+WARNING: [Synth 8-3295] tying undriven pin chain2[0].chain2_link:ena to constant 0 [D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/sources_1/new/girador.vhd:252]
+WARNING: [Synth 8-3295] tying undriven pin chain2[1].chain2_link:ena to constant 0 [D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/sources_1/new/girador.vhd:252]
+WARNING: [Synth 8-3295] tying undriven pin chain2[2].chain2_link:ena to constant 0 [D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/sources_1/new/girador.vhd:252]
+WARNING: [Synth 8-3295] tying undriven pin chain2[3].chain2_link:ena to constant 0 [D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/sources_1/new/girador.vhd:252]
+WARNING: [Synth 8-3295] tying undriven pin chain2[4].chain2_link:ena to constant 0 [D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/sources_1/new/girador.vhd:252]
+WARNING: [Synth 8-3295] tying undriven pin chain2[5].chain2_link:ena to constant 0 [D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/sources_1/new/girador.vhd:252]
+WARNING: [Synth 8-3295] tying undriven pin chain2[6].chain2_link:ena to constant 0 [D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/sources_1/new/girador.vhd:252]
+WARNING: [Synth 8-3295] tying undriven pin chain2[7].chain2_link:ena to constant 0 [D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/sources_1/new/girador.vhd:252]
+WARNING: [Synth 8-3295] tying undriven pin chain2[8].chain2_link:ena to constant 0 [D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/sources_1/new/girador.vhd:252]
+WARNING: [Synth 8-3295] tying undriven pin chain2[9].chain2_link:ena to constant 0 [D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/sources_1/new/girador.vhd:252]
+WARNING: [Synth 8-3295] tying undriven pin chain2[10].chain2_link:ena to constant 0 [D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/sources_1/new/girador.vhd:252]
+WARNING: [Synth 8-3295] tying undriven pin chain2[11].chain2_link:ena to constant 0 [D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/sources_1/new/girador.vhd:252]
+WARNING: [Synth 8-3295] tying undriven pin chain2[12].chain2_link:ena to constant 0 [D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/sources_1/new/girador.vhd:252]
+WARNING: [Synth 8-3295] tying undriven pin chain2[13].chain2_link:ena to constant 0 [D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/sources_1/new/girador.vhd:252]
+WARNING: [Synth 8-3295] tying undriven pin chain2[14].chain2_link:ena to constant 0 [D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/sources_1/new/girador.vhd:252]
+WARNING: [Synth 8-3295] tying undriven pin chain2[15].chain2_link:ena to constant 0 [D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/sources_1/new/girador.vhd:252]
+WARNING: [Synth 8-3295] tying undriven pin chain2[16].chain2_link:ena to constant 0 [D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/sources_1/new/girador.vhd:252]
+WARNING: [Synth 8-3295] tying undriven pin chain2[17].chain2_link:ena to constant 0 [D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/sources_1/new/girador.vhd:252]
+WARNING: [Synth 8-3295] tying undriven pin chain2[18].chain2_link:ena to constant 0 [D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/sources_1/new/girador.vhd:252]
+WARNING: [Synth 8-3295] tying undriven pin chain2[19].chain2_link:ena to constant 0 [D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/sources_1/new/girador.vhd:252]
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 452.945 ; gain = 158.250
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 452.945 ; gain = 158.250
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7z010clg400-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [d:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/sources_1/bd/video_mem/ip/video_mem_blk_mem_gen_0_0/video_mem_blk_mem_gen_0_0/video_mem_blk_mem_gen_0_0_in_context.xdc] for cell 'memoria_video/video_mem_i/blk_mem_gen_0'
+Finished Parsing XDC File [d:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/sources_1/bd/video_mem/ip/video_mem_blk_mem_gen_0_0/video_mem_blk_mem_gen_0_0/video_mem_blk_mem_gen_0_0_in_context.xdc] for cell 'memoria_video/video_mem_i/blk_mem_gen_0'
+Parsing XDC File [d:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/sources_1/bd/clock_unit/ip/clock_unit_clk_wiz_0_0/clock_unit_clk_wiz_0_0/clock_unit_clk_wiz_0_0_in_context.xdc] for cell 'VGA/clock_unit/clock_unit_i/clk_wiz_0'
+Finished Parsing XDC File [d:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/sources_1/bd/clock_unit/ip/clock_unit_clk_wiz_0_0/clock_unit_clk_wiz_0_0/clock_unit_clk_wiz_0_0_in_context.xdc] for cell 'VGA/clock_unit/clock_unit_i/clk_wiz_0'
+Parsing XDC File [D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/constrs_1/imports/04PinesVGAVideoMem/Arty-Z7-20-Master.xdc]
+WARNING: [Vivado 12-584] No ports matched 'sw[0]'. [D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/constrs_1/imports/04PinesVGAVideoMem/Arty-Z7-20-Master.xdc:35]
+WARNING: [Vivado 12-584] No ports matched 'sw[1]'. [D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/constrs_1/imports/04PinesVGAVideoMem/Arty-Z7-20-Master.xdc:37]
+WARNING: [Vivado 12-584] No ports matched 'sw[2]'. [D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/constrs_1/imports/04PinesVGAVideoMem/Arty-Z7-20-Master.xdc:39]
+Finished Parsing XDC File [D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/constrs_1/imports/04PinesVGAVideoMem/Arty-Z7-20-Master.xdc]
+WARNING: [Project 1-498] One or more constraints failed evaluation while reading constraint file [D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/constrs_1/imports/04PinesVGAVideoMem/Arty-Z7-20-Master.xdc] and the design contains unresolved black boxes. These constraints will be read post-synthesis (as long as their source constraint file is marked as used_in_implementation) and should be applied correctly then. You should review the constraints listed in the file [.Xil/girador_propImpl.xdc] and check the run log file to verify that these constraints were correctly applied.
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/constrs_1/imports/04PinesVGAVideoMem/Arty-Z7-20-Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/girador_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/girador_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.runs/synth_1/dont_touch.xdc]
+Finished Parsing XDC File [D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.runs/synth_1/dont_touch.xdc]
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 796.750 ; gain = 0.000
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 796.750 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 796.750 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.095 . Memory (MB): peak = 796.750 ; gain = 0.000
+WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'memoria_video/video_mem_i/blk_mem_gen_0' at clock pin 'clka' is different from the actual clock period '8.000', this can lead to different synthesis results.
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:20 ; elapsed = 00:00:23 . Memory (MB): peak = 796.750 ; gain = 502.055
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z010clg400-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:20 ; elapsed = 00:00:23 . Memory (MB): peak = 796.750 ; gain = 502.055
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property IO_BUFFER_TYPE = NONE for sys_clk. (constraint file  d:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/sources_1/bd/clock_unit/ip/clock_unit_clk_wiz_0_0/clock_unit_clk_wiz_0_0/clock_unit_clk_wiz_0_0_in_context.xdc, line 3).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for sys_clk. (constraint file  d:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/sources_1/bd/clock_unit/ip/clock_unit_clk_wiz_0_0/clock_unit_clk_wiz_0_0/clock_unit_clk_wiz_0_0_in_context.xdc, line 4).
+Applied set_property DONT_TOUCH = true for memoria_video/video_mem_i. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for memoria_video/video_mem_i/blk_mem_gen_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for VGA/clock_unit/clock_unit_i. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for VGA/clock_unit/clock_unit_i/clk_wiz_0. (constraint file  auto generated constraint, line ).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:20 ; elapsed = 00:00:23 . Memory (MB): peak = 796.750 ; gain = 502.055
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5546] ROM "h_end" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "v_end" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "baud_x16_en_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'uart_rx_ctl'
+INFO: [Synth 8-5544] ROM "over_sample_cnt_done" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "bit_cnt_done" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "bit_cnt" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "bit_cnt" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [D:/Users/Ceci/Documents/Facu/digisist/GHDL/CORDIC/CORDIC_IT.vhd:37]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [D:/Users/Ceci/Documents/Facu/digisist/GHDL/CORDIC/CORDIC_IT.vhd:37]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [D:/Users/Ceci/Documents/Facu/digisist/GHDL/CORDIC/CORDIC_IT.vhd:37]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [D:/Users/Ceci/Documents/Facu/digisist/GHDL/CORDIC/CORDIC_IT.vhd:37]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [D:/Users/Ceci/Documents/Facu/digisist/GHDL/CORDIC/CORDIC_IT.vhd:37]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [D:/Users/Ceci/Documents/Facu/digisist/GHDL/CORDIC/CORDIC_IT.vhd:37]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [D:/Users/Ceci/Documents/Facu/digisist/GHDL/CORDIC/CORDIC_IT.vhd:37]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [D:/Users/Ceci/Documents/Facu/digisist/GHDL/CORDIC/CORDIC_IT.vhd:37]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [D:/Users/Ceci/Documents/Facu/digisist/GHDL/CORDIC/CORDIC_IT.vhd:37]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [D:/Users/Ceci/Documents/Facu/digisist/GHDL/CORDIC/CORDIC_IT.vhd:37]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [D:/Users/Ceci/Documents/Facu/digisist/GHDL/CORDIC/CORDIC_IT.vhd:37]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [D:/Users/Ceci/Documents/Facu/digisist/GHDL/CORDIC/CORDIC_IT.vhd:37]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [D:/Users/Ceci/Documents/Facu/digisist/GHDL/CORDIC/CORDIC_IT.vhd:37]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [D:/Users/Ceci/Documents/Facu/digisist/GHDL/CORDIC/CORDIC_IT.vhd:37]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [D:/Users/Ceci/Documents/Facu/digisist/GHDL/CORDIC/CORDIC_IT.vhd:37]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [D:/Users/Ceci/Documents/Facu/digisist/GHDL/CORDIC/CORDIC_IT.vhd:37]
+INFO: [Synth 8-5544] ROM "pixel_value_reg" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                 iSTATE1 |                               00 |                               00
+                  iSTATE |                               01 |                               01
+                 iSTATE0 |                               10 |                               10
+                 iSTATE2 |                               11 |                               11
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'uart_rx_ctl'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:21 ; elapsed = 00:00:24 . Memory (MB): peak = 796.750 ; gain = 502.055
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
+	   2 Input     31 Bit       Adders := 1     
+	   2 Input     10 Bit       Adders := 3     
+	   3 Input     10 Bit       Adders := 18    
+	   2 Input      9 Bit       Adders := 19    
+	   2 Input      7 Bit       Adders := 1     
+	   2 Input      4 Bit       Adders := 1     
+	   2 Input      3 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 1     
+	               31 Bit    Registers := 1     
+	               10 Bit    Registers := 22    
+	                9 Bit    Registers := 70    
+	                8 Bit    Registers := 1     
+	                7 Bit    Registers := 1     
+	                4 Bit    Registers := 4     
+	                3 Bit    Registers := 1     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 14    
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 3     
+	   2 Input     31 Bit        Muxes := 3     
+	   2 Input     20 Bit        Muxes := 1     
+	   2 Input     19 Bit        Muxes := 1     
+	   2 Input     10 Bit        Muxes := 24    
+	   2 Input      9 Bit        Muxes := 11    
+	   2 Input      8 Bit        Muxes := 2     
+	   2 Input      4 Bit        Muxes := 5     
+	   4 Input      2 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 2     
+	   6 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 14    
+	   4 Input      1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module girador 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
+	   2 Input     31 Bit       Adders := 1     
+	   2 Input      9 Bit       Adders := 4     
++---Registers : 
+	               32 Bit    Registers := 1     
+	               31 Bit    Registers := 1     
+	                9 Bit    Registers := 2     
+	                1 Bit    Registers := 4     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 3     
+	   2 Input     31 Bit        Muxes := 3     
+	   2 Input     20 Bit        Muxes := 1     
+	   2 Input     19 Bit        Muxes := 1     
+	   2 Input      9 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 2     
+Module vga_sync 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     10 Bit       Adders := 2     
++---Registers : 
+	               10 Bit    Registers := 2     
+	                1 Bit    Registers := 3     
++---Muxes : 
+	   2 Input     10 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 2     
+Module gen_pixels 
+Detailed RTL Component Info : 
++---Registers : 
+	                4 Bit    Registers := 3     
++---Muxes : 
+	   2 Input      4 Bit        Muxes := 3     
+Module meta_harden 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 2     
+Module uart_baud_gen 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      7 Bit       Adders := 1     
++---Registers : 
+	                7 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module uart_rx_ctl 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      4 Bit       Adders := 1     
+	   2 Input      3 Bit       Adders := 1     
++---Registers : 
+	                8 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                3 Bit    Registers := 1     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 2     
+	   2 Input      4 Bit        Muxes := 2     
+	   4 Input      2 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 2     
+	   6 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 9     
+	   4 Input      1 Bit        Muxes := 1     
+Module CORDIC_IT 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     10 Bit       Adders := 1     
+	   3 Input     10 Bit       Adders := 2     
+	   2 Input      9 Bit       Adders := 2     
++---Registers : 
+	               10 Bit    Registers := 2     
+	                9 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     10 Bit        Muxes := 2     
+	   2 Input      9 Bit        Muxes := 1     
+Module CORDIC_IT__parameterized1 
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input     10 Bit       Adders := 2     
+	   2 Input      9 Bit       Adders := 2     
++---Registers : 
+	               10 Bit    Registers := 2     
+	                9 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     10 Bit        Muxes := 2     
+	   2 Input      9 Bit        Muxes := 1     
+Module CORDIC_IT__parameterized3 
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input     10 Bit       Adders := 2     
+	   2 Input      9 Bit       Adders := 2     
++---Registers : 
+	               10 Bit    Registers := 2     
+	                9 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     10 Bit        Muxes := 2     
+	   2 Input      9 Bit        Muxes := 1     
+Module CORDIC_IT__parameterized5 
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input     10 Bit       Adders := 2     
+	   2 Input      9 Bit       Adders := 2     
++---Registers : 
+	               10 Bit    Registers := 2     
+	                9 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     10 Bit        Muxes := 2     
+	   2 Input      9 Bit        Muxes := 1     
+Module CORDIC_IT__parameterized7 
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input     10 Bit       Adders := 2     
+	   2 Input      9 Bit       Adders := 2     
++---Registers : 
+	               10 Bit    Registers := 2     
+	                9 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     10 Bit        Muxes := 2     
+	   2 Input      9 Bit        Muxes := 1     
+Module CORDIC_IT__parameterized9 
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input     10 Bit       Adders := 2     
+	   2 Input      9 Bit       Adders := 2     
++---Registers : 
+	               10 Bit    Registers := 2     
+	                9 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     10 Bit        Muxes := 2     
+	   2 Input      9 Bit        Muxes := 1     
+Module CORDIC_IT__parameterized11 
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input     10 Bit       Adders := 2     
+	   2 Input      9 Bit       Adders := 2     
++---Registers : 
+	               10 Bit    Registers := 2     
+	                9 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     10 Bit        Muxes := 2     
+	   2 Input      9 Bit        Muxes := 1     
+Module CORDIC_IT__parameterized13 
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input     10 Bit       Adders := 2     
++---Registers : 
+	               10 Bit    Registers := 2     
+	                9 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     10 Bit        Muxes := 2     
+Module CORDIC_IT__parameterized15 
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input     10 Bit       Adders := 2     
++---Registers : 
+	               10 Bit    Registers := 2     
+	                9 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     10 Bit        Muxes := 2     
+Module CORDIC_top 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      9 Bit       Adders := 1     
++---Registers : 
+	               10 Bit    Registers := 2     
+	                9 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     10 Bit        Muxes := 4     
+	   2 Input      9 Bit        Muxes := 2     
+Module delay 
+Detailed RTL Component Info : 
++---Registers : 
+	                9 Bit    Registers := 2     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 80 (col length:40)
+BRAMs: 120 (col length: RAMB18 40 RAMB36 20)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+INFO: [Synth 8-5544] ROM "UART/uart_rx_ctl_i0/bit_cnt_done" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "VGA/vga_sync_unit/h_end" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "VGA/vga_sync_unit/v_end" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "UART/uart_baud_gen_rx_i0/baud_x16_en_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-3886] merging instance 'VGA/pixeles/red_reg_reg[0]' (FDC) to 'VGA/pixeles/red_reg_reg[3]'
+INFO: [Synth 8-3886] merging instance 'VGA/pixeles/red_reg_reg[1]' (FDC) to 'VGA/pixeles/red_reg_reg[3]'
+INFO: [Synth 8-3886] merging instance 'VGA/pixeles/red_reg_reg[2]' (FDC) to 'VGA/pixeles/red_reg_reg[3]'
+WARNING: [Synth 8-3332] Sequential element (UART/uart_rx_ctl_i0/FSM_sequential_state_reg[1]) is unused and will be removed from module girador.
+WARNING: [Synth 8-3332] Sequential element (UART/uart_rx_ctl_i0/FSM_sequential_state_reg[0]) is unused and will be removed from module girador.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:26 ; elapsed = 00:00:30 . Memory (MB): peak = 796.750 ; gain = 502.055
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5578] Moved timing constraint from pin 'VGA/clock_unit/clock_unit_i/clk_wiz_0/clk_out1' to pin 'VGA/clock_unit/clock_unit_i/clk_wiz_0/bbstub_clk_out1/O'
+INFO: [Synth 8-5819] Moved 1 constraints on hierarchical pins to their respective driving/loading pins
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:39 ; elapsed = 00:00:43 . Memory (MB): peak = 796.750 ; gain = 502.055
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:40 ; elapsed = 00:00:44 . Memory (MB): peak = 810.934 ; gain = 516.238
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:40 ; elapsed = 00:00:45 . Memory (MB): peak = 814.570 ; gain = 519.875
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-3295] tying undriven pin memoria_video/video_mem_i:addrb_0[18] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin memoria_video/video_mem_i:addrb_0[17] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin memoria_video/video_mem_i:addrb_0[16] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin memoria_video/video_mem_i:addrb_0[15] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin memoria_video/video_mem_i:addrb_0[14] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin memoria_video/video_mem_i:addrb_0[13] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin memoria_video/video_mem_i:addrb_0[12] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin memoria_video/video_mem_i:addrb_0[11] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin memoria_video/video_mem_i:addrb_0[10] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin memoria_video/video_mem_i:addrb_0[9] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin memoria_video/video_mem_i:addrb_0[8] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin memoria_video/video_mem_i:addrb_0[7] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin memoria_video/video_mem_i:addrb_0[6] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin memoria_video/video_mem_i:addrb_0[5] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin memoria_video/video_mem_i:addrb_0[4] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin memoria_video/video_mem_i:addrb_0[3] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin memoria_video/video_mem_i:addrb_0[2] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin memoria_video/video_mem_i:addrb_0[1] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin memoria_video/video_mem_i:addrb_0[0] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin memoria_video/video_mem_i:clkb_0 to constant 0
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:43 ; elapsed = 00:00:48 . Memory (MB): peak = 814.570 ; gain = 519.875
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:43 ; elapsed = 00:00:48 . Memory (MB): peak = 814.570 ; gain = 519.875
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:43 ; elapsed = 00:00:48 . Memory (MB): peak = 814.570 ; gain = 519.875
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:43 ; elapsed = 00:00:48 . Memory (MB): peak = 814.570 ; gain = 519.875
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:43 ; elapsed = 00:00:48 . Memory (MB): peak = 814.570 ; gain = 519.875
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:43 ; elapsed = 00:00:48 . Memory (MB): peak = 814.570 ; gain = 519.875
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++------+--------------------------+----------+
+|      |BlackBox name             |Instances |
++------+--------------------------+----------+
+|1     |clock_unit_clk_wiz_0_0    |         1|
+|2     |video_mem_blk_mem_gen_0_0 |         1|
++------+--------------------------+----------+
+
+Report Cell Usage: 
++------+---------------------------------+------+
+|      |Cell                             |Count |
++------+---------------------------------+------+
+|1     |clock_unit_clk_wiz_0_0_bbox_0    |     1|
+|2     |video_mem_blk_mem_gen_0_0_bbox_1 |     1|
+|3     |BUFG                             |     1|
+|4     |CARRY4                           |   108|
+|5     |LUT1                             |    29|
+|6     |LUT2                             |   133|
+|7     |LUT3                             |   107|
+|8     |LUT4                             |    64|
+|9     |LUT5                             |    70|
+|10    |LUT6                             |   101|
+|11    |FDCE                             |    35|
+|12    |FDPE                             |     1|
+|13    |FDRE                             |   299|
+|14    |IBUF                             |     1|
+|15    |OBUF                             |    14|
++------+---------------------------------+------+
+
+Report Instance Areas: 
++------+-----------------------------------+---------------------------+------+
+|      |Instance                           |Module                     |Cells |
++------+-----------------------------------+---------------------------+------+
+|1     |top                                |                           |   966|
+|2     |  CORDIC                           |CORDIC_top                 |   707|
+|3     |    \iterations[0].iteration_inst  |CORDIC_IT                  |    47|
+|4     |    \iterations[1].iteration_inst  |CORDIC_IT__parameterized1  |    59|
+|5     |    \iterations[2].iteration_inst  |CORDIC_IT__parameterized3  |    69|
+|6     |    \iterations[3].iteration_inst  |CORDIC_IT__parameterized5  |    71|
+|7     |    \iterations[4].iteration_inst  |CORDIC_IT__parameterized7  |    69|
+|8     |    \iterations[5].iteration_inst  |CORDIC_IT__parameterized9  |    72|
+|9     |    \iterations[6].iteration_inst  |CORDIC_IT__parameterized11 |    58|
+|10    |    \iterations[7].iteration_inst  |CORDIC_IT__parameterized13 |   108|
+|11    |    \iterations[8].iteration_inst  |CORDIC_IT__parameterized15 |   108|
+|12    |  VGA                              |vga_ctrl                   |    58|
+|13    |    clock_unit                     |clock_unit_wrapper         |     2|
+|14    |      clock_unit_i                 |clock_unit                 |     2|
+|15    |    pixeles                        |gen_pixels                 |     1|
+|16    |    vga_sync_unit                  |vga_sync                   |    55|
+|17    |  memoria_video                    |video_mem_wrapper          |     1|
+|18    |    video_mem_i                    |video_mem                  |     1|
++------+-----------------------------------+---------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:43 ; elapsed = 00:00:48 . Memory (MB): peak = 814.570 ; gain = 519.875
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 22 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:27 ; elapsed = 00:00:37 . Memory (MB): peak = 814.570 ; gain = 176.070
+Synthesis Optimization Complete : Time (s): cpu = 00:00:43 ; elapsed = 00:00:48 . Memory (MB): peak = 814.570 ; gain = 519.875
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 108 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-140] Inserted 1 IBUFs to IO ports without IO buffers.
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 814.570 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+154 Infos, 125 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:46 ; elapsed = 00:00:52 . Memory (MB): peak = 814.570 ; gain = 528.230
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 814.570 ; gain = 0.000
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint 'D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.runs/synth_1/girador.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file girador_utilization_synth.rpt -pb girador_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Tue Nov 12 14:25:05 2019...

@@ -1,10 +1,11 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
+use work.my_library.all;
 
 entity CORDIC_top is
-    Generic(	N_bits : natural := 8;  -- máximo 32
-                N_steps: natural := 8); -- máximo 16
+    Generic(	N_bits : natural := 8;  -- mï¿½ximo 32
+                N_steps: natural := 8); -- mï¿½ximo 16
     Port(	clk : in STD_LOGIC;
            	enable : in STD_LOGIC;
 		degrees : in STD_LOGIC_VECTOR (N_bits-1 downto 0);
@@ -21,10 +22,10 @@ architecture Behavioral of CORDIC_top is
 		    angle_step : signed(31 downto 0) := "00100000000000000000000000000000" 
                 );
     	Port ( clk : in STD_LOGIC;
-	       ai : in STD_LOGIC_VECTOR (N_bits downto 0);
+	       ai : in STD_LOGIC_VECTOR (N_bits-1 downto 0);
 	       xi : in STD_LOGIC_VECTOR (N_bits downto 0);
 	       yi : in STD_LOGIC_VECTOR (N_bits downto 0);
-	       ao : out STD_LOGIC_VECTOR (N_bits downto 0);
+	       ao : out STD_LOGIC_VECTOR (N_bits-1 downto 0);
                xo : out STD_LOGIC_VECTOR (N_bits downto 0);
                yo : out STD_LOGIC_VECTOR (N_bits downto 0)
            );
@@ -86,7 +87,7 @@ begin
 x_out <= STD_LOGIC_VECTOR(resize(signed(iteration_data(N_steps).x),N_bits));
 y_out <= STD_LOGIC_VECTOR(resize(signed(iteration_data(N_steps).y),N_bits));
 
-rotation_start : process(clk)
+rotation_start : process(clk,enable)
     begin
 	if ((rising_edge(clk))and(enable = '1')) then
 	    if signed(degrees) < right_angle then
@@ -110,7 +111,13 @@ rotation_start : process(clk)
 iterations: for i in 0 to N_steps-2 generate
 	iteration_inst: CORDIC_IT 
 	    generic map(N_bits,i,angle_steps(i))
-	    port map(clk,iteration_data(i).a,iteration_data(i).x,iteration_data(i).y,iteration_data(i+1).a,iteration_data(i+1).x,iteration_data(i+1).y);
+	    port map(clk=>clk,
+	             ai=>iteration_data(i).a,
+	             xi=>iteration_data(i).x,
+	             yi=>iteration_data(i).y,
+	             ao=>iteration_data(i+1).a,
+	             xo=>iteration_data(i+1).x,
+	             yo=>iteration_data(i+1).y);
     end generate;
 
 scaling: process(clk)

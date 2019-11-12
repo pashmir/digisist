@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="synth_1" LaunchPart="xc7z010clg400-1" LaunchTime="1573579233">
+  <File Type="PA-TCL" Name="girador.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="girador_drc_synth.rpt"/>
+  <File Type="REPORTS-TCL" Name="girador_reports.tcl"/>
+  <File Type="RDS-RDS" Name="girador.vds"/>
+  <File Type="RDS-UTIL" Name="girador_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="girador_utilization_synth.pb"/>
+  <File Type="RDS-DCP" Name="girador.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="girador_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="girador_timing_summary_synth.pb"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/bd/video_mem/video_mem.bd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/bd/clock_unit/clock_unit.bd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../GHDL/CORDIC/CORDIC_IT.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../GHDL/delay/my_library.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../GHDL/CORDIC/CORDIC_top.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/hdl/clock_unit_wrapper.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PSRCDIR/sources_1/bd/clock_unit/hdl/clock_unit_wrapper.vhd"/>
+        <Attr Name="ImportTime" Val="1573421814"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../GHDL/delay/delay.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Ejemplos_TP2/arcvga/02VGAVideoMem/gen_pixels.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Interfaz_UART-VGA/Interfaz_UART-VGA.srcs/sources_1/imports/Ejemplos_TP2/arcvga/02VGAVideoMem/gen_pixels.vhd"/>
+        <Attr Name="ImportTime" Val="1543342666"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Ejemplos_TP2/UART_Fuentes/meta_harden.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Interfaz_UART-VGA/Interfaz_UART-VGA.srcs/sources_1/imports/Ejemplos_TP2/UART_Fuentes/meta_harden.vhd"/>
+        <Attr Name="ImportTime" Val="1542314390"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Ejemplos_TP2/UART_Fuentes/uart_baud_gen.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Interfaz_UART-VGA/Interfaz_UART-VGA.srcs/sources_1/imports/Ejemplos_TP2/UART_Fuentes/uart_baud_gen.vhd"/>
+        <Attr Name="ImportTime" Val="1542314405"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Ejemplos_TP2/UART_Fuentes/uart_rx.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Interfaz_UART-VGA/Interfaz_UART-VGA.srcs/sources_1/imports/Ejemplos_TP2/UART_Fuentes/uart_rx.vhd"/>
+        <Attr Name="ImportTime" Val="1542314437"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Ejemplos_TP2/UART_Fuentes/uart_rx_ctl.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Interfaz_UART-VGA/Interfaz_UART-VGA.srcs/sources_1/imports/Ejemplos_TP2/UART_Fuentes/uart_rx_ctl.vhd"/>
+        <Attr Name="ImportTime" Val="1542314447"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Ejemplos_TP2/arcvga/02VGAVideoMem/vga_sync.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Interfaz_UART-VGA/Interfaz_UART-VGA.srcs/sources_1/imports/Ejemplos_TP2/arcvga/02VGAVideoMem/vga_sync.vhd"/>
+        <Attr Name="ImportTime" Val="1465497512"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Ejemplos_TP2/arcvga/02VGAVideoMem/vga_ctrl.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Interfaz_UART-VGA/Interfaz_UART-VGA.srcs/sources_1/imports/Ejemplos_TP2/arcvga/02VGAVideoMem/vga_ctrl.vhd"/>
+        <Attr Name="ImportTime" Val="1561488514"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/hdl/video_mem_wrapper.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PSRCDIR/sources_1/bd/video_mem/hdl/video_mem_wrapper.vhd"/>
+        <Attr Name="ImportTime" Val="1573421830"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/girador.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../Ejemplos_TP2/Char_ROM/Char_ROM.vhd">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Ejemplos_TP2/UART_Fuentes/led_ctl.vhd">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Interfaz_UART-VGA/Interfaz_UART-VGA.srcs/sources_1/imports/Ejemplos_TP2/UART_Fuentes/led_ctl.vhd"/>
+        <Attr Name="ImportTime" Val="1543004005"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Ejemplos_TP2/UART_Fuentes/uart_led.vhd">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Interfaz_UART-VGA/Interfaz_UART-VGA.srcs/sources_1/imports/Ejemplos_TP2/UART_Fuentes/uart_led.vhd"/>
+        <Attr Name="ImportTime" Val="1542314356"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Ejemplos_TP2/UART_Fuentes/uart_top.vhd">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Interfaz_UART-VGA/Interfaz_UART-VGA.srcs/sources_1/imports/Ejemplos_TP2/UART_Fuentes/uart_top.vhd"/>
+        <Attr Name="ImportTime" Val="1545413128"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="girador"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <File Path="$PSRCDIR/constrs_1/imports/04PinesVGAVideoMem/Arty-Z7-20-Master.xdc">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../Ejemplos_TP2/arcvga/04PinesVGAVideoMem/Arty-Z7-20-Master.xdc"/>
+        <Attr Name="ImportTime" Val="1543192472"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1">
+    <Filter Type="Utils"/>
+    <Config>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
+    <Step Id="synth_design"/>
+  </Strategy>
+  <BlockFileSet Type="BlockSrcs" Name="clock_unit_clk_wiz_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="video_mem_blk_mem_gen_0_0"/>
+</GenRun>

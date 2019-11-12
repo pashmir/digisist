@@ -1,13 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="video_mem_synth_1" LaunchPart="xc7z010clg400-1" LaunchTime="1572477846">
+<GenRun Id="video_mem_synth_1" LaunchPart="xc7z010clg400-1" LaunchTime="1573578383">
   <File Type="PA-TCL" Name="video_mem.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="video_mem_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="video_mem_reports.tcl"/>
   <File Type="RDS-RDS" Name="video_mem.vds"/>
   <File Type="RDS-UTIL" Name="video_mem_utilization_synth.rpt"/>
   <File Type="RDS-UTIL-PB" Name="video_mem_utilization_synth.pb"/>
   <File Type="RDS-DCP" Name="video_mem.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="video_mem_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="video_mem_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="BlockSrcs" RelSrcDir="$PSRCDIR/video_mem">
     <File Path="$PSRCDIR/sources_1/ip/video_mem/video_mem.xci">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/ip/video_mem.xcix">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -21,6 +31,13 @@
   </FileSet>
   <FileSet Name="constrs_in" Type="BlockSrcs" RelSrcDir="$PSRCDIR/video_mem">
     <File Path="$PSRCDIR/sources_1/ip/video_mem/video_mem.xci">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/ip/video_mem.xcix">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>

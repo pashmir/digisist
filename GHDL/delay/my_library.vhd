@@ -9,4 +9,6 @@ package my_library is
         y : STD_LOGIC_VECTOR(N_bits-1 downto 0);
     end record;
     type t_array_punto is array(integer range <>) of t_punto;
+    constant zero : std_logic_vector(N_bits-1 downto 0) := (others => '0');
+    constant origen : t_punto := (x=>zero, y=>zero);
 end my_library;

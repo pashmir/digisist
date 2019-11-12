@@ -1,7 +1,7 @@
 --Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
---Date        : Sun Nov 10 18:36:54 2019
+--Date        : Tue Nov 12 13:42:51 2019
 --Host        : DESKTOP-DUF9KV0 running 64-bit major release  (build 9200)
 --Command     : generate_target clock_unit.bd
 --Design      : clock_unit

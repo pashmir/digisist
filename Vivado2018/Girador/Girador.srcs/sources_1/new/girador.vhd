@@ -112,15 +112,17 @@ end component;
                 x_out : out STD_LOGIC_VECTOR (N_bits-1 downto 0);
                 y_out : out STD_LOGIC_VECTOR (N_bits-1 downto 0));
     end component;
+    
     component delay is
         port ( i_in : in  t_punto;
 	           clk : in std_logic;
+	           ena : in std_logic;
 	           o_out : out t_punto);
     end component;
     -- Constantes
     constant N_bits : natural := 9;
     constant N_steps : natural := 10;
-    constant N_points : natural := 10;
+    constant N_points : natural := 20;
 --    -- Tipos personalizados (están en la biblioteca)
 --    type t_punto is record 
 --        x : STD_LOGIC_VECTOR(N_bits-1 downto 0);
@@ -147,9 +149,12 @@ end component;
     signal rx_data_rdy: std_logic;                  -- Data ready output of uart_rx
     -- PUNTOS
     -- Aca va un array con los puntos que se van a girar para ver una recta
-    signal line_points : t_array_punto;
+    constant puntos : t_array_punto(0 to N_points-1) := (others=>origen);--tabla con los puntos de la recta inicial
+    signal fifo : t_array_punto(0 to N_points-N_steps-1);
+    signal fifo_ant : t_array_punto(0 to N_points);
     signal to_turn : t_punto;
-    signal turned : t_punto;
+    --signal turned : t_punto;
+    signal cordic_clk : std_logic;
     signal enable : std_logic;
     signal grados : STD_LOGIC_VECTOR(N_bits-1 downto 0);
     
@@ -204,14 +209,22 @@ begin
             enb_0 => '1',
             wea_0 => "1"
         );	
-    chars: fontrom --evaluar si es necesaria
-        port map(
-            char_address => char_add,
-            font_row => font_row,
-            font_col => font_column,
-            rom_out => rom_out
-        );
+--    chars: fontrom --evaluar si es necesaria
+--        port map(
+--            char_address => char_add,
+--            font_row => font_row,
+--            font_col => font_column,
+--            rom_out => rom_out
+--        );
         
+-- Sección del código dedicada a girar puntos
+-- esto tiene que ir a 2 clock de velocidad para poder escribir y borrar los puntos
+    process (sys_clk)
+    begin
+        if rising_edge(sys_clk) then
+            cordic_clk <= not(cordic_clk);
+        end if;
+    end process;
     CORDIC: CORDIC_top
         generic map(
             N_bits => N_bits,
@@ -220,22 +233,53 @@ begin
         port map(
             degrees=>grados,
             enable=>enable,
-            clk=>sys_clk,
-            x_out=>turned.x,
-            y_out=>turned.y,
+            clk=>cordic_clk,
+            x_out=>fifo(0).x,
+            y_out=>fifo(0).y,
             x_in=>to_turn.x,
             y_in=>to_turn.y
         );
--- process para girar los puntos
--- voy a necesitar mux/demux
-chain: for i in 0 to N_points-2 generate
+        
+chain: for i in 0 to N_points-N_steps-2 generate
     chain_part: delay
-        port map(clk=>sys_clk,
-                 i_in=>line_points(i),
-                 o_out=>line_points(i+1));
+        port map(clk=>cordic_clk,
+                 ena=>enable,
+                 i_in=>fifo(i),
+                 o_out=>fifo(i+1));
 end generate;
-to_turn<=line_points(N_points-1);
-line_points(0)<=turned;
+
+chain2: for i in 0 to N_points-1 generate
+	chain2_link: delay
+		port map(clk=>cordic_clk,
+		         ena=>enable,
+		         i_in=>fifo_ant(i),
+		         o_out=>fifo_ant(i+1));
+	end generate;
+	
+process(cordic_clk)
+	variable init : bit := '0';
+	variable i :natural :=0;
+	variable mi_dato : t_punto := origen;
+	begin
+	if rising_edge(cordic_clk) then
+	    if rst='1' then
+	       init:='0';
+	       i:=0;
+	    end if;
+		if init='1' then
+			to_turn <= fifo(N_points-N_steps-1);
+			fifo_ant(0)<=fifo(N_points-N_steps-1);
+		else
+			mi_dato.x:=std_logic_vector(to_signed(i,N_bits));
+			to_turn<=mi_dato;--modificar para cargar la recta inicial
+			fifo_ant(0)<=mi_dato;
+			i:=i+1;
+			if i=N_points then
+				init:= '1';
+			end if;
+		end if;
+	end if;
+    end process;
 
 -- Process para escribir la memoria de video
 process (rx_data_rdy,rst,sys_clk)
@@ -258,14 +302,14 @@ process (rx_data_rdy,rst,sys_clk)
             conteo := conteo+1;
             if wipe='0' then
                 
-                font_row<=std_logic_vector(to_unsigned(conteo/8,3));
-                font_column<=std_logic_vector(to_unsigned(conteo mod 8,3)); 
-                pixel_value_reg(0) <= rom_out;
-                dir:=(conteo/8) * 800 + conteo mod 8 + 6400 * (qchars/80) + 8 * (qchars mod 80);
-                if (conteo=64) then
-                    conteo:=0;
+                if conteo mod 2 = 0 then
+                    dir := to_integer(unsigned(signed(fifo(0).x)+320) + 800 * unsigned(signed(fifo(0).y)+240));
+                    pixel_value_reg(0) <= '1';
+                else 
+                    dir := to_integer(unsigned(signed(fifo_ant(N_points).x)+320) + 800 * unsigned(signed(fifo_ant(N_points).y)+240));
+                    pixel_value_reg(0) <= '0';
                 end if;
-            
+                
             else 
                 pixel_value_reg(0)<='0';
                 dir:=conteo;
