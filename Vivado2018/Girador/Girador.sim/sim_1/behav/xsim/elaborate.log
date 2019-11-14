@@ -1,0 +1,53 @@
+Vivado Simulator 2018.3
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2018.3/bin/unwrapped/win64.o/xelab.exe -wto bfa713d9bd134214a93968dfe9a46f1b --incr --debug typical --relax --mt 2 -L blk_mem_gen_v8_4_2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot girador_behav xil_defaultlib.girador xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package unisim.vcomponents
+Compiling package xil_defaultlib.my_library
+Compiling package vl.vl_types
+Compiling module xil_defaultlib.glbl
+Compiling architecture delay_arq of entity xil_defaultlib.delay [delay_default]
+Compiling module unisims_ver.IBUF
+Compiling module unisims_ver.MMCME2_ADV(CLKFBOUT_MULT_F=8.0,C...
+Compiling module unisims_ver.BUFG
+Compiling module xil_defaultlib.clock_unit_clk_wiz_0_0_clk_wiz
+Compiling module xil_defaultlib.clock_unit_clk_wiz_0_0
+Compiling architecture structure of entity xil_defaultlib.clock_unit [clock_unit_default]
+Compiling architecture structure of entity xil_defaultlib.clock_unit_wrapper [clock_unit_wrapper_default]
+Compiling architecture vga_sync_arq of entity xil_defaultlib.vga_sync [vga_sync_default]
+Compiling architecture gen_pixels_arch of entity xil_defaultlib.gen_pixels [gen_pixels_default]
+Compiling architecture vga_ctrl_arch of entity xil_defaultlib.vga_ctrl [vga_ctrl_default]
+Compiling architecture meta_harden_arq of entity xil_defaultlib.meta_harden [meta_harden_default]
+Compiling architecture uart_baud_gen_arq of entity xil_defaultlib.uart_baud_gen [\uart_baud_gen(baud_rate=115200,...]
+Compiling architecture uart_rx_ctl_arq of entity xil_defaultlib.uart_rx_ctl [uart_rx_ctl_default]
+Compiling architecture uart_rx_arq of entity xil_defaultlib.uart_rx [\uart_rx(clock_rate=125000000)\]
+Compiling module blk_mem_gen_v8_4_2.blk_mem_gen_v8_4_2_output_stage(...
+Compiling module blk_mem_gen_v8_4_2.blk_mem_gen_v8_4_2_output_stage(...
+Compiling module blk_mem_gen_v8_4_2.blk_mem_gen_v8_4_2_softecc_outpu...
+Compiling module blk_mem_gen_v8_4_2.blk_mem_gen_v8_4_2_mem_module(C_...
+Compiling module blk_mem_gen_v8_4_2.blk_mem_axi_regs_fwd_v8_4(C_DATA...
+Compiling module blk_mem_gen_v8_4_2.blk_mem_gen_v8_4_2(C_FAMILY="zyn...
+Compiling module xil_defaultlib.video_mem_blk_mem_gen_0_0
+Compiling architecture structure of entity xil_defaultlib.video_mem [video_mem_default]
+Compiling architecture structure of entity xil_defaultlib.video_mem_wrapper [video_mem_wrapper_default]
+Compiling architecture behavioral of entity xil_defaultlib.CORDIC_IT [\CORDIC_IT(n_bits=9)\]
+Compiling architecture behavioral of entity xil_defaultlib.CORDIC_IT [\CORDIC_IT(n_bits=9,iteration=1,...]
+Compiling architecture behavioral of entity xil_defaultlib.CORDIC_IT [\CORDIC_IT(n_bits=9,iteration=2,...]
+Compiling architecture behavioral of entity xil_defaultlib.CORDIC_IT [\CORDIC_IT(n_bits=9,iteration=3,...]
+Compiling architecture behavioral of entity xil_defaultlib.CORDIC_IT [\CORDIC_IT(n_bits=9,iteration=4,...]
+Compiling architecture behavioral of entity xil_defaultlib.CORDIC_IT [\CORDIC_IT(n_bits=9,iteration=5,...]
+Compiling architecture behavioral of entity xil_defaultlib.CORDIC_IT [\CORDIC_IT(n_bits=9,iteration=6,...]
+Compiling architecture behavioral of entity xil_defaultlib.CORDIC_IT [\CORDIC_IT(n_bits=9,iteration=7,...]
+Compiling architecture behavioral of entity xil_defaultlib.CORDIC_IT [\CORDIC_IT(n_bits=9,iteration=8,...]
+Compiling architecture behavioral of entity xil_defaultlib.CORDIC_top [\CORDIC_top(n_bits=9,n_steps=10)...]
+Compiling architecture gir_arq of entity xil_defaultlib.girador
+Built simulation snapshot girador_behav

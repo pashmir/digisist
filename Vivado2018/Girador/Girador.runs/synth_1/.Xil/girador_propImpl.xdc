@@ -1,4 +1,4 @@
-set_property SRC_FILE_INFO {cfile:D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/constrs_1/imports/04PinesVGAVideoMem/Arty-Z7-20-Master.xdc rfile:../../../Girador.srcs/constrs_1/imports/04PinesVGAVideoMem/Arty-Z7-20-Master.xdc id:1} [current_design]
+set_property SRC_FILE_INFO {cfile:C:/Users/alumno/Documents/GitHub/digisist-master/Vivado2018/Girador/Girador.srcs/constrs_1/imports/04PinesVGAVideoMem/Arty-Z7-20-Master.xdc rfile:../../../Girador.srcs/constrs_1/imports/04PinesVGAVideoMem/Arty-Z7-20-Master.xdc id:1} [current_design]
 set_property src_info {type:XDC file:1 line:8 export:INPUT save:INPUT read:READ} [current_design]
 set_property -dict { PACKAGE_PIN H16    IOSTANDARD LVCMOS33 } [get_ports { sys_clk }]; #IO_L13P_T2_MRCC_35 Sch=SYSCLK
 set_property src_info {type:XDC file:1 line:35 export:INPUT save:INPUT read:READ} [current_design]

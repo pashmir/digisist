@@ -11,4 +11,6 @@ package my_library is
     type t_array_punto is array(integer range <>) of t_punto;
     constant zero : std_logic_vector(N_bits-1 downto 0) := (others => '0');
     constant origen : t_punto := (x=>zero, y=>zero);
+    constant gr_max : std_logic_vector(N_bits-1 downto 0) := (N_bits-3 => '1' ,others => '0');
+    constant gr_min : std_logic_vector(N_bits-1 downto 0) := zero;
 end my_library;

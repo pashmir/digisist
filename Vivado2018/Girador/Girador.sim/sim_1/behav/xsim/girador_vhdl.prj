@@ -1,0 +1,21 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../Girador.ip_user_files/bd/video_mem/sim/video_mem.vhd" \
+"../../../../Girador.ip_user_files/bd/clock_unit/sim/clock_unit.vhd" \
+"../../../../../../GHDL/CORDIC/CORDIC_IT.vhd" \
+"../../../../../../GHDL/delay/my_library.vhd" \
+"../../../../../../GHDL/CORDIC/CORDIC_top.vhd" \
+"../../../../Girador.srcs/sources_1/imports/hdl/clock_unit_wrapper.vhd" \
+"../../../../../../GHDL/delay/delay.vhd" \
+"../../../../Girador.srcs/sources_1/imports/Ejemplos_TP2/arcvga/02VGAVideoMem/gen_pixels.vhd" \
+"../../../../Girador.srcs/sources_1/imports/Ejemplos_TP2/UART_Fuentes/meta_harden.vhd" \
+"../../../../Girador.srcs/sources_1/imports/Ejemplos_TP2/UART_Fuentes/uart_baud_gen.vhd" \
+"../../../../Girador.srcs/sources_1/imports/Ejemplos_TP2/UART_Fuentes/uart_rx.vhd" \
+"../../../../Girador.srcs/sources_1/imports/Ejemplos_TP2/UART_Fuentes/uart_rx_ctl.vhd" \
+"../../../../Girador.srcs/sources_1/imports/Ejemplos_TP2/arcvga/02VGAVideoMem/vga_sync.vhd" \
+"../../../../Girador.srcs/sources_1/imports/Ejemplos_TP2/arcvga/02VGAVideoMem/vga_ctrl.vhd" \
+"../../../../Girador.srcs/sources_1/imports/hdl/video_mem_wrapper.vhd" \
+"../../../../Girador.srcs/sources_1/new/girador.vhd" \
+
+# Do not sort compile order
+nosort

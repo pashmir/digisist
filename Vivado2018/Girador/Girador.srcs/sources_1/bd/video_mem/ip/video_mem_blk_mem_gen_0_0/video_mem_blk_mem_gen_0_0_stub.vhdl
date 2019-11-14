@@ -1,10 +1,10 @@
 -- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
--- Date        : Tue Nov 12 14:23:51 2019
+-- Date        : Tue Nov 12 14:23:50 2019
 -- Host        : DESKTOP-DUF9KV0 running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode synth_stub
---               D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/sources_1/bd/video_mem/ip/video_mem_blk_mem_gen_0_0/video_mem_blk_mem_gen_0_0_stub.vhdl
+-- Command     : write_vhdl -force -mode synth_stub -rename_top video_mem_blk_mem_gen_0_0 -prefix
+--               video_mem_blk_mem_gen_0_0_ video_mem_blk_mem_gen_0_0_stub.vhdl
 -- Design      : video_mem_blk_mem_gen_0_0
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xc7z010clg400-1

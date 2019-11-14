@@ -1,8 +1,8 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------
 | Tool Version              : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-| Date                      : Tue Nov 12 14:27:10 2019
-| Host                      : DESKTOP-DUF9KV0 running 64-bit major release  (build 9200)
+| Date                      : Wed Nov 13 18:50:42 2019
+| Host                      : PC160-PC running 64-bit Service Pack 1  (build 7601)
 | Command                   : report_io -file girador_io_placed.rpt
 | Design                    : girador
 | Device                    : xc7z010
@@ -25,7 +25,7 @@ Table of Contents
 +---------------+
 | Total User IO |
 +---------------+
-|            17 |
+|            20 |
 +---------------+
 
 
@@ -113,8 +113,8 @@ Table of Contents
 | D16        |             |            | PS_MIO46_501            | PSS IO        |             |         |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
 | D17        |             |            | GND                     | GND           |             |         |            |      |                     |                      |     0.0 |            |           |          |      |                  |              |                   |              |
 | D18        |             | High Range | IO_L3N_T0_DQS_AD1N_35   | User IO       |             |      35 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
-| D19        |             | High Range | IO_L4P_T0_35            | User IO       |             |      35 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
-| D20        |             | High Range | IO_L4N_T0_35            | User IO       |             |      35 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
+| D19        | sw[0]       | High Range | IO_L4P_T0_35            | INPUT         | LVCMOS33    |      35 |            |      |                     |                 NONE |         | FIXED      |           |          |      | NONE             |              |                   |              |
+| D20        | sw[1]       | High Range | IO_L4N_T0_35            | INPUT         | LVCMOS33    |      35 |            |      |                     |                 NONE |         | FIXED      |           |          |      | NONE             |              |                   |              |
 | E1         |             |            | PS_DDR_DQ7_502          | PSS IO        |             |         |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
 | E2         |             |            | PS_DDR_DQ8_502          | PSS IO        |             |         |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
 | E3         |             |            | PS_DDR_DQ9_502          | PSS IO        |             |         |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
@@ -254,7 +254,7 @@ Table of Contents
 | L17        |             | High Range | IO_L11N_T1_SRCC_35      | User IO       |             |      35 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
 | L18        |             |            | GND                     | GND           |             |         |            |      |                     |                      |     0.0 |            |           |          |      |                  |              |                   |              |
 | L19        | rst         | High Range | IO_L9P_T1_DQS_AD3P_35   | INPUT         | LVCMOS33    |      35 |            |      |                     |                 NONE |         | FIXED      |           |          |      | NONE             |              |                   |              |
-| L20        |             | High Range | IO_L9N_T1_DQS_AD3N_35   | User IO       |             |      35 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
+| L20        | sw[2]       | High Range | IO_L9N_T1_DQS_AD3N_35   | INPUT         | LVCMOS33    |      35 |            |      |                     |                 NONE |         | FIXED      |           |          |      | NONE             |              |                   |              |
 | M1         |             |            | GND                     | GND           |             |         |            |      |                     |                      |     0.0 |            |           |          |      |                  |              |                   |              |
 | M2         |             |            | PS_DDR_CKN_502          | PSS IO        |             |         |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
 | M3         |             |            | PS_DDR_A2_502           | PSS IO        |             |         |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |

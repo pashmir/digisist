@@ -1,10 +1,10 @@
 // Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-// Date        : Tue Nov 12 14:23:51 2019
+// Date        : Tue Nov 12 14:23:50 2019
 // Host        : DESKTOP-DUF9KV0 running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode funcsim
-//               D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/sources_1/bd/video_mem/ip/video_mem_blk_mem_gen_0_0/video_mem_blk_mem_gen_0_0_sim_netlist.v
+// Command     : write_verilog -force -mode funcsim -rename_top video_mem_blk_mem_gen_0_0 -prefix
+//               video_mem_blk_mem_gen_0_0_ video_mem_blk_mem_gen_0_0_sim_netlist.v
 // Design      : video_mem_blk_mem_gen_0_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -206,7 +206,6 @@ module video_mem_blk_mem_gen_0_0
         .web(1'b0));
 endmodule
 
-(* ORIG_REF_NAME = "blk_mem_gen_generic_cstr" *) 
 module video_mem_blk_mem_gen_0_0_blk_mem_gen_generic_cstr
    (doutb,
     clka,
@@ -620,7 +619,6 @@ module video_mem_blk_mem_gen_0_0_blk_mem_gen_mux__parameterized0
         .R(1'b0));
 endmodule
 
-(* ORIG_REF_NAME = "blk_mem_gen_prim_width" *) 
 module video_mem_blk_mem_gen_0_0_blk_mem_gen_prim_width
    (DOUTB,
     clka,
@@ -992,7 +990,6 @@ module video_mem_blk_mem_gen_0_0_blk_mem_gen_prim_width__parameterized6
         .wea(wea));
 endmodule
 
-(* ORIG_REF_NAME = "blk_mem_gen_prim_wrapper" *) 
 module video_mem_blk_mem_gen_0_0_blk_mem_gen_prim_wrapper
    (DOUTB,
     clka,
@@ -4597,7 +4594,6 @@ module video_mem_blk_mem_gen_0_0_blk_mem_gen_prim_wrapper__parameterized6
         .O(ram_enb));
 endmodule
 
-(* ORIG_REF_NAME = "blk_mem_gen_top" *) 
 module video_mem_blk_mem_gen_0_0_blk_mem_gen_top
    (doutb,
     clka,
@@ -4665,7 +4661,7 @@ endmodule
 (* C_WEA_WIDTH = "1" *) (* C_WEB_WIDTH = "1" *) (* C_WRITE_DEPTH_A = "480000" *) 
 (* C_WRITE_DEPTH_B = "480000" *) (* C_WRITE_MODE_A = "NO_CHANGE" *) (* C_WRITE_MODE_B = "WRITE_FIRST" *) 
 (* C_WRITE_WIDTH_A = "1" *) (* C_WRITE_WIDTH_B = "1" *) (* C_XDEVICEFAMILY = "zynq" *) 
-(* ORIG_REF_NAME = "blk_mem_gen_v8_4_2" *) (* downgradeipidentifiedwarnings = "yes" *) 
+(* downgradeipidentifiedwarnings = "yes" *) 
 module video_mem_blk_mem_gen_0_0_blk_mem_gen_v8_4_2
    (clka,
     rsta,
@@ -4883,7 +4879,6 @@ module video_mem_blk_mem_gen_0_0_blk_mem_gen_v8_4_2
         .wea(wea));
 endmodule
 
-(* ORIG_REF_NAME = "blk_mem_gen_v8_4_2_synth" *) 
 module video_mem_blk_mem_gen_0_0_blk_mem_gen_v8_4_2_synth
    (doutb,
     clka,

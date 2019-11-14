@@ -1,0 +1,11 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  --include "../../../../Girador.srcs/sources_1/bd/clock_unit/ipshared/85a3" \
+"../../../../Girador.ip_user_files/bd/video_mem/ip/video_mem_blk_mem_gen_0_0/sim/video_mem_blk_mem_gen_0_0.v" \
+"../../../../Girador.ip_user_files/bd/clock_unit/ip/clock_unit_clk_wiz_0_0/clock_unit_clk_wiz_0_0_clk_wiz.v" \
+"../../../../Girador.ip_user_files/bd/clock_unit/ip/clock_unit_clk_wiz_0_0/clock_unit_clk_wiz_0_0.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

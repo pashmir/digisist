@@ -1,10 +1,10 @@
 -- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
--- Date        : Tue Nov 12 14:23:51 2019
+-- Date        : Tue Nov 12 14:23:50 2019
 -- Host        : DESKTOP-DUF9KV0 running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode funcsim
---               D:/Users/Ceci/Documents/Facu/digisist/Vivado2018/Girador/Girador.srcs/sources_1/bd/video_mem/ip/video_mem_blk_mem_gen_0_0/video_mem_blk_mem_gen_0_0_sim_netlist.vhdl
+-- Command     : write_vhdl -force -mode funcsim -rename_top video_mem_blk_mem_gen_0_0 -prefix
+--               video_mem_blk_mem_gen_0_0_ video_mem_blk_mem_gen_0_0_sim_netlist.vhdl
 -- Design      : video_mem_blk_mem_gen_0_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -194,8 +194,6 @@ entity video_mem_blk_mem_gen_0_0_blk_mem_gen_prim_wrapper is
     dina : in STD_LOGIC_VECTOR ( 0 to 0 );
     wea : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of video_mem_blk_mem_gen_0_0_blk_mem_gen_prim_wrapper : entity is "blk_mem_gen_prim_wrapper";
 end video_mem_blk_mem_gen_0_0_blk_mem_gen_prim_wrapper;
 
 architecture STRUCTURE of video_mem_blk_mem_gen_0_0_blk_mem_gen_prim_wrapper is
@@ -3834,8 +3832,6 @@ entity video_mem_blk_mem_gen_0_0_blk_mem_gen_prim_width is
     dina : in STD_LOGIC_VECTOR ( 0 to 0 );
     wea : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of video_mem_blk_mem_gen_0_0_blk_mem_gen_prim_width : entity is "blk_mem_gen_prim_width";
 end video_mem_blk_mem_gen_0_0_blk_mem_gen_prim_width;
 
 architecture STRUCTURE of video_mem_blk_mem_gen_0_0_blk_mem_gen_prim_width is
@@ -4127,8 +4123,6 @@ entity video_mem_blk_mem_gen_0_0_blk_mem_gen_generic_cstr is
     wea : in STD_LOGIC_VECTOR ( 0 to 0 );
     ena : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of video_mem_blk_mem_gen_0_0_blk_mem_gen_generic_cstr : entity is "blk_mem_gen_generic_cstr";
 end video_mem_blk_mem_gen_0_0_blk_mem_gen_generic_cstr;
 
 architecture STRUCTURE of video_mem_blk_mem_gen_0_0_blk_mem_gen_generic_cstr is
@@ -4444,8 +4438,6 @@ entity video_mem_blk_mem_gen_0_0_blk_mem_gen_top is
     wea : in STD_LOGIC_VECTOR ( 0 to 0 );
     ena : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of video_mem_blk_mem_gen_0_0_blk_mem_gen_top : entity is "blk_mem_gen_top";
 end video_mem_blk_mem_gen_0_0_blk_mem_gen_top;
 
 architecture STRUCTURE of video_mem_blk_mem_gen_0_0_blk_mem_gen_top is
@@ -4479,8 +4471,6 @@ entity video_mem_blk_mem_gen_0_0_blk_mem_gen_v8_4_2_synth is
     wea : in STD_LOGIC_VECTOR ( 0 to 0 );
     ena : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of video_mem_blk_mem_gen_0_0_blk_mem_gen_v8_4_2_synth : entity is "blk_mem_gen_v8_4_2_synth";
 end video_mem_blk_mem_gen_0_0_blk_mem_gen_v8_4_2_synth;
 
 architecture STRUCTURE of video_mem_blk_mem_gen_0_0_blk_mem_gen_v8_4_2_synth is
@@ -4718,8 +4708,6 @@ entity video_mem_blk_mem_gen_0_0_blk_mem_gen_v8_4_2 is
   attribute C_WRITE_WIDTH_B of video_mem_blk_mem_gen_0_0_blk_mem_gen_v8_4_2 : entity is 1;
   attribute C_XDEVICEFAMILY : string;
   attribute C_XDEVICEFAMILY of video_mem_blk_mem_gen_0_0_blk_mem_gen_v8_4_2 : entity is "zynq";
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of video_mem_blk_mem_gen_0_0_blk_mem_gen_v8_4_2 : entity is "blk_mem_gen_v8_4_2";
   attribute downgradeipidentifiedwarnings : string;
   attribute downgradeipidentifiedwarnings of video_mem_blk_mem_gen_0_0_blk_mem_gen_v8_4_2 : entity is "yes";
 end video_mem_blk_mem_gen_0_0_blk_mem_gen_v8_4_2;

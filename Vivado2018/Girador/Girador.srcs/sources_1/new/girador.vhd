@@ -150,14 +150,24 @@ end component;
     signal rx_data_rdy: std_logic;                  -- Data ready output of uart_rx
     -- PUNTOS
     -- Aca va un array con los puntos que se van a girar para ver una recta
-    constant puntos : t_array_punto(0 to N_points-1) := (others=>origen);--tabla con los puntos de la recta inicial
+    constant puntos : t_array_punto(0 to N_points-1) := (0 => (x => std_logic_vector(to_signed(230,N_bits)),y=>zero),
+                                                         1 => (x => std_logic_vector(to_signed(200,N_bits)),y=>zero),
+                                                         2 => (x => std_logic_vector(to_signed(170,N_bits)),y=>zero),
+                                                         3 => (x => std_logic_vector(to_signed(140,N_bits)),y=>zero),
+                                                         4 => (x => std_logic_vector(to_signed(110,N_bits)),y=>zero),
+                                                         5 => (x => std_logic_vector(to_signed( 70,N_bits)),y=>zero),
+                                                         6 => (x => std_logic_vector(to_signed( 40,N_bits)),y=>zero),
+                                                         7 => (x => std_logic_vector(to_signed( 10,N_bits)),y=>zero),
+                                                         8 => (x => std_logic_vector(to_signed(215,N_bits)),y=>zero),
+                                                         9 => (x => std_logic_vector(to_signed(185,N_bits)),y=>zero),
+                                                         others=>origen);--tabla con los puntos de la recta inicial
     signal fifo : t_array_punto(0 to N_points-N_steps-1);
     signal fifo_ant : t_array_punto(0 to N_points);
     signal to_turn : t_punto;
     --signal turned : t_punto;
     signal cordic_clk : std_logic;
     signal enable : std_logic;
-    signal grados : STD_LOGIC_VECTOR(N_bits-1 downto 0);
+    signal grados : STD_LOGIC_VECTOR(N_bits-1 downto 0):=zero;
     
 begin
     
@@ -223,9 +233,11 @@ begin
     begin
         if rising_edge(sys_clk) then
             if sw(0)='1' then -- cambio sentido
-                grados <= std_logic_vector(-abs(signed(grados)));
+                --grados <= std_logic_vector(-abs(signed(grados)));
+                enable<='1';
             else
-                grados <= std_logic_vector(abs(signed(grados)));
+                enable<='0';
+                --grados <= std_logic_vector(abs(signed(grados)));
             end if;
             if sw(1)='1' then -- cambio velocidad de giro '+'
                 if grados<gr_max then
@@ -283,7 +295,7 @@ chain2: for i in 0 to N_points-1 generate
 process(cordic_clk)
 	variable init : bit := '0';
 	variable i :natural :=0;
-	variable mi_dato : t_punto := origen;
+	--variable mi_dato : t_punto := origen;
 	begin
 	if rising_edge(cordic_clk) then
 	    if rst='1' then
@@ -294,9 +306,9 @@ process(cordic_clk)
 			to_turn <= fifo(N_points-N_steps-1);
 			fifo_ant(0)<=fifo(N_points-N_steps-1);
 		else
-			mi_dato.x:=std_logic_vector(to_signed(i,N_bits));
-			to_turn<=mi_dato;--modificar para cargar la recta inicial
-			fifo_ant(0)<=mi_dato;
+			
+			to_turn<=puntos(i);--modificar para cargar la recta inicial
+			fifo_ant(0)<=puntos(i);
 			i:=i+1;
 			if i=N_points then
 				init:= '1';
@@ -326,12 +338,16 @@ process (rx_data_rdy,rst,sys_clk)
             conteo := conteo+1;
             if wipe='0' then
                 
-                if conteo mod 2 = 0 then
-                    dir := to_integer(unsigned(signed(fifo(0).x)+320) + 800 * unsigned(signed(fifo(0).y)+240));
+                --if conteo mod 2 = 0 then
+                    --dir := to_integer(unsigned(signed(fifo(0).x)+320)) + 800 * to_integer(unsigned(signed(fifo(0).y)+240));
+                    dir := to_integer(signed(puntos(conteo).x)+320) + 800 * to_integer(signed(puntos(conteo).y)+240);
                     pixel_value_reg(0) <= '1';
-                else 
-                    dir := to_integer(unsigned(signed(fifo_ant(N_points).x)+320) + 800 * unsigned(signed(fifo_ant(N_points).y)+240));
-                    pixel_value_reg(0) <= '0';
+                --else 
+                    --dir := to_integer(unsigned(signed(fifo_ant(N_points).x)+320)) + 800 * to_integer(unsigned(signed(fifo_ant(N_points).y)+240));
+                    --pixel_value_reg(0) <= '0';
+                --end if;
+                if conteo=N_points-1 then
+                    conteo:=0;
                 end if;
                 
             else 

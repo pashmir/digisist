@@ -45,7 +45,7 @@ architecture vga_ctrl_arch of vga_ctrl is
 	signal video_on: std_logic;
 	signal pix_clock : std_logic;
     signal add_video_mem : std_logic_vector (18 downto 0);
-    signal pixel_value : std_logic_vector (0 downto 0);
+    --signal pixel_value : std_logic_vector (0 downto 0);
     signal pixel : std_logic_vector (2 downto 0);
     signal clk50 : std_logic;
     
@@ -109,6 +109,8 @@ process (pix_clock,rst, pixel_x,pixel_y)
     add_video_mem <= std_logic_vector(to_unsigned(conteo,add_video_mem'length));
 end process;
 
-pixel <= pixel_value(0) & pixel_value(0) & '1'; 	
+pixel <= pix_value(0) & pix_value(0) & '1'; 	
+pixel_clock<=pix_clock;
+video_read_add<=add_video_mem;
 	
 end vga_ctrl_arch;

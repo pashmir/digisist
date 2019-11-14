@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7z010clg400-1" LaunchTime="1573579561">
+<GenRun Id="impl_1" LaunchPart="xc7z010clg400-1" LaunchTime="1573681737">
   <File Type="BITSTR-BMM" Name="girador_bd.bmm"/>
   <File Type="OPT-METHODOLOGY-DRC" Name="girador_methodology_drc_opted.rpt"/>
   <File Type="INIT-TIMING" Name="girador_timing_summary_init.rpt"/>
@@ -258,6 +258,4 @@
     <Step Id="post_route_phys_opt_design"/>
     <Step Id="write_bitstream"/>
   </Strategy>
-  <BlockFileSet Type="BlockSrcs" Name="clock_unit_clk_wiz_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="video_mem_blk_mem_gen_0_0"/>
 </GenRun>

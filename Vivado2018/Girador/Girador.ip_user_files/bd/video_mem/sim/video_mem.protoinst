@@ -1,0 +1,9 @@
+{
+	"version": "1.0",
+	"modules": {
+		"video_mem": {
+			"proto_instances": {
+			}
+		}
+	}
+}
