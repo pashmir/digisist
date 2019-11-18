@@ -22,6 +22,7 @@ architecture Behavioral of CORDIC_top is
 		    angle_step : signed(31 downto 0) := "00100000000000000000000000000000" 
                 );
     	Port ( clk : in STD_LOGIC;
+    	   ena : in STD_LOGIC;
 	       ai : in STD_LOGIC_VECTOR (N_bits-1 downto 0);
 	       xi : in STD_LOGIC_VECTOR (N_bits downto 0);
 	       yi : in STD_LOGIC_VECTOR (N_bits downto 0);
@@ -112,6 +113,7 @@ iterations: for i in 0 to N_steps-2 generate
 	iteration_inst: CORDIC_IT 
 	    generic map(N_bits,i,angle_steps(i))
 	    port map(clk=>clk,
+	             ena=>enable,  
 	             ai=>iteration_data(i).a,
 	             xi=>iteration_data(i).x,
 	             yi=>iteration_data(i).y,

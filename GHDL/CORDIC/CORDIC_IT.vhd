@@ -8,6 +8,7 @@ entity CORDIC_IT is
 		angle_step : signed(31 downto 0) := "00100000000000000000000000000000" 
                 );
     Port ( clk : in STD_LOGIC;
+       ena : in STD_LOGIC; 
 	   ai : in STD_LOGIC_VECTOR (N_bits-1 downto 0);
 	   xi : in STD_LOGIC_VECTOR (N_bits downto 0);
 	   yi : in STD_LOGIC_VECTOR (N_bits downto 0);
@@ -18,10 +19,11 @@ entity CORDIC_IT is
 end CORDIC_IT;
 architecture Behavioral of CORDIC_IT is
     begin
-    process(clk)
+    process(clk,ena)
 	begin
-  	if iteration=0 then
-		if rising_edge(clk) then
+	if rising_edge(clk) then
+	if ena='1' then
+  	     if iteration=0 then
 			if signed(ai)>0 then
 				ao <= STD_LOGIC_VECTOR(signed(ai) - angle_step(31 downto 32-N_bits));
      				xo <= STD_LOGIC_VECTOR(signed(xi) - signed(yi));
@@ -31,9 +33,7 @@ architecture Behavioral of CORDIC_IT is
      				xo <= STD_LOGIC_VECTOR(signed(xi) + signed(yi));
       				yo <= STD_LOGIC_VECTOR(signed(yi) - signed(xi));
    			end if;
-		end if;
- 	else
-		if rising_edge(clk) then
+ 	      else
 			if signed(ai) > 0 then
                     		ao <= STD_LOGIC_VECTOR(signed(ai) - angle_step(31 downto 32-N_bits));
                     		xo <= STD_LOGIC_VECTOR(signed(xi) - shift_right(signed(yi),iteration));
@@ -44,6 +44,7 @@ architecture Behavioral of CORDIC_IT is
                     		yo <= STD_LOGIC_VECTOR(signed(yi) - shift_right(signed(xi),iteration));
                 	end if;
 		end if;
+	end if;
 	end if;
     end process;
 end Behavioral;

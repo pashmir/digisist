@@ -12,5 +12,5 @@ package my_library is
     constant zero : std_logic_vector(N_bits-1 downto 0) := (others => '0');
     constant origen : t_punto := (x=>zero, y=>zero);
     constant gr_max : std_logic_vector(N_bits-1 downto 0) := (N_bits-3 => '1' ,others => '0');
-    constant gr_min : std_logic_vector(N_bits-1 downto 0) := zero;
+    constant gr_min : std_logic_vector(N_bits-1 downto 0) := std_logic_vector(-signed(gr_max));
 end my_library;
