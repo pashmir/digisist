@@ -121,8 +121,8 @@ end component;
 	           o_out : out t_punto);
     end component;
     -- Constantes
-    constant N_bits : natural := 9;
-    constant N_steps : natural := 10;
+    --constant N_bits : natural := 9;
+    constant N_steps : natural := 16;
     constant N_points : natural := 20;
 --    -- Tipos personalizados (están en la biblioteca)
 --    type t_punto is record 
@@ -150,23 +150,33 @@ end component;
     signal rx_data_rdy: std_logic;                  -- Data ready output of uart_rx
     -- PUNTOS
     -- Aca va un array con los puntos que se van a girar para ver una recta
-    constant puntos : t_array_punto(0 to N_points-1) := (0 => (x => std_logic_vector(to_signed(230,N_bits)),y=>zero),
-                                                         1 => (x => std_logic_vector(to_signed(200,N_bits)),y=>zero),
-                                                         2 => (x => std_logic_vector(to_signed(170,N_bits)),y=>zero),
-                                                         3 => (x => std_logic_vector(to_signed(140,N_bits)),y=>zero),
-                                                         4 => (x => std_logic_vector(to_signed(110,N_bits)),y=>zero),
-                                                         5 => (x => std_logic_vector(to_signed( 70,N_bits)),y=>zero),
-                                                         6 => (x => std_logic_vector(to_signed( 40,N_bits)),y=>zero),
-                                                         7 => (x => std_logic_vector(to_signed( 10,N_bits)),y=>zero),
-                                                         8 => (x => std_logic_vector(to_signed(215,N_bits)),y=>zero),
-                                                         9 => (x => std_logic_vector(to_signed(185,N_bits)),y=>zero),
-                                                         others=>origen);--tabla con los puntos de la recta inicial
+    constant puntos : t_array_punto(0 to N_points-1) := (0 => (x => std_logic_vector(to_signed( 10*(2**(N_bits-1-8)),N_bits)),y=>zero),
+                                                         1 => (x => std_logic_vector(to_signed( 20*(2**(N_bits-1-8)),N_bits)),y=>zero),
+                                                         2 => (x => std_logic_vector(to_signed( 30*(2**(N_bits-1-8)),N_bits)),y=>zero),
+                                                         3 => (x => std_logic_vector(to_signed( 40*(2**(N_bits-1-8)),N_bits)),y=>zero),
+                                                         4 => (x => std_logic_vector(to_signed( 50*(2**(N_bits-1-8)),N_bits)),y=>zero),
+                                                         5 => (x => std_logic_vector(to_signed( 60*(2**(N_bits-1-8)),N_bits)),y=>zero),
+                                                         6 => (x => std_logic_vector(to_signed( 70*(2**(N_bits-1-8)),N_bits)),y=>zero),
+                                                         7 => (x => std_logic_vector(to_signed( 80*(2**(N_bits-1-8)),N_bits)),y=>zero),
+                                                         8 => (x => std_logic_vector(to_signed( 90*(2**(N_bits-1-8)),N_bits)),y=>zero),
+                                                         9 => (x => std_logic_vector(to_signed(100*(2**(N_bits-1-8)),N_bits)),y=>zero),
+                                                         10 => (x => std_logic_vector(to_signed(110*(2**(N_bits-1-8)),N_bits)),y=>zero),
+                                                         11 => (x => std_logic_vector(to_signed(120*(2**(N_bits-1-8)),N_bits)),y=>zero),
+                                                         12 => (x => std_logic_vector(to_signed(130*(2**(N_bits-1-8)),N_bits)),y=>zero),
+                                                         13 => (x => std_logic_vector(to_signed(140*(2**(N_bits-1-8)),N_bits)),y=>zero),
+                                                         14 => (x => std_logic_vector(to_signed(150*(2**(N_bits-1-8)),N_bits)),y=>zero),
+                                                         15 => (x => std_logic_vector(to_signed(160*(2**(N_bits-1-8)),N_bits)),y=>zero),
+                                                         16 => (x => std_logic_vector(to_signed(170*(2**(N_bits-1-8)),N_bits)),y=>zero),
+                                                         17 => (x => std_logic_vector(to_signed(180*(2**(N_bits-1-8)),N_bits)),y=>zero),
+                                                         18 => (x => std_logic_vector(to_signed(190*(2**(N_bits-1-8)),N_bits)),y=>zero),
+                                                         19 => (x => std_logic_vector(to_signed(0,N_bits)),y=>zero)
+                                                         );--tabla con los puntos de la recta inicial
     signal fifo : t_array_punto(0 to N_points-N_steps-1);
-    signal fifo_ant : t_array_punto(0 to N_points);
+    signal fifo_ant : t_array_punto(0 to 2*N_points-1);
     signal to_turn : t_punto;
     --signal turned : t_punto;
     signal cordic_clk : std_logic;
-    signal enable : std_logic;
+    signal enable : std_logic:='1';
     signal grados : STD_LOGIC_VECTOR(N_bits-1 downto 0):=zero;
     
 begin
@@ -229,38 +239,48 @@ begin
 --        );
    
 -- Sección del código dedicada al control del girado de los puntos
-    process(sys_clk)
+    process(sys_clk,rst)
     begin
         if rising_edge(sys_clk) then
-            if sw(0)='1' then -- cambio sentido
+        if rst='0' then
+            if sw(1)='1' then -- cambio sentido
                 --grados <= std_logic_vector(-abs(signed(grados)));
-                enable<='1';
+                --enable<='1';
             else
-                enable<='0';
+                --enable<='0';
                 --grados <= std_logic_vector(abs(signed(grados)));
             end if;
-            if sw(1)='1' then -- cambio velocidad de giro '+'
-                if grados<gr_max then
-                    grados<=std_logic_vector(signed(grados)+10);
+            if sw(0)='1' then -- cambio velocidad de giro '+'
+                if signed(grados)<signed(gr_max) then
+                    grados<=std_logic_vector(to_signed(2**(N_bits-2)-1,N_bits));
                 end if;
             end if;
             if sw(2)='1' then --cambio velocidad de giro '-'
-                if grados>gr_min then
-                    grados<=std_logic_vector(signed(grados)-10);
+                if signed(grados)>signed(gr_min) then
+                    grados<=std_logic_vector(- to_signed(2**(N_bits-2)-1,N_bits));
                 end if;
             
             end if;
+            end if;
         end if;
     end process; 
+    
         
 -- Sección del código dedicada a girar puntos
 -- esto tiene que ir a 2 clock de velocidad para poder escribir y borrar los puntos
     process (sys_clk)
+    variable conteo : unsigned(4 downto 0);
     begin
         if rising_edge(sys_clk) then
-            cordic_clk <= not(cordic_clk);
+            conteo:=conteo+1;
+        end if;
+        if conteo<16 then
+            cordic_clk<='0';
+        else
+            cordic_clk<='1';
         end if;
     end process;
+    
     CORDIC: CORDIC_top
         generic map(
             N_bits => N_bits,
@@ -284,7 +304,7 @@ chain: for i in 0 to N_points-N_steps-2 generate
                  o_out=>fifo(i+1));
 end generate;
 
-chain2: for i in 0 to N_points-1 generate
+chain2: for i in 0 to 2*N_points-2 generate
 	chain2_link: delay
 		port map(clk=>cordic_clk,
 		         ena=>enable,
@@ -292,7 +312,7 @@ chain2: for i in 0 to N_points-1 generate
 		         o_out=>fifo_ant(i+1));
 	end generate;
 	
-process(cordic_clk)
+init: process(cordic_clk)
 	variable init : bit := '0';
 	variable i :natural :=0;
 	--variable mi_dato : t_punto := origen;
@@ -301,10 +321,13 @@ process(cordic_clk)
 	    if rst='1' then
 	       init:='0';
 	       i:=0;
+	       enable<='1';
+	       grados<=zero;
 	    end if;
 		if init='1' then
 			to_turn <= fifo(N_points-N_steps-1);
 			fifo_ant(0)<=fifo(N_points-N_steps-1);
+		    enable<=sw(1);
 		else
 			
 			to_turn<=puntos(i);--modificar para cargar la recta inicial
@@ -323,6 +346,7 @@ process (rx_data_rdy,rst,sys_clk)
     variable qchars : integer := 0;
     variable wipe : bit := '0';
     variable dir : integer := 0;
+    variable dir_a : integer:=0;
     begin
     if (rst = '1') then
         conteo := 0;
@@ -338,15 +362,22 @@ process (rx_data_rdy,rst,sys_clk)
             conteo := conteo+1;
             if wipe='0' then
                 
-                --if conteo mod 2 = 0 then
-                    --dir := to_integer(unsigned(signed(fifo(0).x)+320)) + 800 * to_integer(unsigned(signed(fifo(0).y)+240));
-                    dir := to_integer(signed(puntos(conteo).x)+320) + 800 * to_integer(signed(puntos(conteo).y)+240);
+--                if conteo < N_points then
+                    dir := 320 + to_integer(signed(fifo_ant(conteo).x(N_bits-1 downto N_bits-9))) + 800 * (to_integer(signed(fifo_ant(conteo).y(N_bits-1 downto N_bits-9)))+240);
+                    --dir := 320 + to_integer(signed(puntos(conteo).x)) + 800 * (to_integer(signed(puntos(conteo).y))+240);
                     pixel_value_reg(0) <= '1';
-                --else 
-                    --dir := to_integer(unsigned(signed(fifo_ant(N_points).x)+320)) + 800 * to_integer(unsigned(signed(fifo_ant(N_points).y)+240));
-                    --pixel_value_reg(0) <= '0';
-                --end if;
+--                else
+--                    dir_a := 320 + to_integer(signed(fifo_ant(conteo).x(N_bits-1 downto N_bits-9))) + 800 * (to_integer(signed(fifo_ant(conteo).y(N_bits-1 downto N_bits-9)))+240);
+--                    dir := 320 + to_integer(signed(fifo_ant(conteo-N_points).x(N_bits-1 downto N_bits-9))) + 800 * (to_integer(signed(fifo_ant(conteo-N_points).y(N_bits-1 downto N_bits-9)))+240);
+--                    if dir_a/=dir then
+--                        dir:=dir_a;
+--                        pixel_value_reg(0) <= '0';
+--                    else
+----                        pixel_value_reg(0) <= '1';
+--                    end if;  
+--                end if;
                 if conteo=N_points-1 then
+                    wipe:='1';
                     conteo:=0;
                 end if;
                 
@@ -360,26 +391,8 @@ process (rx_data_rdy,rst,sys_clk)
             end if;    
         end if;
         
-        
-        
-        
         -- AcÃ¡ se termina de modificar la pantalla
         -------------------------------------------
-        if (rising_edge (rx_data_rdy) ) then
-            qchars := qchars+1;
-            
-            if (rx_data(0)='0') then
-                char_add<="000000";
-            else
-                char_add<="000001";
-            end if;
-            
-        end if;
-        
-        if (qchars = 4800) then
-            qchars:=0;
-        end if; 
-        
     end if;
     add_video_mem_load <= std_logic_vector(to_unsigned(dir,add_video_mem_load'length));
     pixel_in <= pixel_value_reg;
