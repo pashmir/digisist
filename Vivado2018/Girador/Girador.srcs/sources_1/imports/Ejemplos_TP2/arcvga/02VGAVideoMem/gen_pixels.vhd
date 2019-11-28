@@ -50,7 +50,7 @@ begin
 				--rgb_reg <= sw;
 				red_reg <= sw(0) & sw(0) & sw(0) & sw(0);
                 green_reg <=  sw(1) & sw(1) & sw(1) & sw(1);
-                blue_reg <=  sw(2) & sw(2) & sw(2) & sw(2);
+                blue_reg <=  sw(2) & sw(2) & '1' & sw(2);
 --			end if;
 		end if;
 	end process;

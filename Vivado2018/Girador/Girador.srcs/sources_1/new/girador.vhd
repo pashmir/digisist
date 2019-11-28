@@ -68,7 +68,8 @@ end component;
             -- agregar conexionado para interactuar con memoria
             pixel_clock : out std_logic;
             video_read_add : out std_logic_vector(18 downto 0);
-            pix_value : in std_logic_vector(0 downto 0)
+            pix_value : in std_logic_vector(0 downto 0);
+            frame_tick : out std_logic
         );
     end component;
     
@@ -144,6 +145,7 @@ end component;
     signal font_row : std_logic_vector(2 downto 0);--not needed
     signal font_column : std_logic_vector(2 downto 0);--not needed
     signal rom_out : std_logic;--not needed
+    signal fr_tick : std_logic;
     -- UART
     signal rst_clk_rx: std_logic;
     signal rx_data: std_logic_vector(7 downto 0);     -- Data output of uart_rx
@@ -178,6 +180,7 @@ end component;
     signal cordic_clk : std_logic;
     signal enable : std_logic:='1';
     signal grados : STD_LOGIC_VECTOR(N_bits-1 downto 0):=zero;
+    signal b : std_logic_vector(2 downto 0);
     
 begin
     
@@ -193,12 +196,34 @@ begin
             blue => blue,
             pixel_clock=>pix_clock,
             video_read_add=>add_video_mem,
-            pix_value => pixel_value
+            pix_value => pixel_value,
+            frame_tick => fr_tick
             -- Necesito un IN que sea lo que saca la memoria de video
             -- Necesito un OUT que sea la dire de la video mem
         );
         
     meta_harden_rst_i0: meta_harden -- capaz haya que usar esto para otro boton
+        port map(
+            clk_dst     => sys_clk,
+            rst_dst     => rst,            -- No reset on the hardener for reset!
+            signal_src     => sw(0),
+            signal_dst     => b(0)
+        );
+    meta_harden_rst_sw0: meta_harden -- capaz haya que usar esto para otro boton
+        port map(
+            clk_dst     => sys_clk,
+            rst_dst     => rst,            -- No reset on the hardener for reset!
+            signal_src     => sw(1),
+            signal_dst     => b(1)
+        );
+    meta_harden_rst_sw1: meta_harden -- capaz haya que usar esto para otro boton
+        port map(
+            clk_dst     => sys_clk,
+            rst_dst     => rst,            -- No reset on the hardener for reset!
+            signal_src     => sw(2),
+            signal_dst     => b(2)
+        );
+    meta_harden_rst_sw2: meta_harden -- capaz haya que usar esto para otro boton
         port map(
             clk_dst     => sys_clk,
             rst_dst     => '0',            -- No reset on the hardener for reset!
@@ -237,33 +262,6 @@ begin
 --            font_col => font_column,
 --            rom_out => rom_out
 --        );
-   
--- Sección del código dedicada al control del girado de los puntos
-    process(sys_clk,rst)
-    begin
-        if rising_edge(sys_clk) then
-        if rst='0' then
-            if sw(1)='1' then -- cambio sentido
-                --grados <= std_logic_vector(-abs(signed(grados)));
-                --enable<='1';
-            else
-                --enable<='0';
-                --grados <= std_logic_vector(abs(signed(grados)));
-            end if;
-            if sw(0)='1' then -- cambio velocidad de giro '+'
-                if signed(grados)<signed(gr_max) then
-                    grados<=std_logic_vector(to_signed(2**(N_bits-2)-1,N_bits));
-                end if;
-            end if;
-            if sw(2)='1' then --cambio velocidad de giro '-'
-                if signed(grados)>signed(gr_min) then
-                    grados<=std_logic_vector(- to_signed(2**(N_bits-2)-1,N_bits));
-                end if;
-            
-            end if;
-            end if;
-        end if;
-    end process; 
     
         
 -- Sección del código dedicada a girar puntos
@@ -289,7 +287,7 @@ begin
         port map(
             degrees=>grados,
             enable=>enable,
-            clk=>cordic_clk,
+            clk=>sys_clk,
             x_out=>fifo(0).x,
             y_out=>fifo(0).y,
             x_in=>to_turn.x,
@@ -298,7 +296,7 @@ begin
         
 chain: for i in 0 to N_points-N_steps-2 generate
     chain_part: delay
-        port map(clk=>cordic_clk,
+        port map(clk=>sys_clk,
                  ena=>enable,
                  i_in=>fifo(i),
                  o_out=>fifo(i+1));
@@ -306,93 +304,101 @@ end generate;
 
 chain2: for i in 0 to 2*N_points-2 generate
 	chain2_link: delay
-		port map(clk=>cordic_clk,
+		port map(clk=>sys_clk,
 		         ena=>enable,
 		         i_in=>fifo_ant(i),
 		         o_out=>fifo_ant(i+1));
 	end generate;
-	
-init: process(cordic_clk)
-	variable init : bit := '0';
-	variable i :natural :=0;
-	--variable mi_dato : t_punto := origen;
+-- proceso de control de girado	
+init: process(sys_clk,fr_tick,b,rst)
+	variable init, turn, turning, done_turning : bit := '0';
+	variable i,j :natural :=0;
 	begin
-	if rising_edge(cordic_clk) then
-	    if rst='1' then
-	       init:='0';
-	       i:=0;
-	       enable<='1';
-	       grados<=zero;
-	    end if;
-		if init='1' then
-			to_turn <= fifo(N_points-N_steps-1);
-			fifo_ant(0)<=fifo(N_points-N_steps-1);
-		    enable<=sw(1);
-		else
-			
-			to_turn<=puntos(i);--modificar para cargar la recta inicial
-			fifo_ant(0)<=puntos(i);
-			i:=i+1;
-			if i=N_points then
-				init:= '1';
-			end if;
-		end if;
-	end if;
+	if rst='1' then
+	   init:='0';
+	   i:=0;
+       enable<='1';
+       grados<=zero;
+	else
+        if rising_edge(fr_tick) then --cada frame
+           if b(1) = '1' then
+               turn:='1';
+           else 
+               turn:='0';
+           end if;
+           if b(0)='1' then -- cambio velocidad de giro '+'
+                if signed(grados)<signed(gr_max) then
+                    grados<=std_logic_vector(signed(grados)+1);
+                end if;
+           end if;
+           if b(2)='1' then --cambio velocidad de giro '-'
+                if signed(grados)>signed(gr_min) then
+                    grados<=std_logic_vector(signed(grados)-1);
+                end if;
+           end if;
+        end if;
+        if rising_edge(sys_clk) then
+            if init='1' then
+                to_turn <= fifo(N_points-N_steps-1);
+                fifo_ant(0)<=fifo(N_points-N_steps-1);
+                if turn='1' then
+                    if done_turning='0' then
+                        j:=0;
+                        turning:='1';
+                    end if;
+                else
+                    done_turning:='0';
+                end if;
+                if turning='1' then
+                    enable<='1';
+                    j:=j+1;
+                    if j=N_points then
+                        turning:='0';
+                        done_turning:='1';
+                        enable <='0';
+                    end if;
+                end if;
+                
+            else --inicializacion, carga los puntos en el sistema
+                to_turn<=puntos(i);
+                fifo_ant(0)<=puntos(i);
+                i:=i+1;
+                if i=N_points then
+                    init:= '1';
+                    enable<='0';
+                end if;
+            end if;
+	   end if;
+    end if;
     end process;
 
 -- Process para escribir la memoria de video
-process (rx_data_rdy,rst,sys_clk)
+process (rst,sys_clk,fr_tick)
     variable conteo : integer := 0;
-    variable qchars : integer := 0;
     variable wipe : bit := '0';
     variable dir : integer := 0;
-    variable dir_a : integer:=0;
     begin
-    if (rst = '1') then
+    if (rst = '1' or rising_edge(fr_tick)) then -- si reset o termina un frame
         conteo := 0;
-        qchars := 0;
         wipe:='1';
-        
     else
-        ------------------------------------------
-        --A partir de acÃ¡ se modifica la pantalla
-        
         if (rising_edge (sys_clk)) then
-            
             conteo := conteo+1;
-            if wipe='0' then
-                
---                if conteo < N_points then
-                    dir := 320 + to_integer(signed(fifo_ant(conteo).x(N_bits-1 downto N_bits-9))) + 800 * (to_integer(signed(fifo_ant(conteo).y(N_bits-1 downto N_bits-9)))+240);
-                    --dir := 320 + to_integer(signed(puntos(conteo).x)) + 800 * (to_integer(signed(puntos(conteo).y))+240);
-                    pixel_value_reg(0) <= '1';
---                else
---                    dir_a := 320 + to_integer(signed(fifo_ant(conteo).x(N_bits-1 downto N_bits-9))) + 800 * (to_integer(signed(fifo_ant(conteo).y(N_bits-1 downto N_bits-9)))+240);
---                    dir := 320 + to_integer(signed(fifo_ant(conteo-N_points).x(N_bits-1 downto N_bits-9))) + 800 * (to_integer(signed(fifo_ant(conteo-N_points).y(N_bits-1 downto N_bits-9)))+240);
---                    if dir_a/=dir then
---                        dir:=dir_a;
---                        pixel_value_reg(0) <= '0';
---                    else
-----                        pixel_value_reg(0) <= '1';
---                    end if;  
---                end if;
+            if wipe='0' then --ploteo puntos
+                dir := 320 + to_integer(signed(fifo_ant(conteo).x(N_bits-1 downto N_bits-9))) + 800 * (to_integer(signed(fifo_ant(conteo).y(N_bits-1 downto N_bits-9)))+240);
+                pixel_value_reg(0) <= '1';
                 if conteo=N_points-1 then
-                    wipe:='1';
                     conteo:=0;
                 end if;
-                
-            else 
+            else --limpio pantalla
                 pixel_value_reg(0)<='0';
                 dir:=conteo;
-                if conteo=480000 then
+                if conteo=384000 then
                     wipe:='0';
                     conteo:=0;
                 end if;
             end if;    
         end if;
-        
-        -- AcÃ¡ se termina de modificar la pantalla
-        -------------------------------------------
     end if;
     add_video_mem_load <= std_logic_vector(to_unsigned(dir,add_video_mem_load'length));
     pixel_in <= pixel_value_reg;

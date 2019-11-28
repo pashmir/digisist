@@ -24,7 +24,8 @@ entity vga_ctrl is
 		blue : out std_logic_vector(3 downto 0);
 		pixel_clock : out std_logic;
         video_read_add : out std_logic_vector(18 downto 0);
-        pix_value : in std_logic_vector(0 downto 0)
+        pix_value : in std_logic_vector(0 downto 0);
+        frame_tick : out std_logic
 		-- agregar puertos para interactuar con la video mem: pix_clk, video_add y pixel_value
 	);
 	
@@ -48,6 +49,7 @@ architecture vga_ctrl_arch of vga_ctrl is
     --signal pixel_value : std_logic_vector (0 downto 0);
     signal pixel : std_logic_vector (2 downto 0);
     signal clk50 : std_logic;
+    signal frame : std_logic := '1';
     
     component clock_unit_wrapper is
   port (
@@ -98,19 +100,25 @@ process (pix_clock,rst, pixel_x,pixel_y)
     begin
     if ((rst = '1') or ((pixel_x = "0000000000") and (pixel_y = "0000000000"))) then
         conteo := 0;
+        frame<='0';
     else
         if (rising_edge (pix_clock)) then
             conteo := conteo + 1;
         end if;
+        if (conteo = 384000) then
+            frame <='1';
+        end if;
         if (conteo = 480000) then
             conteo := 0;
+            frame <= '0';
         end if;
     end if;
     add_video_mem <= std_logic_vector(to_unsigned(conteo,add_video_mem'length));
 end process;
 
-pixel <= pix_value(0) & pix_value(0) & '1'; 	
+pixel <= pix_value(0) & pix_value(0) & pix_value(0); 	
 pixel_clock<=pix_clock;
 video_read_add<=add_video_mem;
+frame_tick <= frame;
 	
 end vga_ctrl_arch;
