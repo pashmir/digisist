@@ -108,9 +108,11 @@ process (pix_clock,rst, pixel_x,pixel_y)
         if (conteo = 384000) then
             frame <='1';
         end if;
+        if (conteo = 384002) then
+            frame <='0';
+        end if;
         if (conteo = 480000) then
             conteo := 0;
-            frame <= '0';
         end if;
     end if;
     add_video_mem <= std_logic_vector(to_unsigned(conteo,add_video_mem'length));

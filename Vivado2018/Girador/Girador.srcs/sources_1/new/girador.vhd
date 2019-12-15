@@ -321,11 +321,11 @@ init: process(sys_clk,fr_tick,b,rst)
        grados<=zero;
 	else
         if rising_edge(fr_tick) then --cada frame
-           if b(1) = '1' then
-               turn:='1';
-           else 
-               turn:='0';
-           end if;
+--           if b(1) = '1' then
+--               turn:='1';
+--           else 
+--               turn:='0';
+--           end if;
            if b(0)='1' then -- cambio velocidad de giro '+'
                 if signed(grados)<signed(gr_max) then
                     grados<=std_logic_vector(signed(grados)+1);
@@ -341,20 +341,31 @@ init: process(sys_clk,fr_tick,b,rst)
             if init='1' then
                 to_turn <= fifo(N_points-N_steps-1);
                 fifo_ant(0)<=fifo(N_points-N_steps-1);
-                if turn='1' then
-                    if done_turning='0' then
-                        j:=0;
-                        turning:='1';
-                    end if;
-                else
-                    done_turning:='0';
+--                if turn='1' then
+--                    if done_turning='0' then
+--                        j:=0;
+--                        turning:='1';
+--                    end if;
+--                else
+--                    done_turning:='0';
+--                end if;
+--                if turning='1' then
+--                    enable<='1';
+--                    j:=j+1;
+--                    if j=N_points then
+--                        turning:='0';
+--                        done_turning:='1';
+--                        enable <='0';
+--                    end if;
+--                end if;
+                if (fr_tick='1' and b(1)='1') then
+                    turning:='1';
                 end if;
                 if turning='1' then
                     enable<='1';
                     j:=j+1;
                     if j=N_points then
                         turning:='0';
-                        done_turning:='1';
                         enable <='0';
                     end if;
                 end if;
