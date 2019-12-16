@@ -321,27 +321,27 @@ init: process(sys_clk,fr_tick,b,rst_clk_rx,cordic_clk)
        --enable<='1';
        grados<=zero;
 	else
-        if b(0)='1' and fr_tick='1' then -- cambio velocidad de giro '+'
+        if b(0)='1' and rising_edge(fr_tick) then -- cambio velocidad de giro '+'
             if signed(grados)<signed(gr_max) then
                 grados<=std_logic_vector(signed(grados)+1000);
             end if;
         end if;
-        if b(2)='1' and fr_tick='1' then --cambio velocidad de giro '-'
+        if b(2)='1' and rising_edge(fr_tick) then --cambio velocidad de giro '-'
             if signed(grados)>signed(gr_min) then
                 grados<=std_logic_vector(signed(grados)-1000);
             end if;
         end if;
         
-        if i<N_points and rising_edge(cordic_clk) then
+        if i<N_points+1 and rising_edge(cordic_clk) then
             i:=i+1;
         end if;
-        if (fr_tick='1' and b(1)='1') then
+        if (rising_edge(fr_tick) and b(1)='1') then
             j:=0;
         end if;
-        if j<N_points and rising_edge(cordic_clk) then
+        if j<N_points+1 and rising_edge(cordic_clk) then
             j:=j+1;
         end if;
-        if ((j<N_points-1) or (i<N_points-1)) then
+        if ((j<N_points) or (i<N_points)) then
             enable<='1';
         else
             enable <='0';
