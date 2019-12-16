@@ -108,7 +108,7 @@ process (pix_clock,rst, pixel_x,pixel_y)
         if (conteo = 384000) then
             frame <='1';
         end if;
-        if (conteo = 384002) then
+        if (conteo = 384001) then
             frame <='0';
         end if;
         if (conteo = 480000) then

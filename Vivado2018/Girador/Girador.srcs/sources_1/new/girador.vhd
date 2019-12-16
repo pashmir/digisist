@@ -287,7 +287,7 @@ begin
         port map(
             degrees=>grados,
             enable=>enable,
-            clk=>sys_clk,
+            clk=>CORDIC_clk,
             x_out=>fifo(0).x,
             y_out=>fifo(0).y,
             x_in=>to_turn.x,
@@ -296,7 +296,7 @@ begin
         
 chain: for i in 0 to N_points-N_steps-2 generate
     chain_part: delay
-        port map(clk=>sys_clk,
+        port map(clk=>CORDIC_clk,
                  ena=>enable,
                  i_in=>fifo(i),
                  o_out=>fifo(i+1));
@@ -304,82 +304,60 @@ end generate;
 
 chain2: for i in 0 to 2*N_points-2 generate
 	chain2_link: delay
-		port map(clk=>sys_clk,
+		port map(clk=>CORDIC_clk,
 		         ena=>enable,
 		         i_in=>fifo_ant(i),
 		         o_out=>fifo_ant(i+1));
 	end generate;
 -- proceso de control de girado	
-init: process(sys_clk,fr_tick,b,rst)
-	variable init, turn, turning, done_turning : bit := '0';
-	variable i,j :natural :=0;
+init: process(sys_clk,fr_tick,b,rst_clk_rx,cordic_clk)
+	variable init : bit := '0';
+	variable i :natural :=0;
+	variable j :natural :=0;
 	begin
-	if rst='1' then
+	if rst_clk_rx='1' then
 	   init:='0';
 	   i:=0;
-       enable<='1';
+       --enable<='1';
        grados<=zero;
 	else
-        if rising_edge(fr_tick) then --cada frame
---           if b(1) = '1' then
---               turn:='1';
---           else 
---               turn:='0';
---           end if;
-           if b(0)='1' then -- cambio velocidad de giro '+'
-                if signed(grados)<signed(gr_max) then
-                    grados<=std_logic_vector(signed(grados)+1);
-                end if;
-           end if;
-           if b(2)='1' then --cambio velocidad de giro '-'
-                if signed(grados)>signed(gr_min) then
-                    grados<=std_logic_vector(signed(grados)-1);
-                end if;
-           end if;
+        if b(0)='1' and fr_tick='1' then -- cambio velocidad de giro '+'
+            if signed(grados)<signed(gr_max) then
+                grados<=std_logic_vector(signed(grados)+1000);
+            end if;
         end if;
-        if rising_edge(sys_clk) then
+        if b(2)='1' and fr_tick='1' then --cambio velocidad de giro '-'
+            if signed(grados)>signed(gr_min) then
+                grados<=std_logic_vector(signed(grados)-1000);
+            end if;
+        end if;
+        
+        if i<N_points and rising_edge(cordic_clk) then
+            i:=i+1;
+        end if;
+        if (fr_tick='1' and b(1)='1') then
+            j:=0;
+        end if;
+        if j<N_points and rising_edge(cordic_clk) then
+            j:=j+1;
+        end if;
+        if ((j<N_points-1) or (i<N_points-1)) then
+            enable<='1';
+        else
+            enable <='0';
+            init:='1';
+        end if;
+        
+        --if rising_edge(sys_clk) then
             if init='1' then
                 to_turn <= fifo(N_points-N_steps-1);
                 fifo_ant(0)<=fifo(N_points-N_steps-1);
---                if turn='1' then
---                    if done_turning='0' then
---                        j:=0;
---                        turning:='1';
---                    end if;
---                else
---                    done_turning:='0';
---                end if;
---                if turning='1' then
---                    enable<='1';
---                    j:=j+1;
---                    if j=N_points then
---                        turning:='0';
---                        done_turning:='1';
---                        enable <='0';
---                    end if;
---                end if;
-                if (fr_tick='1' and b(1)='1') then
-                    turning:='1';
-                end if;
-                if turning='1' then
-                    enable<='1';
-                    j:=j+1;
-                    if j=N_points then
-                        turning:='0';
-                        enable <='0';
-                    end if;
-                end if;
-                
             else --inicializacion, carga los puntos en el sistema
                 to_turn<=puntos(i);
                 fifo_ant(0)<=puntos(i);
-                i:=i+1;
-                if i=N_points then
-                    init:= '1';
-                    enable<='0';
-                end if;
+                --i:=i+1;
             end if;
-	   end if;
+	   --end if;
     end if;
     end process;
 
