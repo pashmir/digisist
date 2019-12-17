@@ -1,0 +1,10 @@
+C:/Users/Franco/Documents/Git-Ceci/digisist/GHDL/CORDIC_Ctrl/CORDIC_Ctrl.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Franco/Documents/Git-Ceci/digisist/GHDL/CORDIC_Ctrl/CORDIC_Ctrl.vhd
+Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 2015
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity CORDIC_Ctrl
+-- Compiling architecture arq of CORDIC_Ctrl
+
+} {} {}}
