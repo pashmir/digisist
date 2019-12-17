@@ -267,12 +267,12 @@ begin
 -- Sección del código dedicada a girar puntos
 -- esto tiene que ir a 2 clock de velocidad para poder escribir y borrar los puntos
     process (sys_clk)
-    variable conteo : unsigned(4 downto 0);
+    variable conteo : unsigned(2 downto 0);
     begin
         if rising_edge(sys_clk) then
             conteo:=conteo+1;
         end if;
-        if conteo<16 then
+        if conteo<4 then
             cordic_clk<='0';
         else
             cordic_clk<='1';
@@ -311,13 +311,14 @@ chain2: for i in 0 to 2*N_points-2 generate
 	end generate;
 -- proceso de control de girado	
 init: process(sys_clk,fr_tick,b,rst_clk_rx,cordic_clk)
-	variable init : bit := '0';
+	variable init, girar : bit := '0';
 	variable i :natural :=0;
 	variable j :natural :=0;
 	begin
 	if rst_clk_rx='1' then
 	   init:='0';
-	   i:=0;
+	   girar:='1';
+	   --i:=0;
        --enable<='1';
        grados<=zero;
 	else
@@ -336,7 +337,11 @@ init: process(sys_clk,fr_tick,b,rst_clk_rx,cordic_clk)
             i:=i+1;
         end if;
         if (rising_edge(fr_tick) and b(1)='1') then
+            girar:='1';
+        end if;
+        if girar='1' and rising_edge(cordic_clk) then
             j:=0;
+            girar:='0';
         end if;
         if j<N_points+1 and rising_edge(cordic_clk) then
             j:=j+1;
