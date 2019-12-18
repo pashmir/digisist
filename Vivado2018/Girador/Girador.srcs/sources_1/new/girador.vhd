@@ -327,13 +327,13 @@ init: process(sys_clk,fr_tick,b,rst_clk_rx,cordic_clk)
             if signed(grados)<signed(gr_max) then
                 grados<=std_logic_vector(signed(grados)+1000);
             end if;
-            led(2)<='1';
+            led(0)<='0';
         end if;
         if b(2)='1' and rising_edge(fr_tick) then --cambio velocidad de giro '-'
             if signed(grados)>signed(gr_min) then
                 grados<=std_logic_vector(signed(grados)-1000);
             end if;
-            led(3)<='1';
+            led(2)<='1';
         end if;
         
         if rising_edge(cordic_clk) then -- tiene que estar
@@ -341,7 +341,7 @@ init: process(sys_clk,fr_tick,b,rst_clk_rx,cordic_clk)
         end if;
         if (rising_edge(fr_tick) and sw(1)='1') then
             girar:='1';
-            led(1)<='1';
+            --led(1)<='1';
         end if;
         if girar='1' and rising_edge(cordic_clk) then
             --j:=0;
@@ -353,6 +353,7 @@ init: process(sys_clk,fr_tick,b,rst_clk_rx,cordic_clk)
             i:=0;
             --init:='1';
         end if;
+        led(1)<=b(1);
 --        if j<N_points+1 and rising_edge(cordic_clk) then
 --            j:=j+1;
 --        end if;
