@@ -29,6 +29,7 @@ begin
     b1 <= '1' after TCK * 20;
     b0 <= '1' after TCK * 25;
     fr_tick <= not(fr_tick) after TCK * 43/2;
+    rst <= not(rst) after TCK * 75;
 
     process (clk)
     begin
@@ -55,8 +56,9 @@ begin
 	begin
 	if rst='1' then
 	   init:='0';
-	   i:=0;
-       --enable<='1';
+	   girar:='1';
+	   --i:=0;
+           --enable<='1';
        grados<=std_logic_vector(to_signed(0,5));
 	else
         if b0='1' and rising_edge(fr_tick) then -- cambio velocidad de giro '+'
