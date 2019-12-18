@@ -22,8 +22,9 @@ entity girador is
     --UART
     rxd_pin: in std_logic;
     -- Tal vez necesite botones
-    sw : in std_logic_vector(2 downto 0)
-    
+    sw : in std_logic_vector(2 downto 0);
+    --LEDS para debug
+    led: out std_logic_vector(3 downto 0)
   );
 end girador;
 
@@ -326,18 +327,22 @@ init: process(sys_clk,fr_tick,b,rst_clk_rx,cordic_clk)
             if signed(grados)<signed(gr_max) then
                 grados<=std_logic_vector(signed(grados)+1000);
             end if;
+            led(2)<='1';
         end if;
         if b(2)='1' and rising_edge(fr_tick) then --cambio velocidad de giro '-'
             if signed(grados)>signed(gr_min) then
                 grados<=std_logic_vector(signed(grados)-1000);
             end if;
+            led(3)<='1';
         end if;
         
-        if i<N_points+1 and rising_edge(cordic_clk) then
+        if i<N_points+1 and rising_edge(cordic_clk) then -- tiene que estar
             i:=i+1;
         end if;
         if (rising_edge(fr_tick) and b(1)='1') then
             girar:='1';
+            led(1)<='1';
+        else
         end if;
         if girar='1' and rising_edge(cordic_clk) then
             j:=0;
@@ -357,9 +362,11 @@ init: process(sys_clk,fr_tick,b,rst_clk_rx,cordic_clk)
             if init='1' then
                 to_turn <= fifo(N_points-N_steps-1);
                 fifo_ant(0)<=fifo(N_points-N_steps-1);
+                led(0)<='1';
             else --inicializacion, carga los puntos en el sistema
                 to_turn<=puntos(i);
                 fifo_ant(0)<=puntos(i);
+                led(0)<='0';
                 --i:=i+1;
             end if;
 	   --end if;
@@ -381,13 +388,13 @@ process (rst,sys_clk,fr_tick)
             if wipe='0' then --ploteo puntos
                 dir := 320 + to_integer(signed(fifo_ant(conteo).x(N_bits-1 downto N_bits-9))) + 800 * (to_integer(signed(fifo_ant(conteo).y(N_bits-1 downto N_bits-9)))+240);
                 pixel_value_reg(0) <= '1';
-                if conteo=N_points-1 then
+                if conteo=N_points then
                     conteo:=0;
                 end if;
             else --limpio pantalla
                 pixel_value_reg(0)<='0';
                 dir:=conteo;
-                if conteo=384000 then
+                if conteo=480000 then
                     wipe:='0';
                     conteo:=0;
                 end if;
