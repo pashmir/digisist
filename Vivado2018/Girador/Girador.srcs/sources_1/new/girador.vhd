@@ -320,7 +320,7 @@ init: process(sys_clk,fr_tick,b,rst_clk_rx,cordic_clk)
 	   init:='0';
 	   girar:='1';
 	   --i:=0;
-       --enable<='1';
+       enable<='1';
        grados<=zero;
 	else
         if b(0)='1' and rising_edge(fr_tick) then -- cambio velocidad de giro '+'
@@ -336,39 +336,45 @@ init: process(sys_clk,fr_tick,b,rst_clk_rx,cordic_clk)
             led(3)<='1';
         end if;
         
-        if i<N_points+1 and rising_edge(cordic_clk) then -- tiene que estar
+        if rising_edge(cordic_clk) then -- tiene que estar
             i:=i+1;
         end if;
-        if (rising_edge(fr_tick) and b(1)='1') then
+        if (rising_edge(fr_tick) and sw(1)='1') then
             girar:='1';
             led(1)<='1';
-        else
         end if;
         if girar='1' and rising_edge(cordic_clk) then
-            j:=0;
+            --j:=0;
             girar:='0';
-        end if;
-        if j<N_points+1 and rising_edge(cordic_clk) then
-            j:=j+1;
-        end if;
-        if ((j<N_points) or (i<N_points)) then
             enable<='1';
-        else
-            enable <='0';
-            init:='1';
         end if;
-        
+        if i=N_Points then
+            --enable<='0';
+            i:=0;
+            --init:='1';
+        end if;
+--        if j<N_points+1 and rising_edge(cordic_clk) then
+--            j:=j+1;
+--        end if;
+--        if ((j<N_points) or (i<N_points)) then
+--            enable<='1';
+--        else
+--            enable <='0';
+--            init:='1';
+--            led(0)<='1';
+--        end if;
+            to_turn<=puntos(i);
+            fifo_ant(0)<=fifo(N_points-N_steps-1);
         --if rising_edge(sys_clk) then
-            if init='1' then
-                to_turn <= fifo(N_points-N_steps-1);
-                fifo_ant(0)<=fifo(N_points-N_steps-1);
-                led(0)<='1';
-            else --inicializacion, carga los puntos en el sistema
-                to_turn<=puntos(i);
-                fifo_ant(0)<=puntos(i);
-                led(0)<='0';
+            --if init='1' then
+                --fifo_ant(0)<=fifo(N_points-N_steps-1);
+                --to_turn <= fifo(N_points-N_steps-1);
+            --else --inicializacion, 
+                --to_turn<=puntos(i);
+                --fifo_ant(0)<=puntos(i);
+                --led(0)<='0';
                 --i:=i+1;
-            end if;
+            --end if;
 	   --end if;
     end if;
     end process;
