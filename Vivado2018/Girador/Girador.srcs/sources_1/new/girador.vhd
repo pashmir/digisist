@@ -30,18 +30,18 @@ end girador;
 
 architecture gir_arq of girador is
     -- COMPONENTES
-    component fontrom --evaluar si es necesaria
-        generic(
-            N: integer:= 6;
-            M: integer:= 3;
-            W: integer:= 8
-        );
-        port(
-            char_address: in std_logic_vector(5 downto 0);
-            font_row, font_col: in std_logic_vector(M-1 downto 0);
-            rom_out: out std_logic
-        );
-    end component;
+--    component fontrom --evaluar si es necesaria
+--        generic(
+--            N: integer:= 6;
+--            M: integer:= 3;
+--            W: integer:= 8
+--        );
+--        port(
+--            char_address: in std_logic_vector(5 downto 0);
+--            font_row, font_col: in std_logic_vector(M-1 downto 0);
+--            rom_out: out std_logic
+--        );
+--    end component;
 
 component video_mem_wrapper is
   port (
@@ -74,26 +74,26 @@ end component;
         );
     end component;
     
-    component uart_rx is
-        generic(
-            BAUD_RATE: integer := 115200; 	-- Baud rate
-            CLOCK_RATE: integer := 125E6
-        );
+--    component uart_rx is
+--        generic(
+--            BAUD_RATE: integer := 115200; 	-- Baud rate
+--            CLOCK_RATE: integer := 125E6
+--        );
     
-        port(
-            -- Write side inputs
-            clk_rx: in std_logic;       				-- Clock input
-            rst_clk_rx: in std_logic;   				-- Active HIGH reset - synchronous to clk_rx
+--        port(
+--            -- Write side inputs
+--            clk_rx: in std_logic;       				-- Clock input
+--            rst_clk_rx: in std_logic;   				-- Active HIGH reset - synchronous to clk_rx
                             
-            rxd_i: in std_logic;        				-- RS232 RXD pin - Directly from pad
-            rxd_clk_rx: out std_logic;					-- RXD pin after synchronization to clk_rx
+--            rxd_i: in std_logic;        				-- RS232 RXD pin - Directly from pad
+--            rxd_clk_rx: out std_logic;					-- RXD pin after synchronization to clk_rx
         
-            rx_data: out std_logic_vector(7 downto 0);	-- 8 bit data output
-                                                        --  - valid when rx_data_rdy is asserted
-            rx_data_rdy: out std_logic;  				-- Ready signal for rx_data
-            frm_err: out std_logic       				-- The STOP bit was not detected	
-        );
-    end component;
+--            rx_data: out std_logic_vector(7 downto 0);	-- 8 bit data output
+--                                                        --  - valid when rx_data_rdy is asserted
+--            rx_data_rdy: out std_logic;  				-- Ready signal for rx_data
+--            frm_err: out std_logic       				-- The STOP bit was not detected	
+--        );
+--    end component;
     
     component meta_harden is
         port(
@@ -141,16 +141,16 @@ end component;
     signal pixel_value : std_logic_vector(0 downto 0);
     signal add_video_mem : std_logic_vector(18 downto 0);
     signal pix_clock : std_logic;
-    signal pantalla : std_logic;--no usado
-    signal char_add : std_logic_vector(5 downto 0);--esto no se necesita
-    signal font_row : std_logic_vector(2 downto 0);--not needed
-    signal font_column : std_logic_vector(2 downto 0);--not needed
-    signal rom_out : std_logic;--not needed
+    --signal pantalla : std_logic;--no usado
+    --signal char_add : std_logic_vector(5 downto 0);--esto no se necesita
+    --signal font_row : std_logic_vector(2 downto 0);--not needed
+    --signal font_column : std_logic_vector(2 downto 0);--not needed
+    --signal rom_out : std_logic;--not needed
     signal fr_tick : std_logic;
     -- UART
     signal rst_clk_rx: std_logic;
-    signal rx_data: std_logic_vector(7 downto 0);     -- Data output of uart_rx
-    signal rx_data_rdy: std_logic;                  -- Data ready output of uart_rx
+--    signal rx_data: std_logic_vector(7 downto 0);     -- Data output of uart_rx
+--    signal rx_data_rdy: std_logic;                  -- Data ready output of uart_rx
     -- PUNTOS
     -- Aca va un array con los puntos que se van a girar para ver una recta
     constant puntos : t_array_punto(0 to N_points-1) := (0 => (x => std_logic_vector(to_signed(   0*(2**(N_bits-1-8)),N_bits)),y=>zero),
@@ -394,7 +394,7 @@ end component;
                                                          238 => (x => std_logic_vector(to_signed(228*(2**(N_bits-1-8)),N_bits)),y=>zero),
                                                          239 => (x => std_logic_vector(to_signed(229*(2**(N_bits-1-8)),N_bits)),y=>zero)
                                                          );--tabla con los puntos de la recta inicial
-    signal fifo : t_array_punto(0 to N_points-N_steps-1);
+    --signal fifo : t_array_punto(0 to N_points-N_steps-1);
     signal fifo_ant : t_array_punto(0 to 2*N_points-1);
     signal to_turn : t_punto;
     --signal turned : t_punto;
@@ -423,28 +423,28 @@ begin
             -- Necesito un OUT que sea la dire de la video mem
         );
         
-    meta_harden_rst_i0: meta_harden -- capaz haya que usar esto para otro boton
+    meta_harden_rst_sw0: meta_harden -- capaz haya que usar esto para otro boton
         port map(
             clk_dst     => sys_clk,
             rst_dst     => rst,            -- No reset on the hardener for reset!
             signal_src     => sw(0),
             signal_dst     => b(0)
         );
-    meta_harden_rst_sw0: meta_harden -- capaz haya que usar esto para otro boton
+    meta_harden_rst_sw1: meta_harden -- capaz haya que usar esto para otro boton
         port map(
             clk_dst     => sys_clk,
             rst_dst     => rst,            -- No reset on the hardener for reset!
             signal_src     => sw(1),
             signal_dst     => b(1)
         );
-    meta_harden_rst_sw1: meta_harden -- capaz haya que usar esto para otro boton
+    meta_harden_rst_sw2: meta_harden -- capaz haya que usar esto para otro boton
         port map(
             clk_dst     => sys_clk,
             rst_dst     => rst,            -- No reset on the hardener for reset!
             signal_src     => sw(2),
             signal_dst     => b(2)
         );
-    meta_harden_rst_sw2: meta_harden -- capaz haya que usar esto para otro boton
+    meta_harden_rst_i0: meta_harden -- capaz haya que usar esto para otro boton
         port map(
             clk_dst     => sys_clk,
             rst_dst     => '0',            -- No reset on the hardener for reset!
@@ -452,18 +452,18 @@ begin
             signal_dst     => rst_clk_rx
         );
         
-    UART: uart_rx 
-        port map(
-            clk_rx         => sys_clk,
-            rst_clk_rx     => rst_clk_rx,
+--    UART: uart_rx 
+--        port map(
+--            clk_rx         => sys_clk,
+--            rst_clk_rx     => rst_clk_rx,
     
-            rxd_i          => rxd_pin,
-            rxd_clk_rx     => open,
+--            rxd_i          => rxd_pin,
+--            rxd_clk_rx     => open,
     
-            rx_data_rdy    => rx_data_rdy,
-            rx_data        => rx_data,
-            frm_err        => open
-        );
+--            rx_data_rdy    => rx_data_rdy,
+--            rx_data        => rx_data,
+--            frm_err        => open
+--        );
     memoria_video: video_mem_wrapper
         port map (
             addra_0 => add_video_mem_load,
@@ -509,19 +509,19 @@ begin
             degrees=>grados,
             enable=>enable,
             clk=>CORDIC_clk,
-            x_out=>fifo(0).x,
-            y_out=>fifo(0).y,
+            x_out=>fifo_ant(0).x,
+            y_out=>fifo_ant(0).y,
             x_in=>to_turn.x,
             y_in=>to_turn.y
         );
         
-chain: for i in 0 to N_points-N_steps-2 generate
-    chain_part: delay
-        port map(clk=>CORDIC_clk,
-                 ena=>enable,
-                 i_in=>fifo(i),
-                 o_out=>fifo(i+1));
-end generate;
+--chain: for i in 0 to N_points-N_steps-2 generate
+--    chain_part: delay
+--        port map(clk=>CORDIC_clk,
+--                 ena=>enable,
+--                 i_in=>fifo(i),
+--                 o_out=>fifo(i+1));
+--end generate;
 
 chain2: for i in 0 to 2*N_points-2 generate
 	chain2_link: delay
@@ -546,7 +546,7 @@ init: process(sys_clk,fr_tick,b,rst_clk_rx,cordic_clk)
         if rising_edge(fr_tick) then -- cambio velocidad de giro '+'
             if b(0)='1' then
             --if signed(grados)<signed(gr_max) then
-                grados<=std_logic_vector(signed(grados)+1000000);
+                grados<=std_logic_vector(signed(grados)+10000000);
             --end if;
             led(0)<='1';
             else
@@ -556,7 +556,7 @@ init: process(sys_clk,fr_tick,b,rst_clk_rx,cordic_clk)
         if rising_edge(fr_tick) then --cambio velocidad de giro '-'
             if b(2)='1' then
             --if signed(grados)>signed(gr_min) then
-                grados<=std_logic_vector(signed(grados)-1000000);
+                grados<=std_logic_vector(signed(grados)-10000000);
             --end if;
                 led(2)<='1';
             else
@@ -597,7 +597,7 @@ init: process(sys_clk,fr_tick,b,rst_clk_rx,cordic_clk)
 --            led(0)<='1';
 --        end if;
             to_turn<=puntos(i);
-            fifo_ant(0)<=fifo(N_points-N_steps-1);
+            --fifo_ant(0)<=fifo(N_points-N_steps-1);
         --if rising_edge(sys_clk) then
             --if init='1' then
                 --fifo_ant(0)<=fifo(N_points-N_steps-1);
@@ -633,7 +633,7 @@ process (rst,sys_clk,fr_tick)
             else --limpio pantalla
                 pixel_value_reg(0)<='0';
                 dir:=conteo;
-                if conteo=384000 then
+                if conteo=307200 then
                     wipe:='0';
                     conteo:=0;
                 end if;
