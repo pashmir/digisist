@@ -17,7 +17,7 @@ entity vga_ctrl is
 	port(
 	    sys_clk: in std_logic;
 		rst: in std_logic;
-		sw: in std_logic_vector (2 downto 0);-- parece que no se usa esta variable
+		--sw: in std_logic_vector (2 downto 0);-- parece que no se usa esta variable
 		hsync , vsync : out std_logic;
 		red : out std_logic_vector(3 downto 0);
 		green : out std_logic_vector(3 downto 0);

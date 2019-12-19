@@ -20,7 +20,7 @@ entity girador is
     green : out std_logic_vector(3 downto 0);
     blue : out std_logic_vector(3 downto 0);
     --UART
-    rxd_pin: in std_logic;
+    --rxd_pin: in std_logic;
     -- Tal vez necesite botones
     sw : in std_logic_vector(2 downto 0);
     --LEDS para debug
@@ -61,7 +61,7 @@ end component;
         port(
             sys_clk: in std_logic;
             rst: in std_logic;
-            sw: in std_logic_vector (2 downto 0);
+            --sw: in std_logic_vector (2 downto 0);
             hsync , vsync : out std_logic;
             red : out std_logic_vector(3 downto 0);
             green : out std_logic_vector(3 downto 0);
@@ -137,7 +137,7 @@ end component;
     signal pixel_value_reg : std_logic_vector (0 downto 0);--este es para setear debería irse
     signal add_video_mem_load : std_logic_vector (18 downto 0);--debería irse
     signal pixel : std_logic_vector (2 downto 0);
-    signal pixel_in : std_logic_vector (0 downto 0);--este tambien se tiene que ir
+    signal pixel_in : std_logic_vector (0 downto 0);
     signal pixel_value : std_logic_vector(0 downto 0);
     signal add_video_mem : std_logic_vector(18 downto 0);
     signal pix_clock : std_logic;
@@ -395,7 +395,7 @@ end component;
                                                          239 => (x => std_logic_vector(to_signed(229*(2**(N_bits-1-8)),N_bits)),y=>zero)
                                                          );--tabla con los puntos de la recta inicial
     --signal fifo : t_array_punto(0 to N_points-N_steps-1);
-    signal fifo_ant : t_array_punto(0 to 2*N_points-1);
+    signal fifo_ant : t_array_punto(0 to N_points-1);
     signal to_turn : t_punto;
     --signal turned : t_punto;
     signal cordic_clk : std_logic;
@@ -409,7 +409,7 @@ begin
         port map (
             sys_clk => sys_clk,
             rst => rst,
-            sw => "000",
+            --sw => "000",
             hsync => hsync,
             vsync => vsync,
             red => red,
@@ -523,7 +523,7 @@ begin
 --                 o_out=>fifo(i+1));
 --end generate;
 
-chain2: for i in 0 to 2*N_points-2 generate
+chain2: for i in 0 to N_points-2 generate
 	chain2_link: delay
 		port map(clk=>CORDIC_clk,
 		         ena=>enable,
@@ -633,7 +633,7 @@ process (rst,sys_clk,fr_tick)
             else --limpio pantalla
                 pixel_value_reg(0)<='0';
                 dir:=conteo;
-                if conteo=307200 then
+                if conteo=384000 then
                     wipe:='0';
                     conteo:=0;
                 end if;
