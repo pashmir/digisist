@@ -124,7 +124,7 @@ end component;
     end component;
     -- Constantes
     --constant N_bits : natural := 9;
-    constant N_steps : natural := 16;
+    constant N_steps : natural := 11;
     constant N_points : natural := 240;
 --    -- Tipos personalizados (están en la biblioteca)
 --    type t_punto is record 
@@ -546,7 +546,7 @@ init: process(sys_clk,fr_tick,b,rst_clk_rx,cordic_clk)
         if rising_edge(fr_tick) then -- cambio velocidad de giro '+'
             if b(0)='1' then
             --if signed(grados)<signed(gr_max) then
-                grados<=std_logic_vector(signed(grados)+10000000);
+                grados<=std_logic_vector(signed(grados)+10);
             --end if;
             led(0)<='1';
             else
@@ -556,7 +556,7 @@ init: process(sys_clk,fr_tick,b,rst_clk_rx,cordic_clk)
         if rising_edge(fr_tick) then --cambio velocidad de giro '-'
             if b(2)='1' then
             --if signed(grados)>signed(gr_min) then
-                grados<=std_logic_vector(signed(grados)-10000000);
+                grados<=std_logic_vector(signed(grados)-10);
             --end if;
                 led(2)<='1';
             else
